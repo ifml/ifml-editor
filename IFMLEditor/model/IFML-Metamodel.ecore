@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="IFML" nsURI="http://www.omg.org/spec/20130218" nsPrefix="IFML">
+  <eSubpackages name="DataTypes" nsURI="http://www.omg.org/spec/20130218/data" nsPrefix="data">
+    <eClassifiers xsi:type="ecore:EEnum" name="Direction">
+      <eLiterals name="in"/>
+      <eLiterals name="out"/>
+      <eLiterals name="inout"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="SystemEventType">
+      <eLiterals name="time"/>
+      <eLiterals name="specialCondition"/>
+      <eLiterals name="actionCompletion"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ContextVariableScope">
+      <eLiterals name="ApplicationScope"/>
+      <eLiterals name="SessionScope"/>
+      <eLiterals name="ViewContainerScope"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="Core" nsURI="http://www.omg.org/spec/20130218/core" nsPrefix="core">
+    <eClassifiers xsi:type="ecore:EClass" name="InteractionFlow" abstract="true" eSuperTypes="#//Core/InteractionFlowModelElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindingGroup"
+          ordered="false" eType="#//Core/ParameterBindingGroup" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceInteractionFlowElement"
+          ordered="false" lowerBound="1" eType="#//Core/InteractionFlowElement" eOpposite="#//Core/InteractionFlowElement/outInteractionFlows"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetInteractionFlowElement"
+          ordered="false" lowerBound="1" eType="#//Core/InteractionFlowElement" eOpposite="#//Core/InteractionFlowElement/inInteractionFlows"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InteractionFlowExpression" eSuperTypes="#//Core/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interactionFlow" ordered="false"
+          lowerBound="2" upperBound="-1" eType="#//Core/InteractionFlow"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SystemEvent" eSuperTypes="#//Core/CatchingEvent">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="triggeringExpressions"
+          ordered="false" upperBound="-1" eType="#//Core/Expression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false"
+          lowerBound="1" eType="#//DataTypes/SystemEventType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="#//Core/InteractionFlowModelElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceParameter" ordered="false"
+          lowerBound="1" eType="#//Core/IFMLParameter"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetParameter" ordered="false"
+          lowerBound="1" eType="#//Core/IFMLParameter"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActionEvent" eSuperTypes="#//Core/CatchingEvent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DomainModel" eSuperTypes="#//Core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="domainElements" ordered="false"
+          upperBound="-1" eType="#//Core/DomainElement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//Core/Element">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PortDefinition" eSuperTypes="#//Core/InteractionFlowElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" ordered="false"
+          upperBound="-1" eType="#//Core/IFMLPort" eOpposite="#//Core/IFMLPort/portDefinition"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContentBinding" abstract="true" eSuperTypes="#//Core/ViewComponentPart">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniformResourceIdentifier"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewElement" eSuperTypes="#//Core/InteractionFlowElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewElementEvents" ordered="false"
+          upperBound="-1" eType="#//Core/ViewElementEvent" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activationExpression"
+          ordered="false" eType="#//Core/ActivationExpression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewContainer" ordered="false"
+          eType="#//Core/ViewContainer" eOpposite="#//Core/ViewContainer/viewElements"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//Core/InteractionFlowModelElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DynamicBehavior" eSuperTypes="#//Core/ContentBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralFeatureConcept"
+          ordered="false" eType="#//Core/BehavioralFeatureConcept" eOpposite="#//Core/BehavioralFeatureConcept/dynamicBehavior"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorConcept" ordered="false"
+          eType="#//Core/BehaviorConcept" eOpposite="#//Core/BehaviorConcept/dynamicBehavior"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Viewpoint" eSuperTypes="#//Core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interactionFlowModelElements"
+          ordered="false" upperBound="-1" eType="#//Core/InteractionFlowModelElement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
+          lowerBound="1" eType="#//Core/Context"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DataFlow" eSuperTypes="#//Core/InteractionFlow"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewComponentPart" eSuperTypes="#//Core/InteractionFlowElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewElementEvents" ordered="false"
+          upperBound="-1" eType="#//Core/ViewElementEvent" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activationExpression"
+          ordered="false" eType="#//Core/ActivationExpression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentViewComponentPart"
+          ordered="false" lowerBound="1" eType="#//Core/ViewComponentPart"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subViewComponentParts"
+          ordered="false" upperBound="-1" eType="#//Core/ViewComponentPart" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewContainer" eSuperTypes="#//Core/ViewElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLandmark" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDefault" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isXOR" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewElements" ordered="false"
+          upperBound="-1" eType="#//Core/ViewElement" containment="true" eOpposite="#//Core/ViewElement/viewContainer"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actions" ordered="false"
+          upperBound="-1" eType="#//Core/IFMLAction" containment="true" eOpposite="#//Core/IFMLAction/viewContainer"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivationExpression" eSuperTypes="#//Core/BooleanExpression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InteractionFlowModel" eSuperTypes="#//Core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interactionFlowModelElements"
+          ordered="false" upperBound="-1" eType="#//Core/InteractionFlowModelElement"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContextDimension" eSuperTypes="#//Core/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IFMLModel" eSuperTypes="#//Core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interactionFlowModel"
+          ordered="false" lowerBound="1" eType="#//Core/InteractionFlowModel" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="domainModel" ordered="false"
+          lowerBound="1" eType="#//Core/DomainModel" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interactionFlowModelViewpoint"
+          ordered="false" upperBound="-1" eType="#//Core/Viewpoint" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModuleDefinition" eSuperTypes="#//Core/ModularizationElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inputPorts" ordered="false"
+          upperBound="-1" eType="#//Core/PortDefinition" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outputPorts" ordered="false"
+          upperBound="-1" eType="#//Core/PortDefinition" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interactionFlowModelElement"
+          ordered="false" lowerBound="1" upperBound="-1" eType="#//Core/InteractionFlowModelElement"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="modules" ordered="false"
+          upperBound="-1" eType="#//Core/IFMLModule" eOpposite="#//Core/IFMLModule/moduleDefinition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityConcept" ordered="false"
+          eType="#//Core/ActivityConcept" eOpposite="#//Core/ActivityConcept/moduleDefinition"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BooleanExpression" eSuperTypes="#//Core/Expression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InteractionFlowElement" abstract="true"
+        eSuperTypes="#//Core/NamedElement #//Core/InteractionFlowModelElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" ordered="false"
+          upperBound="-1" eType="#//Core/IFMLParameter" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outInteractionFlows"
+          ordered="false" upperBound="-1" eType="#//Core/InteractionFlow" containment="true"
+          eOpposite="#//Core/InteractionFlow/sourceInteractionFlowElement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inInteractionFlows" ordered="false"
+          upperBound="-1" eType="#//Core/InteractionFlow" eOpposite="#//Core/InteractionFlow/targetInteractionFlowElement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IFMLAction" eSuperTypes="#//Core/InteractionFlowElement #//Core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actionEvents" ordered="false"
+          upperBound="-1" eType="#//Core/ActionEvent" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicBehavior" ordered="false"
+          lowerBound="1" eType="#//Core/DynamicBehavior"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewContainer" ordered="false"
+          eType="#//Core/ViewContainer" eOpposite="#//Core/ViewContainer/actions"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NavigationFlow" eSuperTypes="#//Core/InteractionFlow"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterBindingGroup" eSuperTypes="#//Core/InteractionFlowModelElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" ordered="false"
+          lowerBound="1" upperBound="-1" eType="#//Core/ParameterBinding" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" ordered="false"
+          upperBound="-1" eType="#//Core/Constraint" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" ordered="false"
+          upperBound="-1" eType="#//Core/Annotation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Constraint" eSuperTypes="#//Core/BooleanExpression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewComponent" eSuperTypes="#//Core/ViewElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewComponentParts" ordered="false"
+          upperBound="-1" eType="#//Core/ViewComponentPart" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IFMLParameter" eSuperTypes="#//Core/InteractionFlowModelElement #//Core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" ordered="false"
+          lowerBound="1" eType="#//DataTypes/Direction" defaultValueLiteral="in"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="defaultValue" ordered="false"
+          lowerBound="1" eType="#//Core/Expression"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DataBinding" eSuperTypes="#//Core/ContentBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalExpression"
+          ordered="false" upperBound="-1" eType="#//Core/ConditionalExpression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="visualizationAttribute"
+          ordered="false" upperBound="-1" eType="#//Core/VisualizationAttribute" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dataContextVariables"
+          ordered="false" upperBound="-1" eType="#//Core/DataContextVariable" eOpposite="#//Core/DataContextVariable/dataBinding"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="domainConcept" ordered="false"
+          lowerBound="1" eType="#//Core/DomainConcept" eOpposite="#//Core/DomainConcept/dataBinding"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConditionalExpression" eSuperTypes="#//Core/Expression #//Core/ViewComponentPart"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="#//Core/Element">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="contextDimensions" ordered="false"
+          upperBound="-1" eType="#//Core/ContextDimension" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="contextVariables" ordered="false"
+          upperBound="-1" eType="#//Core/ContextVariable" containment="true" eOpposite="#//Core/ContextVariable/context"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VisualizationAttribute" eSuperTypes="#//Core/ViewComponentPart">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="featureConcept" ordered="false"
+          lowerBound="1" eType="#//Core/FeatureConcept" eOpposite="#//Core/FeatureConcept/visualizationAttribute"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//Core/InteractionFlowElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activationExpression"
+          ordered="false" eType="#//Core/ActivationExpression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interactionFlowExpression"
+          ordered="false" eType="#//Core/InteractionFlowExpression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InteractionFlowModelElement" abstract="true"
+        eSuperTypes="#//Core/Element"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewElementEvent" eSuperTypes="#//Core/CatchingEvent">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="viewElement" ordered="false"
+          lowerBound="1" eType="#//Core/ViewElement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Annotation">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModulePackage" eSuperTypes="#//Core/ModularizationElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="modularizationElements"
+          ordered="false" upperBound="-1" eType="#//Core/ModularizationElement" containment="true"
+          eOpposite="#//Core/ModularizationElement/modulePackage"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModularizationElement" eSuperTypes="#//Core/NamedElement #//Core/InteractionFlowModelElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="modulePackage" ordered="false"
+          eType="#//Core/ModulePackage" eOpposite="#//Core/ModulePackage/modularizationElements"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IFMLModule" eSuperTypes="#//Core/NamedElement #//Core/InteractionFlowElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="moduleDefinition" ordered="false"
+          lowerBound="1" eType="#//Core/ModuleDefinition" eOpposite="#//Core/ModuleDefinition/modules"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" ordered="false"
+          upperBound="-1" eType="#//Core/IFMLPort" eOpposite="#//Core/IFMLPort/module"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IFMLPort" eSuperTypes="#//Core/InteractionFlowElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portDefinition" ordered="false"
+          lowerBound="1" eType="#//Core/PortDefinition" eOpposite="#//Core/PortDefinition/ports"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="module" ordered="false"
+          lowerBound="1" eType="#//Core/IFMLModule" eOpposite="#//Core/IFMLModule/ports"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CatchingEvent" eSuperTypes="#//Core/Event"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ThrowingEvent" eSuperTypes="#//Core/Event"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BPMNActivityConcept" eSuperTypes="#//Core/ActivityConcept"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ContextVariable" eSuperTypes="#//Core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
+          lowerBound="1" eType="#//Core/Context" eOpposite="#//Core/Context/contextVariables"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="scope" ordered="false"
+          lowerBound="1" eType="#//DataTypes/ContextVariableScope"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SimpleContextVariable" eSuperTypes="#//Core/ContextVariable"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DataContextVariable" eSuperTypes="#//Core/ContextVariable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dataBinding" ordered="false"
+          lowerBound="1" eType="#//Core/DataBinding" eOpposite="#//Core/DataBinding/dataContextVariables"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DomainConcept" eSuperTypes="#//Core/DomainElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dataBinding" ordered="false"
+          eType="#//Core/DataBinding" eOpposite="#//Core/DataBinding/domainConcept"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FeatureConcept" eSuperTypes="#//Core/DomainElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="visualizationAttribute"
+          ordered="false" eType="#//Core/VisualizationAttribute" eOpposite="#//Core/VisualizationAttribute/featureConcept"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BehaviorConcept" eSuperTypes="#//Core/DomainElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicBehavior" ordered="false"
+          eType="#//Core/DynamicBehavior" eOpposite="#//Core/DynamicBehavior/behaviorConcept"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BehavioralFeatureConcept" eSuperTypes="#//Core/DomainElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicBehavior" ordered="false"
+          lowerBound="1" eType="#//Core/DynamicBehavior" eOpposite="#//Core/DynamicBehavior/behavioralFeatureConcept"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UMLBehavior" eSuperTypes="#//Core/BehaviorConcept">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" ordered="false"
+          eType="#//Core/DynamicBehavior"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UMLBehavioralFeature" eSuperTypes="#//Core/BehavioralFeatureConcept">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralFeature" ordered="false"
+          eType="#//Core/UMLBehavior"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UMLDomainConcept" eSuperTypes="#//Core/DomainConcept">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" ordered="false"
+          eType="#//Core/UMLDomainConcept"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UMLStructuralFeature" eSuperTypes="#//Core/FeatureConcept">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="structuralFeature" ordered="false"
+          eType="#//Core/UMLStructuralFeature"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityConcept" eSuperTypes="#//Core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="moduleDefinition" ordered="false"
+          lowerBound="1" eType="#//Core/ModuleDefinition" eOpposite="#//Core/ModuleDefinition/activityConcept"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DomainElement" eSuperTypes="#//Core/NamedElement"/>
+  </eSubpackages>
+  <eSubpackages name="Extensions" nsURI="http://www.omg.org/spec/20130218/ext" nsPrefix="ext">
+    <eClassifiers xsi:type="ecore:EClass" name="OnSubmitEvent" eSuperTypes="#//Core/ViewElementEvent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ValidationRule" eSuperTypes="#//Core/Constraint"/>
+    <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//Core/ViewComponent">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="selectEvent" ordered="false"
+          upperBound="-1" eType="#//Extensions/OnSelectEvent" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Position" eSuperTypes="#//Core/ContextDimension"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UserRole" eSuperTypes="#//Core/ContextDimension"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IFMLSlot" eSuperTypes="#//Core/ViewComponentPart #//Core/IFMLParameter"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OnSelectEvent" eSuperTypes="#//Core/ViewElementEvent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Field" abstract="true" eSuperTypes="#//Core/ViewComponentPart #//Core/IFMLParameter"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//Core/ViewComponent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="#//Core/ContextDimension"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SelectionField" eSuperTypes="#//Extensions/Field">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMultiSelection" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SimpleField" eSuperTypes="#//Extensions/Field"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Details" eSuperTypes="#//Core/ViewComponent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IFMLWindow" eSuperTypes="#//Core/ViewContainer">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isModal" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNewWindow" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OnLoadEvent" eSuperTypes="#//Core/SystemEvent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IFMLMenu" eSuperTypes="#//Core/ViewContainer"/>
+    <eClassifiers xsi:type="ecore:EClass" name="JumpEvent" eSuperTypes="#//Core/ThrowingEvent">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="landingEvent" ordered="false"
+          eType="#//Extensions/LandingEvent" eOpposite="#//Extensions/LandingEvent/jumpingEvents"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LandingEvent" eSuperTypes="#//Core/CatchingEvent">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="jumpingEvents" ordered="false"
+          upperBound="-1" eType="#//Extensions/JumpEvent" eOpposite="#//Extensions/JumpEvent/landingEvent"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetContextEvent" eSuperTypes="#//Core/ThrowingEvent"/>
+  </eSubpackages>
+</ecore:EPackage>

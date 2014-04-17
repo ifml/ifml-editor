@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated IFML-Metamodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="IFML.Core.presentation.CoreModelWizardID"
+            name="%_UI_CoreModelWizard_label"
+            class="IFML.Core.presentation.CoreModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CoreModelFile.gif">
+         <description>%_UI_CoreModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated IFML-Metamodel -->
+      <editor
+            id="IFML.Core.presentation.CoreEditorID"
+            name="%_UI_CoreEditor_label"
+            icon="icons/full/obj16/CoreModelFile.gif"
+            extensions="core"
+            class="IFML.Core.presentation.CoreEditor"
+            contributorClass="IFML.Core.presentation.CoreActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated IFML-Metamodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="IFML.Extensions.presentation.ExtensionsModelWizardID"
+            name="%_UI_ExtensionsModelWizard_label"
+            class="IFML.Extensions.presentation.ExtensionsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ExtensionsModelFile.gif">
+         <description>%_UI_ExtensionsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated IFML-Metamodel -->
+      <editor
+            id="IFML.Extensions.presentation.ExtensionsEditorID"
+            name="%_UI_ExtensionsEditor_label"
+            icon="icons/full/obj16/ExtensionsModelFile.gif"
+            extensions="extensions"
+            class="IFML.Extensions.presentation.ExtensionsEditor"
+            contributorClass="IFML.Extensions.presentation.ExtensionsActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

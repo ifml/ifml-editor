@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated IFML-Metamodel -->
+      <package
+            uri="http://www.omg.org/spec/20130218/data"
+            class="IFML.DataTypes.DataTypesPackage"
+            genModel="model/IFML-Metamodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated IFML-Metamodel -->
+      <package
+            uri="http://www.omg.org/spec/20130218/core"
+            class="IFML.Core.CorePackage"
+            genModel="model/IFML-Metamodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated IFML-Metamodel -->
+      <package
+            uri="http://www.omg.org/spec/20130218/ext"
+            class="IFML.Extensions.ExtensionsPackage"
+            genModel="model/IFML-Metamodel.genmodel"/>
+   </extension>
+
+</plugin>
