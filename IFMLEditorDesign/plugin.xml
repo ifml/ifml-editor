@@ -4,7 +4,7 @@
   <extension point="org.eclipse.sirius.componentization">
     <component class="defaultpackage.Activator"
                id="IFMLEditorDesign"
-	       name="My">
+	       name="IFML">
     </component>
   </extension>
 </plugin>
