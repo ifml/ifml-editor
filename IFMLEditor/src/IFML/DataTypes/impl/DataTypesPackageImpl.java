@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,6 +95,9 @@ public class DataTypesPackageImpl extends EPackageImpl implements DataTypesPacka
 		DataTypesPackageImpl theDataTypesPackage = (DataTypesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DataTypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DataTypesPackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
@@ -203,19 +207,19 @@ public class DataTypesPackageImpl extends EPackageImpl implements DataTypesPacka
 
 		// Initialize enums and add enum literals
 		initEEnum(directionEEnum, Direction.class, "Direction");
-		addEEnumLiteral(directionEEnum, Direction.IN_LITERAL);
-		addEEnumLiteral(directionEEnum, Direction.OUT_LITERAL);
-		addEEnumLiteral(directionEEnum, Direction.INOUT_LITERAL);
+		addEEnumLiteral(directionEEnum, Direction.IN);
+		addEEnumLiteral(directionEEnum, Direction.OUT);
+		addEEnumLiteral(directionEEnum, Direction.INOUT);
 
 		initEEnum(systemEventTypeEEnum, SystemEventType.class, "SystemEventType");
-		addEEnumLiteral(systemEventTypeEEnum, SystemEventType.TIME_LITERAL);
-		addEEnumLiteral(systemEventTypeEEnum, SystemEventType.SPECIAL_CONDITION_LITERAL);
-		addEEnumLiteral(systemEventTypeEEnum, SystemEventType.ACTION_COMPLETION_LITERAL);
+		addEEnumLiteral(systemEventTypeEEnum, SystemEventType.TIME);
+		addEEnumLiteral(systemEventTypeEEnum, SystemEventType.SPECIAL_CONDITION);
+		addEEnumLiteral(systemEventTypeEEnum, SystemEventType.ACTION_COMPLETION);
 
 		initEEnum(contextVariableScopeEEnum, ContextVariableScope.class, "ContextVariableScope");
-		addEEnumLiteral(contextVariableScopeEEnum, ContextVariableScope.APPLICATION_SCOPE_LITERAL);
-		addEEnumLiteral(contextVariableScopeEEnum, ContextVariableScope.SESSION_SCOPE_LITERAL);
-		addEEnumLiteral(contextVariableScopeEEnum, ContextVariableScope.VIEW_CONTAINER_SCOPE_LITERAL);
+		addEEnumLiteral(contextVariableScopeEEnum, ContextVariableScope.APPLICATION_SCOPE);
+		addEEnumLiteral(contextVariableScopeEEnum, ContextVariableScope.SESSION_SCOPE);
+		addEEnumLiteral(contextVariableScopeEEnum, ContextVariableScope.VIEW_CONTAINER_SCOPE);
 
 		// Create resource
 		createResource(eNS_URI);

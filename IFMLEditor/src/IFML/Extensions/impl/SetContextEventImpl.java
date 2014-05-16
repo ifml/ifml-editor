@@ -33,6 +33,7 @@ public class SetContextEventImpl extends ThrowingEventImpl implements SetContext
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.SET_CONTEXT_EVENT;
 	}

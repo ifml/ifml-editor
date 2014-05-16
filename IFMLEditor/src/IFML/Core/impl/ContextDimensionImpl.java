@@ -31,6 +31,7 @@ public class ContextDimensionImpl extends NamedElementImpl implements ContextDim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.CONTEXT_DIMENSION;
 	}

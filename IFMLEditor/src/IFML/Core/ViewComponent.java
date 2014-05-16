@@ -32,9 +32,9 @@ public interface ViewComponent extends ViewElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View Component Parts</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getViewComponent_ViewComponentParts()
-	 * @model type="IFML.Core.ViewComponentPart" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getViewComponentParts();
+	EList<ViewComponentPart> getViewComponentParts();
 
 } // ViewComponent

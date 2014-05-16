@@ -33,6 +33,7 @@ public class OnSelectEventImpl extends ViewElementEventImpl implements OnSelectE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.ON_SELECT_EVENT;
 	}

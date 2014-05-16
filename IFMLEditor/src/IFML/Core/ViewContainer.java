@@ -116,10 +116,10 @@ public interface ViewContainer extends ViewElement {
 	 * @return the value of the '<em>View Elements</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getViewContainer_ViewElements()
 	 * @see IFML.Core.ViewElement#getViewContainer
-	 * @model type="IFML.Core.ViewElement" opposite="viewContainer" containment="true" ordered="false"
+	 * @model opposite="viewContainer" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getViewElements();
+	EList<ViewElement> getViewElements();
 
 	/**
 	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
@@ -134,9 +134,9 @@ public interface ViewContainer extends ViewElement {
 	 * @return the value of the '<em>Actions</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getViewContainer_Actions()
 	 * @see IFML.Core.IFMLAction#getViewContainer
-	 * @model type="IFML.Core.IFMLAction" opposite="viewContainer" containment="true" ordered="false"
+	 * @model opposite="viewContainer" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getActions();
+	EList<IFMLAction> getActions();
 
 } // ViewContainer

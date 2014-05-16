@@ -55,7 +55,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection supportedTypes = new ArrayList();
+	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
 	 * This constructs an instance.
@@ -85,6 +85,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createOnSubmitEventAdapter() {
 		if (onSubmitEventItemProvider == null) {
 			onSubmitEventItemProvider = new OnSubmitEventItemProvider(this);
@@ -107,6 +108,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createValidationRuleAdapter() {
 		if (validationRuleItemProvider == null) {
 			validationRuleItemProvider = new ValidationRuleItemProvider(this);
@@ -129,6 +131,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createListAdapter() {
 		if (listItemProvider == null) {
 			listItemProvider = new ListItemProvider(this);
@@ -151,6 +154,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createPositionAdapter() {
 		if (positionItemProvider == null) {
 			positionItemProvider = new PositionItemProvider(this);
@@ -173,6 +177,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createUserRoleAdapter() {
 		if (userRoleItemProvider == null) {
 			userRoleItemProvider = new UserRoleItemProvider(this);
@@ -195,6 +200,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createIFMLSlotAdapter() {
 		if (ifmlSlotItemProvider == null) {
 			ifmlSlotItemProvider = new IFMLSlotItemProvider(this);
@@ -217,6 +223,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createOnSelectEventAdapter() {
 		if (onSelectEventItemProvider == null) {
 			onSelectEventItemProvider = new OnSelectEventItemProvider(this);
@@ -239,6 +246,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createFormAdapter() {
 		if (formItemProvider == null) {
 			formItemProvider = new FormItemProvider(this);
@@ -261,6 +269,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createDeviceAdapter() {
 		if (deviceItemProvider == null) {
 			deviceItemProvider = new DeviceItemProvider(this);
@@ -283,6 +292,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createSelectionFieldAdapter() {
 		if (selectionFieldItemProvider == null) {
 			selectionFieldItemProvider = new SelectionFieldItemProvider(this);
@@ -305,6 +315,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createSimpleFieldAdapter() {
 		if (simpleFieldItemProvider == null) {
 			simpleFieldItemProvider = new SimpleFieldItemProvider(this);
@@ -327,6 +338,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createDetailsAdapter() {
 		if (detailsItemProvider == null) {
 			detailsItemProvider = new DetailsItemProvider(this);
@@ -349,6 +361,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createIFMLWindowAdapter() {
 		if (ifmlWindowItemProvider == null) {
 			ifmlWindowItemProvider = new IFMLWindowItemProvider(this);
@@ -371,6 +384,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createOnLoadEventAdapter() {
 		if (onLoadEventItemProvider == null) {
 			onLoadEventItemProvider = new OnLoadEventItemProvider(this);
@@ -393,6 +407,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createIFMLMenuAdapter() {
 		if (ifmlMenuItemProvider == null) {
 			ifmlMenuItemProvider = new IFMLMenuItemProvider(this);
@@ -415,6 +430,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createJumpEventAdapter() {
 		if (jumpEventItemProvider == null) {
 			jumpEventItemProvider = new JumpEventItemProvider(this);
@@ -437,6 +453,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createLandingEventAdapter() {
 		if (landingEventItemProvider == null) {
 			landingEventItemProvider = new LandingEventItemProvider(this);
@@ -459,6 +476,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createSetContextEventAdapter() {
 		if (setContextEventItemProvider == null) {
 			setContextEventItemProvider = new SetContextEventItemProvider(this);
@@ -492,6 +510,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isFactoryForType(Object type) {
 		return supportedTypes.contains(type) || super.isFactoryForType(type);
 	}
@@ -502,6 +521,7 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
 	}
@@ -511,10 +531,11 @@ public class ExtensionsItemProviderAdapterFactory extends ExtensionsAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class) || (((Class)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}

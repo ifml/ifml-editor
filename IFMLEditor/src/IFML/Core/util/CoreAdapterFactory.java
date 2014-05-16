@@ -48,6 +48,7 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
+	@Override
 	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
@@ -64,183 +65,242 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CoreSwitch modelSwitch =
-		new CoreSwitch() {
-			public Object caseInteractionFlow(InteractionFlow object) {
+	protected CoreSwitch<Adapter> modelSwitch =
+		new CoreSwitch<Adapter>() {
+			@Override
+			public Adapter caseInteractionFlow(InteractionFlow object) {
 				return createInteractionFlowAdapter();
 			}
-			public Object caseInteractionFlowExpression(InteractionFlowExpression object) {
+			@Override
+			public Adapter caseInteractionFlowExpression(InteractionFlowExpression object) {
 				return createInteractionFlowExpressionAdapter();
 			}
-			public Object caseSystemEvent(SystemEvent object) {
+			@Override
+			public Adapter caseSystemEvent(SystemEvent object) {
 				return createSystemEventAdapter();
 			}
-			public Object caseParameterBinding(ParameterBinding object) {
+			@Override
+			public Adapter caseParameterBinding(ParameterBinding object) {
 				return createParameterBindingAdapter();
 			}
-			public Object caseActionEvent(ActionEvent object) {
+			@Override
+			public Adapter caseActionEvent(ActionEvent object) {
 				return createActionEventAdapter();
 			}
-			public Object caseDomainModel(DomainModel object) {
+			@Override
+			public Adapter caseDomainModel(DomainModel object) {
 				return createDomainModelAdapter();
 			}
-			public Object caseNamedElement(NamedElement object) {
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
 			}
-			public Object casePortDefinition(PortDefinition object) {
+			@Override
+			public Adapter casePortDefinition(PortDefinition object) {
 				return createPortDefinitionAdapter();
 			}
-			public Object caseContentBinding(ContentBinding object) {
+			@Override
+			public Adapter caseContentBinding(ContentBinding object) {
 				return createContentBindingAdapter();
 			}
-			public Object caseViewElement(ViewElement object) {
+			@Override
+			public Adapter caseViewElement(ViewElement object) {
 				return createViewElementAdapter();
 			}
-			public Object caseExpression(Expression object) {
+			@Override
+			public Adapter caseExpression(Expression object) {
 				return createExpressionAdapter();
 			}
-			public Object caseDynamicBehavior(DynamicBehavior object) {
+			@Override
+			public Adapter caseDynamicBehavior(DynamicBehavior object) {
 				return createDynamicBehaviorAdapter();
 			}
-			public Object caseViewpoint(Viewpoint object) {
+			@Override
+			public Adapter caseViewpoint(Viewpoint object) {
 				return createViewpointAdapter();
 			}
-			public Object caseDataFlow(DataFlow object) {
+			@Override
+			public Adapter caseDataFlow(DataFlow object) {
 				return createDataFlowAdapter();
 			}
-			public Object caseViewComponentPart(ViewComponentPart object) {
+			@Override
+			public Adapter caseViewComponentPart(ViewComponentPart object) {
 				return createViewComponentPartAdapter();
 			}
-			public Object caseViewContainer(ViewContainer object) {
+			@Override
+			public Adapter caseViewContainer(ViewContainer object) {
 				return createViewContainerAdapter();
 			}
-			public Object caseActivationExpression(ActivationExpression object) {
+			@Override
+			public Adapter caseActivationExpression(ActivationExpression object) {
 				return createActivationExpressionAdapter();
 			}
-			public Object caseInteractionFlowModel(InteractionFlowModel object) {
+			@Override
+			public Adapter caseInteractionFlowModel(InteractionFlowModel object) {
 				return createInteractionFlowModelAdapter();
 			}
-			public Object caseContextDimension(ContextDimension object) {
+			@Override
+			public Adapter caseContextDimension(ContextDimension object) {
 				return createContextDimensionAdapter();
 			}
-			public Object caseIFMLModel(IFMLModel object) {
+			@Override
+			public Adapter caseIFMLModel(IFMLModel object) {
 				return createIFMLModelAdapter();
 			}
-			public Object caseModuleDefinition(ModuleDefinition object) {
+			@Override
+			public Adapter caseModuleDefinition(ModuleDefinition object) {
 				return createModuleDefinitionAdapter();
 			}
-			public Object caseBooleanExpression(BooleanExpression object) {
+			@Override
+			public Adapter caseBooleanExpression(BooleanExpression object) {
 				return createBooleanExpressionAdapter();
 			}
-			public Object caseInteractionFlowElement(InteractionFlowElement object) {
+			@Override
+			public Adapter caseInteractionFlowElement(InteractionFlowElement object) {
 				return createInteractionFlowElementAdapter();
 			}
-			public Object caseIFMLAction(IFMLAction object) {
+			@Override
+			public Adapter caseIFMLAction(IFMLAction object) {
 				return createIFMLActionAdapter();
 			}
-			public Object caseNavigationFlow(NavigationFlow object) {
+			@Override
+			public Adapter caseNavigationFlow(NavigationFlow object) {
 				return createNavigationFlowAdapter();
 			}
-			public Object caseParameterBindingGroup(ParameterBindingGroup object) {
+			@Override
+			public Adapter caseParameterBindingGroup(ParameterBindingGroup object) {
 				return createParameterBindingGroupAdapter();
 			}
-			public Object caseElement(Element object) {
+			@Override
+			public Adapter caseElement(Element object) {
 				return createElementAdapter();
 			}
-			public Object caseConstraint(Constraint object) {
+			@Override
+			public Adapter caseConstraint(Constraint object) {
 				return createConstraintAdapter();
 			}
-			public Object caseViewComponent(ViewComponent object) {
+			@Override
+			public Adapter caseViewComponent(ViewComponent object) {
 				return createViewComponentAdapter();
 			}
-			public Object caseIFMLParameter(IFMLParameter object) {
+			@Override
+			public Adapter caseIFMLParameter(IFMLParameter object) {
 				return createIFMLParameterAdapter();
 			}
-			public Object caseDataBinding(DataBinding object) {
+			@Override
+			public Adapter caseDataBinding(DataBinding object) {
 				return createDataBindingAdapter();
 			}
-			public Object caseConditionalExpression(ConditionalExpression object) {
+			@Override
+			public Adapter caseConditionalExpression(ConditionalExpression object) {
 				return createConditionalExpressionAdapter();
 			}
-			public Object caseContext(Context object) {
+			@Override
+			public Adapter caseContext(Context object) {
 				return createContextAdapter();
 			}
-			public Object caseVisualizationAttribute(VisualizationAttribute object) {
+			@Override
+			public Adapter caseVisualizationAttribute(VisualizationAttribute object) {
 				return createVisualizationAttributeAdapter();
 			}
-			public Object caseEvent(Event object) {
+			@Override
+			public Adapter caseEvent(Event object) {
 				return createEventAdapter();
 			}
-			public Object caseInteractionFlowModelElement(InteractionFlowModelElement object) {
+			@Override
+			public Adapter caseInteractionFlowModelElement(InteractionFlowModelElement object) {
 				return createInteractionFlowModelElementAdapter();
 			}
-			public Object caseViewElementEvent(ViewElementEvent object) {
+			@Override
+			public Adapter caseViewElementEvent(ViewElementEvent object) {
 				return createViewElementEventAdapter();
 			}
-			public Object caseAnnotation(Annotation object) {
+			@Override
+			public Adapter caseAnnotation(Annotation object) {
 				return createAnnotationAdapter();
 			}
-			public Object caseModulePackage(ModulePackage object) {
+			@Override
+			public Adapter caseModulePackage(ModulePackage object) {
 				return createModulePackageAdapter();
 			}
-			public Object caseModularizationElement(ModularizationElement object) {
+			@Override
+			public Adapter caseModularizationElement(ModularizationElement object) {
 				return createModularizationElementAdapter();
 			}
-			public Object caseIFMLModule(IFMLModule object) {
+			@Override
+			public Adapter caseIFMLModule(IFMLModule object) {
 				return createIFMLModuleAdapter();
 			}
-			public Object caseIFMLPort(IFMLPort object) {
+			@Override
+			public Adapter caseIFMLPort(IFMLPort object) {
 				return createIFMLPortAdapter();
 			}
-			public Object caseCatchingEvent(CatchingEvent object) {
+			@Override
+			public Adapter caseCatchingEvent(CatchingEvent object) {
 				return createCatchingEventAdapter();
 			}
-			public Object caseThrowingEvent(ThrowingEvent object) {
+			@Override
+			public Adapter caseThrowingEvent(ThrowingEvent object) {
 				return createThrowingEventAdapter();
 			}
-			public Object caseBPMNActivityConcept(BPMNActivityConcept object) {
+			@Override
+			public Adapter caseBPMNActivityConcept(BPMNActivityConcept object) {
 				return createBPMNActivityConceptAdapter();
 			}
-			public Object caseContextVariable(ContextVariable object) {
+			@Override
+			public Adapter caseContextVariable(ContextVariable object) {
 				return createContextVariableAdapter();
 			}
-			public Object caseSimpleContextVariable(SimpleContextVariable object) {
+			@Override
+			public Adapter caseSimpleContextVariable(SimpleContextVariable object) {
 				return createSimpleContextVariableAdapter();
 			}
-			public Object caseDataContextVariable(DataContextVariable object) {
+			@Override
+			public Adapter caseDataContextVariable(DataContextVariable object) {
 				return createDataContextVariableAdapter();
 			}
-			public Object caseDomainConcept(DomainConcept object) {
+			@Override
+			public Adapter caseDomainConcept(DomainConcept object) {
 				return createDomainConceptAdapter();
 			}
-			public Object caseFeatureConcept(FeatureConcept object) {
+			@Override
+			public Adapter caseFeatureConcept(FeatureConcept object) {
 				return createFeatureConceptAdapter();
 			}
-			public Object caseBehaviorConcept(BehaviorConcept object) {
+			@Override
+			public Adapter caseBehaviorConcept(BehaviorConcept object) {
 				return createBehaviorConceptAdapter();
 			}
-			public Object caseBehavioralFeatureConcept(BehavioralFeatureConcept object) {
+			@Override
+			public Adapter caseBehavioralFeatureConcept(BehavioralFeatureConcept object) {
 				return createBehavioralFeatureConceptAdapter();
 			}
-			public Object caseUMLBehavior(UMLBehavior object) {
+			@Override
+			public Adapter caseUMLBehavior(UMLBehavior object) {
 				return createUMLBehaviorAdapter();
 			}
-			public Object caseUMLBehavioralFeature(UMLBehavioralFeature object) {
+			@Override
+			public Adapter caseUMLBehavioralFeature(UMLBehavioralFeature object) {
 				return createUMLBehavioralFeatureAdapter();
 			}
-			public Object caseUMLDomainConcept(UMLDomainConcept object) {
+			@Override
+			public Adapter caseUMLDomainConcept(UMLDomainConcept object) {
 				return createUMLDomainConceptAdapter();
 			}
-			public Object caseUMLStructuralFeature(UMLStructuralFeature object) {
+			@Override
+			public Adapter caseUMLStructuralFeature(UMLStructuralFeature object) {
 				return createUMLStructuralFeatureAdapter();
 			}
-			public Object caseActivityConcept(ActivityConcept object) {
+			@Override
+			public Adapter caseActivityConcept(ActivityConcept object) {
 				return createActivityConceptAdapter();
 			}
-			public Object caseDomainElement(DomainElement object) {
+			@Override
+			public Adapter caseDomainElement(DomainElement object) {
 				return createDomainElementAdapter();
 			}
-			public Object defaultCase(EObject object) {
+			@Override
+			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -253,8 +313,9 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
+	@Override
 	public Adapter createAdapter(Notifier target) {
-		return (Adapter)modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 

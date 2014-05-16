@@ -59,6 +59,7 @@ public class SelectionFieldImpl extends FieldImpl implements SelectionField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.SELECTION_FIELD;
 	}
@@ -89,10 +90,11 @@ public class SelectionFieldImpl extends FieldImpl implements SelectionField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ExtensionsPackage.SELECTION_FIELD__IS_MULTI_SELECTION:
-				return isIsMultiSelection() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsMultiSelection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -102,10 +104,11 @@ public class SelectionFieldImpl extends FieldImpl implements SelectionField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ExtensionsPackage.SELECTION_FIELD__IS_MULTI_SELECTION:
-				setIsMultiSelection(((Boolean)newValue).booleanValue());
+				setIsMultiSelection((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -116,6 +119,7 @@ public class SelectionFieldImpl extends FieldImpl implements SelectionField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ExtensionsPackage.SELECTION_FIELD__IS_MULTI_SELECTION:
@@ -130,6 +134,7 @@ public class SelectionFieldImpl extends FieldImpl implements SelectionField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ExtensionsPackage.SELECTION_FIELD__IS_MULTI_SELECTION:
@@ -143,6 +148,7 @@ public class SelectionFieldImpl extends FieldImpl implements SelectionField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

@@ -2,6 +2,8 @@
  */
 package IFML.Core;
 
+import org.eclipse.uml2.uml.Behavior;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -29,12 +31,12 @@ public interface UMLBehavior extends BehaviorConcept {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Behavior</em>' reference.
-	 * @see #setBehavior(DynamicBehavior)
+	 * @see #setBehavior(Behavior)
 	 * @see IFML.Core.CorePackage#getUMLBehavior_Behavior()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	DynamicBehavior getBehavior();
+	Behavior getBehavior();
 
 	/**
 	 * Sets the value of the '{@link IFML.Core.UMLBehavior#getBehavior <em>Behavior</em>}' reference.
@@ -44,6 +46,6 @@ public interface UMLBehavior extends BehaviorConcept {
 	 * @see #getBehavior()
 	 * @generated
 	 */
-	void setBehavior(DynamicBehavior value);
+	void setBehavior(Behavior value);
 
 } // UMLBehavior

@@ -54,6 +54,7 @@ public class JumpEventImpl extends ThrowingEventImpl implements JumpEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.JUMP_EVENT;
 	}
@@ -123,6 +124,7 @@ public class JumpEventImpl extends ThrowingEventImpl implements JumpEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ExtensionsPackage.JUMP_EVENT__LANDING_EVENT:
@@ -138,6 +140,7 @@ public class JumpEventImpl extends ThrowingEventImpl implements JumpEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ExtensionsPackage.JUMP_EVENT__LANDING_EVENT:
@@ -151,6 +154,7 @@ public class JumpEventImpl extends ThrowingEventImpl implements JumpEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ExtensionsPackage.JUMP_EVENT__LANDING_EVENT:
@@ -165,6 +169,7 @@ public class JumpEventImpl extends ThrowingEventImpl implements JumpEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ExtensionsPackage.JUMP_EVENT__LANDING_EVENT:
@@ -179,6 +184,7 @@ public class JumpEventImpl extends ThrowingEventImpl implements JumpEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ExtensionsPackage.JUMP_EVENT__LANDING_EVENT:
@@ -193,6 +199,7 @@ public class JumpEventImpl extends ThrowingEventImpl implements JumpEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ExtensionsPackage.JUMP_EVENT__LANDING_EVENT:

@@ -33,6 +33,7 @@ public class OnSubmitEventImpl extends ViewElementEventImpl implements OnSubmitE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.ON_SUBMIT_EVENT;
 	}

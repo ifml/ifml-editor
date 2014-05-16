@@ -64,6 +64,7 @@ public class EventImpl extends InteractionFlowElementImpl implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.EVENT;
 	}
@@ -154,6 +155,7 @@ public class EventImpl extends InteractionFlowElementImpl implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.EVENT__INTERACTION_FLOW_EXPRESSION:
@@ -167,6 +169,7 @@ public class EventImpl extends InteractionFlowElementImpl implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.EVENT__ACTIVATION_EXPRESSION:
@@ -183,6 +186,7 @@ public class EventImpl extends InteractionFlowElementImpl implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.EVENT__ACTIVATION_EXPRESSION:
@@ -200,6 +204,7 @@ public class EventImpl extends InteractionFlowElementImpl implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.EVENT__ACTIVATION_EXPRESSION:
@@ -217,6 +222,7 @@ public class EventImpl extends InteractionFlowElementImpl implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.EVENT__ACTIVATION_EXPRESSION:

@@ -20,13 +20,10 @@ import IFML.Core.ViewComponentPart;
 import IFML.Core.ViewContainer;
 import IFML.Core.ViewElement;
 import IFML.Core.ViewElementEvent;
-
 import IFML.Extensions.*;
-
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +38,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see IFML.Extensions.ExtensionsPackage
  * @generated
  */
-public class ExtensionsSwitch {
+public class ExtensionsSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -63,14 +60,16 @@ public class ExtensionsSwitch {
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @parameter ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public Object doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -80,31 +79,12 @@ public class ExtensionsSwitch {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected Object doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch((EClass)eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
-	protected Object doSwitch(int classifierID, EObject theEObject) {
+	@Override
+	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case ExtensionsPackage.ON_SUBMIT_EVENT: {
 				OnSubmitEvent onSubmitEvent = (OnSubmitEvent)theEObject;
-				Object result = caseOnSubmitEvent(onSubmitEvent);
+				T result = caseOnSubmitEvent(onSubmitEvent);
 				if (result == null) result = caseViewElementEvent(onSubmitEvent);
 				if (result == null) result = caseCatchingEvent(onSubmitEvent);
 				if (result == null) result = caseEvent(onSubmitEvent);
@@ -117,7 +97,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.VALIDATION_RULE: {
 				ValidationRule validationRule = (ValidationRule)theEObject;
-				Object result = caseValidationRule(validationRule);
+				T result = caseValidationRule(validationRule);
 				if (result == null) result = caseConstraint(validationRule);
 				if (result == null) result = caseBooleanExpression(validationRule);
 				if (result == null) result = caseExpression(validationRule);
@@ -127,8 +107,8 @@ public class ExtensionsSwitch {
 				return result;
 			}
 			case ExtensionsPackage.LIST: {
-				IFML.Extensions.List list = (IFML.Extensions.List)theEObject;
-				Object result = caseList(list);
+				List list = (List)theEObject;
+				T result = caseList(list);
 				if (result == null) result = caseViewComponent(list);
 				if (result == null) result = caseViewElement(list);
 				if (result == null) result = caseInteractionFlowElement(list);
@@ -140,7 +120,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.POSITION: {
 				Position position = (Position)theEObject;
-				Object result = casePosition(position);
+				T result = casePosition(position);
 				if (result == null) result = caseContextDimension(position);
 				if (result == null) result = caseNamedElement(position);
 				if (result == null) result = caseElement(position);
@@ -149,7 +129,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.USER_ROLE: {
 				UserRole userRole = (UserRole)theEObject;
-				Object result = caseUserRole(userRole);
+				T result = caseUserRole(userRole);
 				if (result == null) result = caseContextDimension(userRole);
 				if (result == null) result = caseNamedElement(userRole);
 				if (result == null) result = caseElement(userRole);
@@ -158,7 +138,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.IFML_SLOT: {
 				IFMLSlot ifmlSlot = (IFMLSlot)theEObject;
-				Object result = caseIFMLSlot(ifmlSlot);
+				T result = caseIFMLSlot(ifmlSlot);
 				if (result == null) result = caseViewComponentPart(ifmlSlot);
 				if (result == null) result = caseIFMLParameter(ifmlSlot);
 				if (result == null) result = caseInteractionFlowElement(ifmlSlot);
@@ -170,7 +150,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.ON_SELECT_EVENT: {
 				OnSelectEvent onSelectEvent = (OnSelectEvent)theEObject;
-				Object result = caseOnSelectEvent(onSelectEvent);
+				T result = caseOnSelectEvent(onSelectEvent);
 				if (result == null) result = caseViewElementEvent(onSelectEvent);
 				if (result == null) result = caseCatchingEvent(onSelectEvent);
 				if (result == null) result = caseEvent(onSelectEvent);
@@ -183,7 +163,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.FIELD: {
 				Field field = (Field)theEObject;
-				Object result = caseField(field);
+				T result = caseField(field);
 				if (result == null) result = caseViewComponentPart(field);
 				if (result == null) result = caseIFMLParameter(field);
 				if (result == null) result = caseInteractionFlowElement(field);
@@ -195,7 +175,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.FORM: {
 				Form form = (Form)theEObject;
-				Object result = caseForm(form);
+				T result = caseForm(form);
 				if (result == null) result = caseViewComponent(form);
 				if (result == null) result = caseViewElement(form);
 				if (result == null) result = caseInteractionFlowElement(form);
@@ -207,7 +187,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.DEVICE: {
 				Device device = (Device)theEObject;
-				Object result = caseDevice(device);
+				T result = caseDevice(device);
 				if (result == null) result = caseContextDimension(device);
 				if (result == null) result = caseNamedElement(device);
 				if (result == null) result = caseElement(device);
@@ -216,7 +196,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.SELECTION_FIELD: {
 				SelectionField selectionField = (SelectionField)theEObject;
-				Object result = caseSelectionField(selectionField);
+				T result = caseSelectionField(selectionField);
 				if (result == null) result = caseField(selectionField);
 				if (result == null) result = caseViewComponentPart(selectionField);
 				if (result == null) result = caseIFMLParameter(selectionField);
@@ -229,7 +209,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.SIMPLE_FIELD: {
 				SimpleField simpleField = (SimpleField)theEObject;
-				Object result = caseSimpleField(simpleField);
+				T result = caseSimpleField(simpleField);
 				if (result == null) result = caseField(simpleField);
 				if (result == null) result = caseViewComponentPart(simpleField);
 				if (result == null) result = caseIFMLParameter(simpleField);
@@ -242,7 +222,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.DETAILS: {
 				Details details = (Details)theEObject;
-				Object result = caseDetails(details);
+				T result = caseDetails(details);
 				if (result == null) result = caseViewComponent(details);
 				if (result == null) result = caseViewElement(details);
 				if (result == null) result = caseInteractionFlowElement(details);
@@ -254,7 +234,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.IFML_WINDOW: {
 				IFMLWindow ifmlWindow = (IFMLWindow)theEObject;
-				Object result = caseIFMLWindow(ifmlWindow);
+				T result = caseIFMLWindow(ifmlWindow);
 				if (result == null) result = caseViewContainer(ifmlWindow);
 				if (result == null) result = caseViewElement(ifmlWindow);
 				if (result == null) result = caseInteractionFlowElement(ifmlWindow);
@@ -266,7 +246,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.ON_LOAD_EVENT: {
 				OnLoadEvent onLoadEvent = (OnLoadEvent)theEObject;
-				Object result = caseOnLoadEvent(onLoadEvent);
+				T result = caseOnLoadEvent(onLoadEvent);
 				if (result == null) result = caseSystemEvent(onLoadEvent);
 				if (result == null) result = caseCatchingEvent(onLoadEvent);
 				if (result == null) result = caseEvent(onLoadEvent);
@@ -279,7 +259,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.IFML_MENU: {
 				IFMLMenu ifmlMenu = (IFMLMenu)theEObject;
-				Object result = caseIFMLMenu(ifmlMenu);
+				T result = caseIFMLMenu(ifmlMenu);
 				if (result == null) result = caseViewContainer(ifmlMenu);
 				if (result == null) result = caseViewElement(ifmlMenu);
 				if (result == null) result = caseInteractionFlowElement(ifmlMenu);
@@ -291,7 +271,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.JUMP_EVENT: {
 				JumpEvent jumpEvent = (JumpEvent)theEObject;
-				Object result = caseJumpEvent(jumpEvent);
+				T result = caseJumpEvent(jumpEvent);
 				if (result == null) result = caseThrowingEvent(jumpEvent);
 				if (result == null) result = caseEvent(jumpEvent);
 				if (result == null) result = caseInteractionFlowElement(jumpEvent);
@@ -303,7 +283,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.LANDING_EVENT: {
 				LandingEvent landingEvent = (LandingEvent)theEObject;
-				Object result = caseLandingEvent(landingEvent);
+				T result = caseLandingEvent(landingEvent);
 				if (result == null) result = caseCatchingEvent(landingEvent);
 				if (result == null) result = caseEvent(landingEvent);
 				if (result == null) result = caseInteractionFlowElement(landingEvent);
@@ -315,7 +295,7 @@ public class ExtensionsSwitch {
 			}
 			case ExtensionsPackage.SET_CONTEXT_EVENT: {
 				SetContextEvent setContextEvent = (SetContextEvent)theEObject;
-				Object result = caseSetContextEvent(setContextEvent);
+				T result = caseSetContextEvent(setContextEvent);
 				if (result == null) result = caseThrowingEvent(setContextEvent);
 				if (result == null) result = caseEvent(setContextEvent);
 				if (result == null) result = caseInteractionFlowElement(setContextEvent);
@@ -340,7 +320,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseOnSubmitEvent(OnSubmitEvent object) {
+	public T caseOnSubmitEvent(OnSubmitEvent object) {
 		return null;
 	}
 
@@ -355,7 +335,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseValidationRule(ValidationRule object) {
+	public T caseValidationRule(ValidationRule object) {
 		return null;
 	}
 
@@ -370,7 +350,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseList(IFML.Extensions.List object) {
+	public T caseList(List object) {
 		return null;
 	}
 
@@ -385,7 +365,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object casePosition(Position object) {
+	public T casePosition(Position object) {
 		return null;
 	}
 
@@ -400,7 +380,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseUserRole(UserRole object) {
+	public T caseUserRole(UserRole object) {
 		return null;
 	}
 
@@ -415,7 +395,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIFMLSlot(IFMLSlot object) {
+	public T caseIFMLSlot(IFMLSlot object) {
 		return null;
 	}
 
@@ -430,7 +410,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseOnSelectEvent(OnSelectEvent object) {
+	public T caseOnSelectEvent(OnSelectEvent object) {
 		return null;
 	}
 
@@ -445,7 +425,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseField(Field object) {
+	public T caseField(Field object) {
 		return null;
 	}
 
@@ -460,7 +440,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseForm(Form object) {
+	public T caseForm(Form object) {
 		return null;
 	}
 
@@ -475,7 +455,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseDevice(Device object) {
+	public T caseDevice(Device object) {
 		return null;
 	}
 
@@ -490,7 +470,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseSelectionField(SelectionField object) {
+	public T caseSelectionField(SelectionField object) {
 		return null;
 	}
 
@@ -505,7 +485,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseSimpleField(SimpleField object) {
+	public T caseSimpleField(SimpleField object) {
 		return null;
 	}
 
@@ -520,7 +500,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseDetails(Details object) {
+	public T caseDetails(Details object) {
 		return null;
 	}
 
@@ -535,7 +515,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIFMLWindow(IFMLWindow object) {
+	public T caseIFMLWindow(IFMLWindow object) {
 		return null;
 	}
 
@@ -550,7 +530,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseOnLoadEvent(OnLoadEvent object) {
+	public T caseOnLoadEvent(OnLoadEvent object) {
 		return null;
 	}
 
@@ -565,7 +545,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIFMLMenu(IFMLMenu object) {
+	public T caseIFMLMenu(IFMLMenu object) {
 		return null;
 	}
 
@@ -580,7 +560,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseJumpEvent(JumpEvent object) {
+	public T caseJumpEvent(JumpEvent object) {
 		return null;
 	}
 
@@ -595,7 +575,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseLandingEvent(LandingEvent object) {
+	public T caseLandingEvent(LandingEvent object) {
 		return null;
 	}
 
@@ -610,7 +590,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseSetContextEvent(SetContextEvent object) {
+	public T caseSetContextEvent(SetContextEvent object) {
 		return null;
 	}
 
@@ -625,7 +605,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseElement(Element object) {
+	public T caseElement(Element object) {
 		return null;
 	}
 
@@ -640,7 +620,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseNamedElement(NamedElement object) {
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 
@@ -655,7 +635,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseInteractionFlowModelElement(InteractionFlowModelElement object) {
+	public T caseInteractionFlowModelElement(InteractionFlowModelElement object) {
 		return null;
 	}
 
@@ -670,7 +650,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseInteractionFlowElement(InteractionFlowElement object) {
+	public T caseInteractionFlowElement(InteractionFlowElement object) {
 		return null;
 	}
 
@@ -685,7 +665,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseEvent(Event object) {
+	public T caseEvent(Event object) {
 		return null;
 	}
 
@@ -700,7 +680,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseCatchingEvent(CatchingEvent object) {
+	public T caseCatchingEvent(CatchingEvent object) {
 		return null;
 	}
 
@@ -715,7 +695,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseViewElementEvent(ViewElementEvent object) {
+	public T caseViewElementEvent(ViewElementEvent object) {
 		return null;
 	}
 
@@ -730,7 +710,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseExpression(Expression object) {
+	public T caseExpression(Expression object) {
 		return null;
 	}
 
@@ -745,7 +725,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBooleanExpression(BooleanExpression object) {
+	public T caseBooleanExpression(BooleanExpression object) {
 		return null;
 	}
 
@@ -760,7 +740,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseConstraint(Constraint object) {
+	public T caseConstraint(Constraint object) {
 		return null;
 	}
 
@@ -775,7 +755,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseViewElement(ViewElement object) {
+	public T caseViewElement(ViewElement object) {
 		return null;
 	}
 
@@ -790,7 +770,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseViewComponent(ViewComponent object) {
+	public T caseViewComponent(ViewComponent object) {
 		return null;
 	}
 
@@ -805,7 +785,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseContextDimension(ContextDimension object) {
+	public T caseContextDimension(ContextDimension object) {
 		return null;
 	}
 
@@ -820,7 +800,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseViewComponentPart(ViewComponentPart object) {
+	public T caseViewComponentPart(ViewComponentPart object) {
 		return null;
 	}
 
@@ -835,7 +815,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIFMLParameter(IFMLParameter object) {
+	public T caseIFMLParameter(IFMLParameter object) {
 		return null;
 	}
 
@@ -850,7 +830,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseViewContainer(ViewContainer object) {
+	public T caseViewContainer(ViewContainer object) {
 		return null;
 	}
 
@@ -865,7 +845,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseSystemEvent(SystemEvent object) {
+	public T caseSystemEvent(SystemEvent object) {
 		return null;
 	}
 
@@ -880,7 +860,7 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseThrowingEvent(ThrowingEvent object) {
+	public T caseThrowingEvent(ThrowingEvent object) {
 		return null;
 	}
 
@@ -895,7 +875,8 @@ public class ExtensionsSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	public Object defaultCase(EObject object) {
+	@Override
+	public T defaultCase(EObject object) {
 		return null;
 	}
 

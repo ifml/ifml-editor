@@ -31,6 +31,7 @@ public class BPMNActivityConceptImpl extends ActivityConceptImpl implements BPMN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.BPMN_ACTIVITY_CONCEPT;
 	}

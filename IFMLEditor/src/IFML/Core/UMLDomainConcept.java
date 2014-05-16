@@ -2,6 +2,8 @@
  */
 package IFML.Core;
 
+import org.eclipse.uml2.uml.Classifier;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -29,12 +31,12 @@ public interface UMLDomainConcept extends DomainConcept {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Classifier</em>' reference.
-	 * @see #setClassifier(UMLDomainConcept)
+	 * @see #setClassifier(Classifier)
 	 * @see IFML.Core.CorePackage#getUMLDomainConcept_Classifier()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	UMLDomainConcept getClassifier();
+	Classifier getClassifier();
 
 	/**
 	 * Sets the value of the '{@link IFML.Core.UMLDomainConcept#getClassifier <em>Classifier</em>}' reference.
@@ -44,6 +46,6 @@ public interface UMLDomainConcept extends DomainConcept {
 	 * @see #getClassifier()
 	 * @generated
 	 */
-	void setClassifier(UMLDomainConcept value);
+	void setClassifier(Classifier value);
 
 } // UMLDomainConcept

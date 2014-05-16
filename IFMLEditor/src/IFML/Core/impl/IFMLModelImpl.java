@@ -67,7 +67,7 @@ public class IFMLModelImpl extends NamedElementImpl implements IFMLModel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList interactionFlowModelViewpoint;
+	protected EList<Viewpoint> interactionFlowModelViewpoint;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,6 +83,7 @@ public class IFMLModelImpl extends NamedElementImpl implements IFMLModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.IFML_MODEL;
 	}
@@ -178,9 +179,9 @@ public class IFMLModelImpl extends NamedElementImpl implements IFMLModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getInteractionFlowModelViewpoint() {
+	public EList<Viewpoint> getInteractionFlowModelViewpoint() {
 		if (interactionFlowModelViewpoint == null) {
-			interactionFlowModelViewpoint = new EObjectContainmentEList(Viewpoint.class, this, CorePackage.IFML_MODEL__INTERACTION_FLOW_MODEL_VIEWPOINT);
+			interactionFlowModelViewpoint = new EObjectContainmentEList<Viewpoint>(Viewpoint.class, this, CorePackage.IFML_MODEL__INTERACTION_FLOW_MODEL_VIEWPOINT);
 		}
 		return interactionFlowModelViewpoint;
 	}
@@ -190,6 +191,7 @@ public class IFMLModelImpl extends NamedElementImpl implements IFMLModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.IFML_MODEL__INTERACTION_FLOW_MODEL:
@@ -197,7 +199,7 @@ public class IFMLModelImpl extends NamedElementImpl implements IFMLModel {
 			case CorePackage.IFML_MODEL__DOMAIN_MODEL:
 				return basicSetDomainModel(null, msgs);
 			case CorePackage.IFML_MODEL__INTERACTION_FLOW_MODEL_VIEWPOINT:
-				return ((InternalEList)getInteractionFlowModelViewpoint()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInteractionFlowModelViewpoint()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -207,6 +209,7 @@ public class IFMLModelImpl extends NamedElementImpl implements IFMLModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.IFML_MODEL__INTERACTION_FLOW_MODEL:
@@ -224,6 +227,8 @@ public class IFMLModelImpl extends NamedElementImpl implements IFMLModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.IFML_MODEL__INTERACTION_FLOW_MODEL:
@@ -234,7 +239,7 @@ public class IFMLModelImpl extends NamedElementImpl implements IFMLModel {
 				return;
 			case CorePackage.IFML_MODEL__INTERACTION_FLOW_MODEL_VIEWPOINT:
 				getInteractionFlowModelViewpoint().clear();
-				getInteractionFlowModelViewpoint().addAll((Collection)newValue);
+				getInteractionFlowModelViewpoint().addAll((Collection<? extends Viewpoint>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -245,6 +250,7 @@ public class IFMLModelImpl extends NamedElementImpl implements IFMLModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.IFML_MODEL__INTERACTION_FLOW_MODEL:
@@ -265,6 +271,7 @@ public class IFMLModelImpl extends NamedElementImpl implements IFMLModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.IFML_MODEL__INTERACTION_FLOW_MODEL:

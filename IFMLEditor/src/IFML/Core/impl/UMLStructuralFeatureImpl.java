@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.uml2.uml.StructuralFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +35,7 @@ public class UMLStructuralFeatureImpl extends FeatureConceptImpl implements UMLS
 	 * @generated
 	 * @ordered
 	 */
-	protected UMLStructuralFeature structuralFeature;
+	protected StructuralFeature structuralFeature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -50,6 +51,7 @@ public class UMLStructuralFeatureImpl extends FeatureConceptImpl implements UMLS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.UML_STRUCTURAL_FEATURE;
 	}
@@ -59,10 +61,10 @@ public class UMLStructuralFeatureImpl extends FeatureConceptImpl implements UMLS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLStructuralFeature getStructuralFeature() {
+	public StructuralFeature getStructuralFeature() {
 		if (structuralFeature != null && structuralFeature.eIsProxy()) {
 			InternalEObject oldStructuralFeature = (InternalEObject)structuralFeature;
-			structuralFeature = (UMLStructuralFeature)eResolveProxy(oldStructuralFeature);
+			structuralFeature = (StructuralFeature)eResolveProxy(oldStructuralFeature);
 			if (structuralFeature != oldStructuralFeature) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.UML_STRUCTURAL_FEATURE__STRUCTURAL_FEATURE, oldStructuralFeature, structuralFeature));
@@ -76,7 +78,7 @@ public class UMLStructuralFeatureImpl extends FeatureConceptImpl implements UMLS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLStructuralFeature basicGetStructuralFeature() {
+	public StructuralFeature basicGetStructuralFeature() {
 		return structuralFeature;
 	}
 
@@ -85,8 +87,8 @@ public class UMLStructuralFeatureImpl extends FeatureConceptImpl implements UMLS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStructuralFeature(UMLStructuralFeature newStructuralFeature) {
-		UMLStructuralFeature oldStructuralFeature = structuralFeature;
+	public void setStructuralFeature(StructuralFeature newStructuralFeature) {
+		StructuralFeature oldStructuralFeature = structuralFeature;
 		structuralFeature = newStructuralFeature;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.UML_STRUCTURAL_FEATURE__STRUCTURAL_FEATURE, oldStructuralFeature, structuralFeature));
@@ -97,6 +99,7 @@ public class UMLStructuralFeatureImpl extends FeatureConceptImpl implements UMLS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.UML_STRUCTURAL_FEATURE__STRUCTURAL_FEATURE:
@@ -111,10 +114,11 @@ public class UMLStructuralFeatureImpl extends FeatureConceptImpl implements UMLS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.UML_STRUCTURAL_FEATURE__STRUCTURAL_FEATURE:
-				setStructuralFeature((UMLStructuralFeature)newValue);
+				setStructuralFeature((StructuralFeature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,10 +129,11 @@ public class UMLStructuralFeatureImpl extends FeatureConceptImpl implements UMLS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.UML_STRUCTURAL_FEATURE__STRUCTURAL_FEATURE:
-				setStructuralFeature((UMLStructuralFeature)null);
+				setStructuralFeature((StructuralFeature)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -139,6 +144,7 @@ public class UMLStructuralFeatureImpl extends FeatureConceptImpl implements UMLS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.UML_STRUCTURAL_FEATURE__STRUCTURAL_FEATURE:

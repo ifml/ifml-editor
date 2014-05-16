@@ -77,6 +77,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -536,6 +537,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CorePackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		DataTypesPackageImpl theDataTypesPackage = (DataTypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI) instanceof DataTypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI) : DataTypesPackage.eINSTANCE);
@@ -2062,6 +2066,11 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		// Obtain other dependent packages
 		DataTypesPackage theDataTypesPackage = (DataTypesPackage)EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+
+		// Create type parameters
+
+		// Set bounds for type parameters
 
 		// Add supertypes to classes
 		interactionFlowEClass.getESuperTypes().add(this.getInteractionFlowModelElement());
@@ -2127,7 +2136,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		activityConceptEClass.getESuperTypes().add(this.getNamedElement());
 		domainElementEClass.getESuperTypes().add(this.getNamedElement());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(interactionFlowEClass, InteractionFlow.class, "InteractionFlow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInteractionFlow_ParameterBindingGroup(), this.getParameterBindingGroup(), null, "parameterBindingGroup", null, 0, 1, InteractionFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getInteractionFlow_SourceInteractionFlowElement(), this.getInteractionFlowElement(), this.getInteractionFlowElement_OutInteractionFlows(), "sourceInteractionFlowElement", null, 1, 1, InteractionFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2147,7 +2156,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEClass(actionEventEClass, ActionEvent.class, "ActionEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(domainModelEClass, DomainModel.class, "DomainModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDomainModel_DomainElements(), this.getDomainElement(), null, "domainElements", null, 0, -1, DomainModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDomainModel_DomainElements(), this.getDomainElement(), null, "domainElements", null, 0, -1, DomainModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2309,16 +2318,16 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEReference(getBehavioralFeatureConcept_DynamicBehavior(), this.getDynamicBehavior(), this.getDynamicBehavior_BehavioralFeatureConcept(), "dynamicBehavior", null, 1, 1, BehavioralFeatureConcept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(umlBehaviorEClass, UMLBehavior.class, "UMLBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUMLBehavior_Behavior(), this.getDynamicBehavior(), null, "behavior", null, 0, 1, UMLBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUMLBehavior_Behavior(), theUMLPackage.getBehavior(), null, "behavior", null, 0, 1, UMLBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(umlBehavioralFeatureEClass, UMLBehavioralFeature.class, "UMLBehavioralFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUMLBehavioralFeature_BehavioralFeature(), this.getUMLBehavior(), null, "behavioralFeature", null, 0, 1, UMLBehavioralFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUMLBehavioralFeature_BehavioralFeature(), theUMLPackage.getBehavioralFeature(), null, "behavioralFeature", null, 0, 1, UMLBehavioralFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(umlDomainConceptEClass, UMLDomainConcept.class, "UMLDomainConcept", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUMLDomainConcept_Classifier(), this.getUMLDomainConcept(), null, "classifier", null, 0, 1, UMLDomainConcept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUMLDomainConcept_Classifier(), theUMLPackage.getClassifier(), null, "classifier", null, 0, 1, UMLDomainConcept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(umlStructuralFeatureEClass, UMLStructuralFeature.class, "UMLStructuralFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUMLStructuralFeature_StructuralFeature(), this.getUMLStructuralFeature(), null, "structuralFeature", null, 0, 1, UMLStructuralFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUMLStructuralFeature_StructuralFeature(), theUMLPackage.getStructuralFeature(), null, "structuralFeature", null, 0, 1, UMLStructuralFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(activityConceptEClass, ActivityConcept.class, "ActivityConcept", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActivityConcept_ModuleDefinition(), this.getModuleDefinition(), this.getModuleDefinition_ActivityConcept(), "moduleDefinition", null, 1, 1, ActivityConcept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

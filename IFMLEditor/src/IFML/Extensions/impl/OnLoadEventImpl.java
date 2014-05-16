@@ -33,6 +33,7 @@ public class OnLoadEventImpl extends SystemEventImpl implements OnLoadEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.ON_LOAD_EVENT;
 	}

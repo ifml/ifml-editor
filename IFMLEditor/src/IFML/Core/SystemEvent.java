@@ -35,10 +35,10 @@ public interface SystemEvent extends CatchingEvent {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Triggering Expressions</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getSystemEvent_TriggeringExpressions()
-	 * @model type="IFML.Core.Expression" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getTriggeringExpressions();
+	EList<Expression> getTriggeringExpressions();
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.

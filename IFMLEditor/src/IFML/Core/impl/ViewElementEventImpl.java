@@ -51,6 +51,7 @@ public class ViewElementEventImpl extends CatchingEventImpl implements ViewEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.VIEW_ELEMENT_EVENT;
 	}
@@ -98,6 +99,7 @@ public class ViewElementEventImpl extends CatchingEventImpl implements ViewEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.VIEW_ELEMENT_EVENT__VIEW_ELEMENT:
@@ -112,6 +114,7 @@ public class ViewElementEventImpl extends CatchingEventImpl implements ViewEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.VIEW_ELEMENT_EVENT__VIEW_ELEMENT:
@@ -126,6 +129,7 @@ public class ViewElementEventImpl extends CatchingEventImpl implements ViewEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.VIEW_ELEMENT_EVENT__VIEW_ELEMENT:
@@ -140,6 +144,7 @@ public class ViewElementEventImpl extends CatchingEventImpl implements ViewEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.VIEW_ELEMENT_EVENT__VIEW_ELEMENT:

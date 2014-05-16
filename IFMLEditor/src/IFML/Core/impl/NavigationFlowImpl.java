@@ -31,6 +31,7 @@ public class NavigationFlowImpl extends InteractionFlowImpl implements Navigatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.NAVIGATION_FLOW;
 	}

@@ -3,21 +3,21 @@
 package IFML.Core.provider;
 
 
+import IFML.Core.CoreFactory;
 import IFML.Core.CorePackage;
 import IFML.Core.DomainModel;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link IFML.Core.DomainModel} object.
@@ -49,35 +49,43 @@ public class DomainModelItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List getPropertyDescriptors(Object object) {
+	@Override
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDomainElementsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Domain Elements feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDomainElementsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DomainModel_domainElements_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DomainModel_domainElements_feature", "_UI_DomainModel_type"),
-				 CorePackage.Literals.DOMAIN_MODEL__DOMAIN_ELEMENTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(CorePackage.Literals.DOMAIN_MODEL__DOMAIN_ELEMENTS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -86,6 +94,7 @@ public class DomainModelItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/DomainModel"));
 	}
@@ -96,6 +105,7 @@ public class DomainModelItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText(Object object) {
 		String label = ((DomainModel)object).getName();
 		return label == null || label.length() == 0 ?
@@ -110,8 +120,15 @@ public class DomainModelItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DomainModel.class)) {
+			case CorePackage.DOMAIN_MODEL__DOMAIN_ELEMENTS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -122,8 +139,54 @@ public class DomainModelItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void collectNewChildDescriptors(Collection newChildDescriptors, Object object) {
+	@Override
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.DOMAIN_MODEL__DOMAIN_ELEMENTS,
+				 CoreFactory.eINSTANCE.createDomainElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.DOMAIN_MODEL__DOMAIN_ELEMENTS,
+				 CoreFactory.eINSTANCE.createDomainConcept()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.DOMAIN_MODEL__DOMAIN_ELEMENTS,
+				 CoreFactory.eINSTANCE.createFeatureConcept()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.DOMAIN_MODEL__DOMAIN_ELEMENTS,
+				 CoreFactory.eINSTANCE.createBehaviorConcept()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.DOMAIN_MODEL__DOMAIN_ELEMENTS,
+				 CoreFactory.eINSTANCE.createBehavioralFeatureConcept()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.DOMAIN_MODEL__DOMAIN_ELEMENTS,
+				 CoreFactory.eINSTANCE.createUMLBehavior()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.DOMAIN_MODEL__DOMAIN_ELEMENTS,
+				 CoreFactory.eINSTANCE.createUMLBehavioralFeature()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.DOMAIN_MODEL__DOMAIN_ELEMENTS,
+				 CoreFactory.eINSTANCE.createUMLDomainConcept()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.DOMAIN_MODEL__DOMAIN_ELEMENTS,
+				 CoreFactory.eINSTANCE.createUMLStructuralFeature()));
 	}
 
 }

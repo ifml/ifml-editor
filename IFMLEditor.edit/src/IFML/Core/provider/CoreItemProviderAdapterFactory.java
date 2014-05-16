@@ -55,7 +55,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection supportedTypes = new ArrayList();
+	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
 	 * This constructs an instance.
@@ -85,6 +85,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createInteractionFlowExpressionAdapter() {
 		if (interactionFlowExpressionItemProvider == null) {
 			interactionFlowExpressionItemProvider = new InteractionFlowExpressionItemProvider(this);
@@ -107,6 +108,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createSystemEventAdapter() {
 		if (systemEventItemProvider == null) {
 			systemEventItemProvider = new SystemEventItemProvider(this);
@@ -129,6 +131,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createParameterBindingAdapter() {
 		if (parameterBindingItemProvider == null) {
 			parameterBindingItemProvider = new ParameterBindingItemProvider(this);
@@ -151,6 +154,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createActionEventAdapter() {
 		if (actionEventItemProvider == null) {
 			actionEventItemProvider = new ActionEventItemProvider(this);
@@ -173,6 +177,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createDomainModelAdapter() {
 		if (domainModelItemProvider == null) {
 			domainModelItemProvider = new DomainModelItemProvider(this);
@@ -195,6 +200,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createPortDefinitionAdapter() {
 		if (portDefinitionItemProvider == null) {
 			portDefinitionItemProvider = new PortDefinitionItemProvider(this);
@@ -217,6 +223,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createViewElementAdapter() {
 		if (viewElementItemProvider == null) {
 			viewElementItemProvider = new ViewElementItemProvider(this);
@@ -239,6 +246,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createDynamicBehaviorAdapter() {
 		if (dynamicBehaviorItemProvider == null) {
 			dynamicBehaviorItemProvider = new DynamicBehaviorItemProvider(this);
@@ -261,6 +269,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createViewpointAdapter() {
 		if (viewpointItemProvider == null) {
 			viewpointItemProvider = new ViewpointItemProvider(this);
@@ -283,6 +292,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createDataFlowAdapter() {
 		if (dataFlowItemProvider == null) {
 			dataFlowItemProvider = new DataFlowItemProvider(this);
@@ -305,6 +315,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createViewComponentPartAdapter() {
 		if (viewComponentPartItemProvider == null) {
 			viewComponentPartItemProvider = new ViewComponentPartItemProvider(this);
@@ -327,6 +338,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createViewContainerAdapter() {
 		if (viewContainerItemProvider == null) {
 			viewContainerItemProvider = new ViewContainerItemProvider(this);
@@ -349,6 +361,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createActivationExpressionAdapter() {
 		if (activationExpressionItemProvider == null) {
 			activationExpressionItemProvider = new ActivationExpressionItemProvider(this);
@@ -371,6 +384,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createInteractionFlowModelAdapter() {
 		if (interactionFlowModelItemProvider == null) {
 			interactionFlowModelItemProvider = new InteractionFlowModelItemProvider(this);
@@ -393,6 +407,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createContextDimensionAdapter() {
 		if (contextDimensionItemProvider == null) {
 			contextDimensionItemProvider = new ContextDimensionItemProvider(this);
@@ -415,6 +430,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createIFMLModelAdapter() {
 		if (ifmlModelItemProvider == null) {
 			ifmlModelItemProvider = new IFMLModelItemProvider(this);
@@ -437,6 +453,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createModuleDefinitionAdapter() {
 		if (moduleDefinitionItemProvider == null) {
 			moduleDefinitionItemProvider = new ModuleDefinitionItemProvider(this);
@@ -459,6 +476,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createBooleanExpressionAdapter() {
 		if (booleanExpressionItemProvider == null) {
 			booleanExpressionItemProvider = new BooleanExpressionItemProvider(this);
@@ -481,6 +499,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createIFMLActionAdapter() {
 		if (ifmlActionItemProvider == null) {
 			ifmlActionItemProvider = new IFMLActionItemProvider(this);
@@ -503,6 +522,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createNavigationFlowAdapter() {
 		if (navigationFlowItemProvider == null) {
 			navigationFlowItemProvider = new NavigationFlowItemProvider(this);
@@ -525,6 +545,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createParameterBindingGroupAdapter() {
 		if (parameterBindingGroupItemProvider == null) {
 			parameterBindingGroupItemProvider = new ParameterBindingGroupItemProvider(this);
@@ -547,6 +568,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createConstraintAdapter() {
 		if (constraintItemProvider == null) {
 			constraintItemProvider = new ConstraintItemProvider(this);
@@ -569,6 +591,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createViewComponentAdapter() {
 		if (viewComponentItemProvider == null) {
 			viewComponentItemProvider = new ViewComponentItemProvider(this);
@@ -591,6 +614,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createIFMLParameterAdapter() {
 		if (ifmlParameterItemProvider == null) {
 			ifmlParameterItemProvider = new IFMLParameterItemProvider(this);
@@ -613,6 +637,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createDataBindingAdapter() {
 		if (dataBindingItemProvider == null) {
 			dataBindingItemProvider = new DataBindingItemProvider(this);
@@ -635,6 +660,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createConditionalExpressionAdapter() {
 		if (conditionalExpressionItemProvider == null) {
 			conditionalExpressionItemProvider = new ConditionalExpressionItemProvider(this);
@@ -657,6 +683,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createContextAdapter() {
 		if (contextItemProvider == null) {
 			contextItemProvider = new ContextItemProvider(this);
@@ -679,6 +706,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createVisualizationAttributeAdapter() {
 		if (visualizationAttributeItemProvider == null) {
 			visualizationAttributeItemProvider = new VisualizationAttributeItemProvider(this);
@@ -701,6 +729,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createEventAdapter() {
 		if (eventItemProvider == null) {
 			eventItemProvider = new EventItemProvider(this);
@@ -723,6 +752,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createViewElementEventAdapter() {
 		if (viewElementEventItemProvider == null) {
 			viewElementEventItemProvider = new ViewElementEventItemProvider(this);
@@ -745,6 +775,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createAnnotationAdapter() {
 		if (annotationItemProvider == null) {
 			annotationItemProvider = new AnnotationItemProvider(this);
@@ -767,6 +798,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createModulePackageAdapter() {
 		if (modulePackageItemProvider == null) {
 			modulePackageItemProvider = new ModulePackageItemProvider(this);
@@ -789,6 +821,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createModularizationElementAdapter() {
 		if (modularizationElementItemProvider == null) {
 			modularizationElementItemProvider = new ModularizationElementItemProvider(this);
@@ -811,6 +844,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createIFMLModuleAdapter() {
 		if (ifmlModuleItemProvider == null) {
 			ifmlModuleItemProvider = new IFMLModuleItemProvider(this);
@@ -833,6 +867,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createIFMLPortAdapter() {
 		if (ifmlPortItemProvider == null) {
 			ifmlPortItemProvider = new IFMLPortItemProvider(this);
@@ -855,6 +890,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createCatchingEventAdapter() {
 		if (catchingEventItemProvider == null) {
 			catchingEventItemProvider = new CatchingEventItemProvider(this);
@@ -877,6 +913,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createThrowingEventAdapter() {
 		if (throwingEventItemProvider == null) {
 			throwingEventItemProvider = new ThrowingEventItemProvider(this);
@@ -899,6 +936,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createBPMNActivityConceptAdapter() {
 		if (bpmnActivityConceptItemProvider == null) {
 			bpmnActivityConceptItemProvider = new BPMNActivityConceptItemProvider(this);
@@ -921,6 +959,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createContextVariableAdapter() {
 		if (contextVariableItemProvider == null) {
 			contextVariableItemProvider = new ContextVariableItemProvider(this);
@@ -943,6 +982,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createSimpleContextVariableAdapter() {
 		if (simpleContextVariableItemProvider == null) {
 			simpleContextVariableItemProvider = new SimpleContextVariableItemProvider(this);
@@ -965,6 +1005,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createDataContextVariableAdapter() {
 		if (dataContextVariableItemProvider == null) {
 			dataContextVariableItemProvider = new DataContextVariableItemProvider(this);
@@ -987,6 +1028,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createDomainConceptAdapter() {
 		if (domainConceptItemProvider == null) {
 			domainConceptItemProvider = new DomainConceptItemProvider(this);
@@ -1009,6 +1051,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createFeatureConceptAdapter() {
 		if (featureConceptItemProvider == null) {
 			featureConceptItemProvider = new FeatureConceptItemProvider(this);
@@ -1031,6 +1074,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createBehaviorConceptAdapter() {
 		if (behaviorConceptItemProvider == null) {
 			behaviorConceptItemProvider = new BehaviorConceptItemProvider(this);
@@ -1053,6 +1097,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createBehavioralFeatureConceptAdapter() {
 		if (behavioralFeatureConceptItemProvider == null) {
 			behavioralFeatureConceptItemProvider = new BehavioralFeatureConceptItemProvider(this);
@@ -1075,6 +1120,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createUMLBehaviorAdapter() {
 		if (umlBehaviorItemProvider == null) {
 			umlBehaviorItemProvider = new UMLBehaviorItemProvider(this);
@@ -1097,6 +1143,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createUMLBehavioralFeatureAdapter() {
 		if (umlBehavioralFeatureItemProvider == null) {
 			umlBehavioralFeatureItemProvider = new UMLBehavioralFeatureItemProvider(this);
@@ -1119,6 +1166,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createUMLDomainConceptAdapter() {
 		if (umlDomainConceptItemProvider == null) {
 			umlDomainConceptItemProvider = new UMLDomainConceptItemProvider(this);
@@ -1141,6 +1189,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createUMLStructuralFeatureAdapter() {
 		if (umlStructuralFeatureItemProvider == null) {
 			umlStructuralFeatureItemProvider = new UMLStructuralFeatureItemProvider(this);
@@ -1163,6 +1212,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createActivityConceptAdapter() {
 		if (activityConceptItemProvider == null) {
 			activityConceptItemProvider = new ActivityConceptItemProvider(this);
@@ -1185,6 +1235,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createDomainElementAdapter() {
 		if (domainElementItemProvider == null) {
 			domainElementItemProvider = new DomainElementItemProvider(this);
@@ -1218,6 +1269,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isFactoryForType(Object type) {
 		return supportedTypes.contains(type) || super.isFactoryForType(type);
 	}
@@ -1228,6 +1280,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
 	}
@@ -1237,10 +1290,11 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class) || (((Class)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}

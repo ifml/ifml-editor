@@ -31,6 +31,7 @@ public class SimpleFieldImpl extends FieldImpl implements SimpleField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.SIMPLE_FIELD;
 	}

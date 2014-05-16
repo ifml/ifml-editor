@@ -48,7 +48,7 @@ public class IFMLActionImpl extends InteractionFlowElementImpl implements IFMLAc
 	 * @generated
 	 * @ordered
 	 */
-	protected EList actionEvents;
+	protected EList<ActionEvent> actionEvents;
 
 	/**
 	 * The cached value of the '{@link #getDynamicBehavior() <em>Dynamic Behavior</em>}' reference.
@@ -74,6 +74,7 @@ public class IFMLActionImpl extends InteractionFlowElementImpl implements IFMLAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.IFML_ACTION;
 	}
@@ -83,9 +84,9 @@ public class IFMLActionImpl extends InteractionFlowElementImpl implements IFMLAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getActionEvents() {
+	public EList<ActionEvent> getActionEvents() {
 		if (actionEvents == null) {
-			actionEvents = new EObjectContainmentEList(ActionEvent.class, this, CorePackage.IFML_ACTION__ACTION_EVENTS);
+			actionEvents = new EObjectContainmentEList<ActionEvent>(ActionEvent.class, this, CorePackage.IFML_ACTION__ACTION_EVENTS);
 		}
 		return actionEvents;
 	}
@@ -174,6 +175,7 @@ public class IFMLActionImpl extends InteractionFlowElementImpl implements IFMLAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.IFML_ACTION__VIEW_CONTAINER:
@@ -189,10 +191,11 @@ public class IFMLActionImpl extends InteractionFlowElementImpl implements IFMLAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.IFML_ACTION__ACTION_EVENTS:
-				return ((InternalEList)getActionEvents()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getActionEvents()).basicRemove(otherEnd, msgs);
 			case CorePackage.IFML_ACTION__VIEW_CONTAINER:
 				return basicSetViewContainer(null, msgs);
 		}
@@ -204,6 +207,7 @@ public class IFMLActionImpl extends InteractionFlowElementImpl implements IFMLAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case CorePackage.IFML_ACTION__VIEW_CONTAINER:
@@ -217,6 +221,7 @@ public class IFMLActionImpl extends InteractionFlowElementImpl implements IFMLAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.IFML_ACTION__ACTION_EVENTS:
@@ -235,11 +240,13 @@ public class IFMLActionImpl extends InteractionFlowElementImpl implements IFMLAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.IFML_ACTION__ACTION_EVENTS:
 				getActionEvents().clear();
-				getActionEvents().addAll((Collection)newValue);
+				getActionEvents().addAll((Collection<? extends ActionEvent>)newValue);
 				return;
 			case CorePackage.IFML_ACTION__DYNAMIC_BEHAVIOR:
 				setDynamicBehavior((DynamicBehavior)newValue);
@@ -256,6 +263,7 @@ public class IFMLActionImpl extends InteractionFlowElementImpl implements IFMLAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.IFML_ACTION__ACTION_EVENTS:
@@ -276,6 +284,7 @@ public class IFMLActionImpl extends InteractionFlowElementImpl implements IFMLAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.IFML_ACTION__ACTION_EVENTS:

@@ -2,6 +2,8 @@
  */
 package IFML.Core;
 
+import org.eclipse.uml2.uml.BehavioralFeature;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -29,12 +31,12 @@ public interface UMLBehavioralFeature extends BehavioralFeatureConcept {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Behavioral Feature</em>' reference.
-	 * @see #setBehavioralFeature(UMLBehavior)
+	 * @see #setBehavioralFeature(BehavioralFeature)
 	 * @see IFML.Core.CorePackage#getUMLBehavioralFeature_BehavioralFeature()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	UMLBehavior getBehavioralFeature();
+	BehavioralFeature getBehavioralFeature();
 
 	/**
 	 * Sets the value of the '{@link IFML.Core.UMLBehavioralFeature#getBehavioralFeature <em>Behavioral Feature</em>}' reference.
@@ -44,6 +46,6 @@ public interface UMLBehavioralFeature extends BehavioralFeatureConcept {
 	 * @see #getBehavioralFeature()
 	 * @generated
 	 */
-	void setBehavioralFeature(UMLBehavior value);
+	void setBehavioralFeature(BehavioralFeature value);
 
 } // UMLBehavioralFeature

@@ -31,6 +31,7 @@ public class ActionEventImpl extends CatchingEventImpl implements ActionEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.ACTION_EVENT;
 	}

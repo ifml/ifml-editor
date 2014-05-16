@@ -40,7 +40,7 @@ public class ViewComponentImpl extends ViewElementImpl implements ViewComponent 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList viewComponentParts;
+	protected EList<ViewComponentPart> viewComponentParts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -56,6 +56,7 @@ public class ViewComponentImpl extends ViewElementImpl implements ViewComponent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.VIEW_COMPONENT;
 	}
@@ -65,9 +66,9 @@ public class ViewComponentImpl extends ViewElementImpl implements ViewComponent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getViewComponentParts() {
+	public EList<ViewComponentPart> getViewComponentParts() {
 		if (viewComponentParts == null) {
-			viewComponentParts = new EObjectContainmentEList(ViewComponentPart.class, this, CorePackage.VIEW_COMPONENT__VIEW_COMPONENT_PARTS);
+			viewComponentParts = new EObjectContainmentEList<ViewComponentPart>(ViewComponentPart.class, this, CorePackage.VIEW_COMPONENT__VIEW_COMPONENT_PARTS);
 		}
 		return viewComponentParts;
 	}
@@ -77,10 +78,11 @@ public class ViewComponentImpl extends ViewElementImpl implements ViewComponent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.VIEW_COMPONENT__VIEW_COMPONENT_PARTS:
-				return ((InternalEList)getViewComponentParts()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getViewComponentParts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -90,6 +92,7 @@ public class ViewComponentImpl extends ViewElementImpl implements ViewComponent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.VIEW_COMPONENT__VIEW_COMPONENT_PARTS:
@@ -103,11 +106,13 @@ public class ViewComponentImpl extends ViewElementImpl implements ViewComponent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.VIEW_COMPONENT__VIEW_COMPONENT_PARTS:
 				getViewComponentParts().clear();
-				getViewComponentParts().addAll((Collection)newValue);
+				getViewComponentParts().addAll((Collection<? extends ViewComponentPart>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -118,6 +123,7 @@ public class ViewComponentImpl extends ViewElementImpl implements ViewComponent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.VIEW_COMPONENT__VIEW_COMPONENT_PARTS:
@@ -132,6 +138,7 @@ public class ViewComponentImpl extends ViewElementImpl implements ViewComponent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.VIEW_COMPONENT__VIEW_COMPONENT_PARTS:

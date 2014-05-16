@@ -86,9 +86,9 @@ public interface IFMLModel extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interaction Flow Model Viewpoint</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getIFMLModel_InteractionFlowModelViewpoint()
-	 * @model type="IFML.Core.Viewpoint" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getInteractionFlowModelViewpoint();
+	EList<Viewpoint> getInteractionFlowModelViewpoint();
 
 } // IFMLModel

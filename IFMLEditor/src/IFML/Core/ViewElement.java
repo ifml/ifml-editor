@@ -34,10 +34,10 @@ public interface ViewElement extends InteractionFlowElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View Element Events</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getViewElement_ViewElementEvents()
-	 * @model type="IFML.Core.ViewElementEvent" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getViewElementEvents();
+	EList<ViewElementEvent> getViewElementEvents();
 
 	/**
 	 * Returns the value of the '<em><b>Activation Expression</b></em>' reference.

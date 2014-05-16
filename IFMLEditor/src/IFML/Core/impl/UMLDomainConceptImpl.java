@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.uml2.uml.Classifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +35,7 @@ public class UMLDomainConceptImpl extends DomainConceptImpl implements UMLDomain
 	 * @generated
 	 * @ordered
 	 */
-	protected UMLDomainConcept classifier;
+	protected Classifier classifier;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -50,6 +51,7 @@ public class UMLDomainConceptImpl extends DomainConceptImpl implements UMLDomain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.UML_DOMAIN_CONCEPT;
 	}
@@ -59,10 +61,10 @@ public class UMLDomainConceptImpl extends DomainConceptImpl implements UMLDomain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLDomainConcept getClassifier() {
+	public Classifier getClassifier() {
 		if (classifier != null && classifier.eIsProxy()) {
 			InternalEObject oldClassifier = (InternalEObject)classifier;
-			classifier = (UMLDomainConcept)eResolveProxy(oldClassifier);
+			classifier = (Classifier)eResolveProxy(oldClassifier);
 			if (classifier != oldClassifier) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.UML_DOMAIN_CONCEPT__CLASSIFIER, oldClassifier, classifier));
@@ -76,7 +78,7 @@ public class UMLDomainConceptImpl extends DomainConceptImpl implements UMLDomain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLDomainConcept basicGetClassifier() {
+	public Classifier basicGetClassifier() {
 		return classifier;
 	}
 
@@ -85,8 +87,8 @@ public class UMLDomainConceptImpl extends DomainConceptImpl implements UMLDomain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setClassifier(UMLDomainConcept newClassifier) {
-		UMLDomainConcept oldClassifier = classifier;
+	public void setClassifier(Classifier newClassifier) {
+		Classifier oldClassifier = classifier;
 		classifier = newClassifier;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.UML_DOMAIN_CONCEPT__CLASSIFIER, oldClassifier, classifier));
@@ -97,6 +99,7 @@ public class UMLDomainConceptImpl extends DomainConceptImpl implements UMLDomain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.UML_DOMAIN_CONCEPT__CLASSIFIER:
@@ -111,10 +114,11 @@ public class UMLDomainConceptImpl extends DomainConceptImpl implements UMLDomain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.UML_DOMAIN_CONCEPT__CLASSIFIER:
-				setClassifier((UMLDomainConcept)newValue);
+				setClassifier((Classifier)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,10 +129,11 @@ public class UMLDomainConceptImpl extends DomainConceptImpl implements UMLDomain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.UML_DOMAIN_CONCEPT__CLASSIFIER:
-				setClassifier((UMLDomainConcept)null);
+				setClassifier((Classifier)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -139,6 +144,7 @@ public class UMLDomainConceptImpl extends DomainConceptImpl implements UMLDomain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.UML_DOMAIN_CONCEPT__CLASSIFIER:

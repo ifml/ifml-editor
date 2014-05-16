@@ -33,6 +33,7 @@ public class FormImpl extends ViewComponentImpl implements Form {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.FORM;
 	}

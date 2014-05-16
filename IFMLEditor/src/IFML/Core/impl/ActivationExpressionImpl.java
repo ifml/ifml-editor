@@ -31,6 +31,7 @@ public class ActivationExpressionImpl extends BooleanExpressionImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.ACTIVATION_EXPRESSION;
 	}

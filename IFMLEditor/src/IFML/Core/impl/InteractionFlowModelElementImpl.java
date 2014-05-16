@@ -31,6 +31,7 @@ public abstract class InteractionFlowModelElementImpl extends ElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.INTERACTION_FLOW_MODEL_ELEMENT;
 	}

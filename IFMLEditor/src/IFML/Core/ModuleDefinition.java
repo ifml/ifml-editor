@@ -36,10 +36,10 @@ public interface ModuleDefinition extends ModularizationElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Input Ports</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getModuleDefinition_InputPorts()
-	 * @model type="IFML.Core.PortDefinition" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getInputPorts();
+	EList<PortDefinition> getInputPorts();
 
 	/**
 	 * Returns the value of the '<em><b>Output Ports</b></em>' containment reference list.
@@ -52,10 +52,10 @@ public interface ModuleDefinition extends ModularizationElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Output Ports</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getModuleDefinition_OutputPorts()
-	 * @model type="IFML.Core.PortDefinition" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getOutputPorts();
+	EList<PortDefinition> getOutputPorts();
 
 	/**
 	 * Returns the value of the '<em><b>Interaction Flow Model Element</b></em>' containment reference list.
@@ -68,10 +68,10 @@ public interface ModuleDefinition extends ModularizationElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interaction Flow Model Element</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getModuleDefinition_InteractionFlowModelElement()
-	 * @model type="IFML.Core.InteractionFlowModelElement" containment="true" required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
-	EList getInteractionFlowModelElement();
+	EList<InteractionFlowModelElement> getInteractionFlowModelElement();
 
 	/**
 	 * Returns the value of the '<em><b>Modules</b></em>' reference list.
@@ -86,10 +86,10 @@ public interface ModuleDefinition extends ModularizationElement {
 	 * @return the value of the '<em>Modules</em>' reference list.
 	 * @see IFML.Core.CorePackage#getModuleDefinition_Modules()
 	 * @see IFML.Core.IFMLModule#getModuleDefinition
-	 * @model type="IFML.Core.IFMLModule" opposite="moduleDefinition" ordered="false"
+	 * @model opposite="moduleDefinition" ordered="false"
 	 * @generated
 	 */
-	EList getModules();
+	EList<IFMLModule> getModules();
 
 	/**
 	 * Returns the value of the '<em><b>Activity Concept</b></em>' reference.

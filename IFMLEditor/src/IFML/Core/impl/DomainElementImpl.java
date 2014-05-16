@@ -31,6 +31,7 @@ public class DomainElementImpl extends NamedElementImpl implements DomainElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.DOMAIN_ELEMENT;
 	}

@@ -40,7 +40,7 @@ public class PortDefinitionImpl extends InteractionFlowElementImpl implements Po
 	 * @generated
 	 * @ordered
 	 */
-	protected EList ports;
+	protected EList<IFMLPort> ports;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -56,6 +56,7 @@ public class PortDefinitionImpl extends InteractionFlowElementImpl implements Po
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.PORT_DEFINITION;
 	}
@@ -65,9 +66,9 @@ public class PortDefinitionImpl extends InteractionFlowElementImpl implements Po
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getPorts() {
+	public EList<IFMLPort> getPorts() {
 		if (ports == null) {
-			ports = new EObjectWithInverseResolvingEList(IFMLPort.class, this, CorePackage.PORT_DEFINITION__PORTS, CorePackage.IFML_PORT__PORT_DEFINITION);
+			ports = new EObjectWithInverseResolvingEList<IFMLPort>(IFMLPort.class, this, CorePackage.PORT_DEFINITION__PORTS, CorePackage.IFML_PORT__PORT_DEFINITION);
 		}
 		return ports;
 	}
@@ -77,10 +78,12 @@ public class PortDefinitionImpl extends InteractionFlowElementImpl implements Po
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.PORT_DEFINITION__PORTS:
-				return ((InternalEList)getPorts()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPorts()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -90,10 +93,11 @@ public class PortDefinitionImpl extends InteractionFlowElementImpl implements Po
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.PORT_DEFINITION__PORTS:
-				return ((InternalEList)getPorts()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -103,6 +107,7 @@ public class PortDefinitionImpl extends InteractionFlowElementImpl implements Po
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.PORT_DEFINITION__PORTS:
@@ -116,11 +121,13 @@ public class PortDefinitionImpl extends InteractionFlowElementImpl implements Po
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.PORT_DEFINITION__PORTS:
 				getPorts().clear();
-				getPorts().addAll((Collection)newValue);
+				getPorts().addAll((Collection<? extends IFMLPort>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -131,6 +138,7 @@ public class PortDefinitionImpl extends InteractionFlowElementImpl implements Po
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.PORT_DEFINITION__PORTS:
@@ -145,6 +153,7 @@ public class PortDefinitionImpl extends InteractionFlowElementImpl implements Po
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.PORT_DEFINITION__PORTS:

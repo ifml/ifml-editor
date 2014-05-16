@@ -31,6 +31,7 @@ public class SimpleContextVariableImpl extends ContextVariableImpl implements Si
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.SIMPLE_CONTEXT_VARIABLE;
 	}

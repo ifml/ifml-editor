@@ -40,7 +40,7 @@ public class ParameterBindingGroupImpl extends InteractionFlowModelElementImpl i
 	 * @generated
 	 * @ordered
 	 */
-	protected EList parameterBindings;
+	protected EList<ParameterBinding> parameterBindings;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -56,6 +56,7 @@ public class ParameterBindingGroupImpl extends InteractionFlowModelElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.PARAMETER_BINDING_GROUP;
 	}
@@ -65,9 +66,9 @@ public class ParameterBindingGroupImpl extends InteractionFlowModelElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getParameterBindings() {
+	public EList<ParameterBinding> getParameterBindings() {
 		if (parameterBindings == null) {
-			parameterBindings = new EObjectContainmentEList(ParameterBinding.class, this, CorePackage.PARAMETER_BINDING_GROUP__PARAMETER_BINDINGS);
+			parameterBindings = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, CorePackage.PARAMETER_BINDING_GROUP__PARAMETER_BINDINGS);
 		}
 		return parameterBindings;
 	}
@@ -77,10 +78,11 @@ public class ParameterBindingGroupImpl extends InteractionFlowModelElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.PARAMETER_BINDING_GROUP__PARAMETER_BINDINGS:
-				return ((InternalEList)getParameterBindings()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getParameterBindings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -90,6 +92,7 @@ public class ParameterBindingGroupImpl extends InteractionFlowModelElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.PARAMETER_BINDING_GROUP__PARAMETER_BINDINGS:
@@ -103,11 +106,13 @@ public class ParameterBindingGroupImpl extends InteractionFlowModelElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.PARAMETER_BINDING_GROUP__PARAMETER_BINDINGS:
 				getParameterBindings().clear();
-				getParameterBindings().addAll((Collection)newValue);
+				getParameterBindings().addAll((Collection<? extends ParameterBinding>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -118,6 +123,7 @@ public class ParameterBindingGroupImpl extends InteractionFlowModelElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.PARAMETER_BINDING_GROUP__PARAMETER_BINDINGS:
@@ -132,6 +138,7 @@ public class ParameterBindingGroupImpl extends InteractionFlowModelElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.PARAMETER_BINDING_GROUP__PARAMETER_BINDINGS:

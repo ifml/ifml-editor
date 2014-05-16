@@ -50,7 +50,7 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList conditionalExpression;
+	protected EList<ConditionalExpression> conditionalExpression;
 
 	/**
 	 * The cached value of the '{@link #getVisualizationAttribute() <em>Visualization Attribute</em>}' containment reference list.
@@ -60,7 +60,7 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList visualizationAttribute;
+	protected EList<VisualizationAttribute> visualizationAttribute;
 
 	/**
 	 * The cached value of the '{@link #getDataContextVariables() <em>Data Context Variables</em>}' reference list.
@@ -70,7 +70,7 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList dataContextVariables;
+	protected EList<DataContextVariable> dataContextVariables;
 
 	/**
 	 * The cached value of the '{@link #getDomainConcept() <em>Domain Concept</em>}' reference.
@@ -96,6 +96,7 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.DATA_BINDING;
 	}
@@ -105,9 +106,9 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getConditionalExpression() {
+	public EList<ConditionalExpression> getConditionalExpression() {
 		if (conditionalExpression == null) {
-			conditionalExpression = new EObjectContainmentEList(ConditionalExpression.class, this, CorePackage.DATA_BINDING__CONDITIONAL_EXPRESSION);
+			conditionalExpression = new EObjectContainmentEList<ConditionalExpression>(ConditionalExpression.class, this, CorePackage.DATA_BINDING__CONDITIONAL_EXPRESSION);
 		}
 		return conditionalExpression;
 	}
@@ -117,9 +118,9 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getVisualizationAttribute() {
+	public EList<VisualizationAttribute> getVisualizationAttribute() {
 		if (visualizationAttribute == null) {
-			visualizationAttribute = new EObjectContainmentEList(VisualizationAttribute.class, this, CorePackage.DATA_BINDING__VISUALIZATION_ATTRIBUTE);
+			visualizationAttribute = new EObjectContainmentEList<VisualizationAttribute>(VisualizationAttribute.class, this, CorePackage.DATA_BINDING__VISUALIZATION_ATTRIBUTE);
 		}
 		return visualizationAttribute;
 	}
@@ -129,9 +130,9 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getDataContextVariables() {
+	public EList<DataContextVariable> getDataContextVariables() {
 		if (dataContextVariables == null) {
-			dataContextVariables = new EObjectWithInverseResolvingEList(DataContextVariable.class, this, CorePackage.DATA_BINDING__DATA_CONTEXT_VARIABLES, CorePackage.DATA_CONTEXT_VARIABLE__DATA_BINDING);
+			dataContextVariables = new EObjectWithInverseResolvingEList<DataContextVariable>(DataContextVariable.class, this, CorePackage.DATA_BINDING__DATA_CONTEXT_VARIABLES, CorePackage.DATA_CONTEXT_VARIABLE__DATA_BINDING);
 		}
 		return dataContextVariables;
 	}
@@ -201,10 +202,12 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.DATA_BINDING__DATA_CONTEXT_VARIABLES:
-				return ((InternalEList)getDataContextVariables()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDataContextVariables()).basicAdd(otherEnd, msgs);
 			case CorePackage.DATA_BINDING__DOMAIN_CONCEPT:
 				if (domainConcept != null)
 					msgs = ((InternalEObject)domainConcept).eInverseRemove(this, CorePackage.DOMAIN_CONCEPT__DATA_BINDING, DomainConcept.class, msgs);
@@ -218,14 +221,15 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.DATA_BINDING__CONDITIONAL_EXPRESSION:
-				return ((InternalEList)getConditionalExpression()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getConditionalExpression()).basicRemove(otherEnd, msgs);
 			case CorePackage.DATA_BINDING__VISUALIZATION_ATTRIBUTE:
-				return ((InternalEList)getVisualizationAttribute()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getVisualizationAttribute()).basicRemove(otherEnd, msgs);
 			case CorePackage.DATA_BINDING__DATA_CONTEXT_VARIABLES:
-				return ((InternalEList)getDataContextVariables()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getDataContextVariables()).basicRemove(otherEnd, msgs);
 			case CorePackage.DATA_BINDING__DOMAIN_CONCEPT:
 				return basicSetDomainConcept(null, msgs);
 		}
@@ -237,6 +241,7 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.DATA_BINDING__CONDITIONAL_EXPRESSION:
@@ -257,19 +262,21 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.DATA_BINDING__CONDITIONAL_EXPRESSION:
 				getConditionalExpression().clear();
-				getConditionalExpression().addAll((Collection)newValue);
+				getConditionalExpression().addAll((Collection<? extends ConditionalExpression>)newValue);
 				return;
 			case CorePackage.DATA_BINDING__VISUALIZATION_ATTRIBUTE:
 				getVisualizationAttribute().clear();
-				getVisualizationAttribute().addAll((Collection)newValue);
+				getVisualizationAttribute().addAll((Collection<? extends VisualizationAttribute>)newValue);
 				return;
 			case CorePackage.DATA_BINDING__DATA_CONTEXT_VARIABLES:
 				getDataContextVariables().clear();
-				getDataContextVariables().addAll((Collection)newValue);
+				getDataContextVariables().addAll((Collection<? extends DataContextVariable>)newValue);
 				return;
 			case CorePackage.DATA_BINDING__DOMAIN_CONCEPT:
 				setDomainConcept((DomainConcept)newValue);
@@ -283,6 +290,7 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.DATA_BINDING__CONDITIONAL_EXPRESSION:
@@ -306,6 +314,7 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.DATA_BINDING__CONDITIONAL_EXPRESSION:

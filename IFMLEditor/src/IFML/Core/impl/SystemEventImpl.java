@@ -46,7 +46,7 @@ public class SystemEventImpl extends CatchingEventImpl implements SystemEvent {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList triggeringExpressions;
+	protected EList<Expression> triggeringExpressions;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -56,7 +56,7 @@ public class SystemEventImpl extends CatchingEventImpl implements SystemEvent {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final SystemEventType TYPE_EDEFAULT = SystemEventType.TIME_LITERAL;
+	protected static final SystemEventType TYPE_EDEFAULT = SystemEventType.TIME;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -82,6 +82,7 @@ public class SystemEventImpl extends CatchingEventImpl implements SystemEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.SYSTEM_EVENT;
 	}
@@ -91,9 +92,9 @@ public class SystemEventImpl extends CatchingEventImpl implements SystemEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getTriggeringExpressions() {
+	public EList<Expression> getTriggeringExpressions() {
 		if (triggeringExpressions == null) {
-			triggeringExpressions = new EObjectContainmentEList(Expression.class, this, CorePackage.SYSTEM_EVENT__TRIGGERING_EXPRESSIONS);
+			triggeringExpressions = new EObjectContainmentEList<Expression>(Expression.class, this, CorePackage.SYSTEM_EVENT__TRIGGERING_EXPRESSIONS);
 		}
 		return triggeringExpressions;
 	}
@@ -124,10 +125,11 @@ public class SystemEventImpl extends CatchingEventImpl implements SystemEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.SYSTEM_EVENT__TRIGGERING_EXPRESSIONS:
-				return ((InternalEList)getTriggeringExpressions()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTriggeringExpressions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -137,6 +139,7 @@ public class SystemEventImpl extends CatchingEventImpl implements SystemEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.SYSTEM_EVENT__TRIGGERING_EXPRESSIONS:
@@ -152,11 +155,13 @@ public class SystemEventImpl extends CatchingEventImpl implements SystemEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.SYSTEM_EVENT__TRIGGERING_EXPRESSIONS:
 				getTriggeringExpressions().clear();
-				getTriggeringExpressions().addAll((Collection)newValue);
+				getTriggeringExpressions().addAll((Collection<? extends Expression>)newValue);
 				return;
 			case CorePackage.SYSTEM_EVENT__TYPE:
 				setType((SystemEventType)newValue);
@@ -170,6 +175,7 @@ public class SystemEventImpl extends CatchingEventImpl implements SystemEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.SYSTEM_EVENT__TRIGGERING_EXPRESSIONS:
@@ -187,6 +193,7 @@ public class SystemEventImpl extends CatchingEventImpl implements SystemEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.SYSTEM_EVENT__TRIGGERING_EXPRESSIONS:
@@ -202,6 +209,7 @@ public class SystemEventImpl extends CatchingEventImpl implements SystemEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

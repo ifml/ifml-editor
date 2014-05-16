@@ -3,11 +3,9 @@
 package IFML.Core.util;
 
 import IFML.Core.*;
-
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see IFML.Core.CorePackage
  * @generated
  */
-public class CoreSwitch {
+public class CoreSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -44,14 +42,16 @@ public class CoreSwitch {
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @parameter ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public Object doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -61,31 +61,12 @@ public class CoreSwitch {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected Object doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch((EClass)eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
-	protected Object doSwitch(int classifierID, EObject theEObject) {
+	@Override
+	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case CorePackage.INTERACTION_FLOW: {
 				InteractionFlow interactionFlow = (InteractionFlow)theEObject;
-				Object result = caseInteractionFlow(interactionFlow);
+				T result = caseInteractionFlow(interactionFlow);
 				if (result == null) result = caseInteractionFlowModelElement(interactionFlow);
 				if (result == null) result = caseElement(interactionFlow);
 				if (result == null) result = defaultCase(theEObject);
@@ -93,7 +74,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.INTERACTION_FLOW_EXPRESSION: {
 				InteractionFlowExpression interactionFlowExpression = (InteractionFlowExpression)theEObject;
-				Object result = caseInteractionFlowExpression(interactionFlowExpression);
+				T result = caseInteractionFlowExpression(interactionFlowExpression);
 				if (result == null) result = caseExpression(interactionFlowExpression);
 				if (result == null) result = caseInteractionFlowModelElement(interactionFlowExpression);
 				if (result == null) result = caseElement(interactionFlowExpression);
@@ -102,7 +83,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.SYSTEM_EVENT: {
 				SystemEvent systemEvent = (SystemEvent)theEObject;
-				Object result = caseSystemEvent(systemEvent);
+				T result = caseSystemEvent(systemEvent);
 				if (result == null) result = caseCatchingEvent(systemEvent);
 				if (result == null) result = caseEvent(systemEvent);
 				if (result == null) result = caseInteractionFlowElement(systemEvent);
@@ -114,7 +95,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.PARAMETER_BINDING: {
 				ParameterBinding parameterBinding = (ParameterBinding)theEObject;
-				Object result = caseParameterBinding(parameterBinding);
+				T result = caseParameterBinding(parameterBinding);
 				if (result == null) result = caseInteractionFlowModelElement(parameterBinding);
 				if (result == null) result = caseElement(parameterBinding);
 				if (result == null) result = defaultCase(theEObject);
@@ -122,7 +103,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.ACTION_EVENT: {
 				ActionEvent actionEvent = (ActionEvent)theEObject;
-				Object result = caseActionEvent(actionEvent);
+				T result = caseActionEvent(actionEvent);
 				if (result == null) result = caseCatchingEvent(actionEvent);
 				if (result == null) result = caseEvent(actionEvent);
 				if (result == null) result = caseInteractionFlowElement(actionEvent);
@@ -134,7 +115,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.DOMAIN_MODEL: {
 				DomainModel domainModel = (DomainModel)theEObject;
-				Object result = caseDomainModel(domainModel);
+				T result = caseDomainModel(domainModel);
 				if (result == null) result = caseNamedElement(domainModel);
 				if (result == null) result = caseElement(domainModel);
 				if (result == null) result = defaultCase(theEObject);
@@ -142,14 +123,14 @@ public class CoreSwitch {
 			}
 			case CorePackage.NAMED_ELEMENT: {
 				NamedElement namedElement = (NamedElement)theEObject;
-				Object result = caseNamedElement(namedElement);
+				T result = caseNamedElement(namedElement);
 				if (result == null) result = caseElement(namedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CorePackage.PORT_DEFINITION: {
 				PortDefinition portDefinition = (PortDefinition)theEObject;
-				Object result = casePortDefinition(portDefinition);
+				T result = casePortDefinition(portDefinition);
 				if (result == null) result = caseInteractionFlowElement(portDefinition);
 				if (result == null) result = caseNamedElement(portDefinition);
 				if (result == null) result = caseInteractionFlowModelElement(portDefinition);
@@ -159,7 +140,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.CONTENT_BINDING: {
 				ContentBinding contentBinding = (ContentBinding)theEObject;
-				Object result = caseContentBinding(contentBinding);
+				T result = caseContentBinding(contentBinding);
 				if (result == null) result = caseViewComponentPart(contentBinding);
 				if (result == null) result = caseInteractionFlowElement(contentBinding);
 				if (result == null) result = caseNamedElement(contentBinding);
@@ -170,7 +151,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.VIEW_ELEMENT: {
 				ViewElement viewElement = (ViewElement)theEObject;
-				Object result = caseViewElement(viewElement);
+				T result = caseViewElement(viewElement);
 				if (result == null) result = caseInteractionFlowElement(viewElement);
 				if (result == null) result = caseNamedElement(viewElement);
 				if (result == null) result = caseInteractionFlowModelElement(viewElement);
@@ -180,7 +161,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.EXPRESSION: {
 				Expression expression = (Expression)theEObject;
-				Object result = caseExpression(expression);
+				T result = caseExpression(expression);
 				if (result == null) result = caseInteractionFlowModelElement(expression);
 				if (result == null) result = caseElement(expression);
 				if (result == null) result = defaultCase(theEObject);
@@ -188,7 +169,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.DYNAMIC_BEHAVIOR: {
 				DynamicBehavior dynamicBehavior = (DynamicBehavior)theEObject;
-				Object result = caseDynamicBehavior(dynamicBehavior);
+				T result = caseDynamicBehavior(dynamicBehavior);
 				if (result == null) result = caseContentBinding(dynamicBehavior);
 				if (result == null) result = caseViewComponentPart(dynamicBehavior);
 				if (result == null) result = caseInteractionFlowElement(dynamicBehavior);
@@ -200,7 +181,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.VIEWPOINT: {
 				Viewpoint viewpoint = (Viewpoint)theEObject;
-				Object result = caseViewpoint(viewpoint);
+				T result = caseViewpoint(viewpoint);
 				if (result == null) result = caseNamedElement(viewpoint);
 				if (result == null) result = caseElement(viewpoint);
 				if (result == null) result = defaultCase(theEObject);
@@ -208,7 +189,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.DATA_FLOW: {
 				DataFlow dataFlow = (DataFlow)theEObject;
-				Object result = caseDataFlow(dataFlow);
+				T result = caseDataFlow(dataFlow);
 				if (result == null) result = caseInteractionFlow(dataFlow);
 				if (result == null) result = caseInteractionFlowModelElement(dataFlow);
 				if (result == null) result = caseElement(dataFlow);
@@ -217,7 +198,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.VIEW_COMPONENT_PART: {
 				ViewComponentPart viewComponentPart = (ViewComponentPart)theEObject;
-				Object result = caseViewComponentPart(viewComponentPart);
+				T result = caseViewComponentPart(viewComponentPart);
 				if (result == null) result = caseInteractionFlowElement(viewComponentPart);
 				if (result == null) result = caseNamedElement(viewComponentPart);
 				if (result == null) result = caseInteractionFlowModelElement(viewComponentPart);
@@ -227,7 +208,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.VIEW_CONTAINER: {
 				ViewContainer viewContainer = (ViewContainer)theEObject;
-				Object result = caseViewContainer(viewContainer);
+				T result = caseViewContainer(viewContainer);
 				if (result == null) result = caseViewElement(viewContainer);
 				if (result == null) result = caseInteractionFlowElement(viewContainer);
 				if (result == null) result = caseNamedElement(viewContainer);
@@ -238,7 +219,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.ACTIVATION_EXPRESSION: {
 				ActivationExpression activationExpression = (ActivationExpression)theEObject;
-				Object result = caseActivationExpression(activationExpression);
+				T result = caseActivationExpression(activationExpression);
 				if (result == null) result = caseBooleanExpression(activationExpression);
 				if (result == null) result = caseExpression(activationExpression);
 				if (result == null) result = caseInteractionFlowModelElement(activationExpression);
@@ -248,7 +229,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.INTERACTION_FLOW_MODEL: {
 				InteractionFlowModel interactionFlowModel = (InteractionFlowModel)theEObject;
-				Object result = caseInteractionFlowModel(interactionFlowModel);
+				T result = caseInteractionFlowModel(interactionFlowModel);
 				if (result == null) result = caseNamedElement(interactionFlowModel);
 				if (result == null) result = caseElement(interactionFlowModel);
 				if (result == null) result = defaultCase(theEObject);
@@ -256,7 +237,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.CONTEXT_DIMENSION: {
 				ContextDimension contextDimension = (ContextDimension)theEObject;
-				Object result = caseContextDimension(contextDimension);
+				T result = caseContextDimension(contextDimension);
 				if (result == null) result = caseNamedElement(contextDimension);
 				if (result == null) result = caseElement(contextDimension);
 				if (result == null) result = defaultCase(theEObject);
@@ -264,7 +245,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.IFML_MODEL: {
 				IFMLModel ifmlModel = (IFMLModel)theEObject;
-				Object result = caseIFMLModel(ifmlModel);
+				T result = caseIFMLModel(ifmlModel);
 				if (result == null) result = caseNamedElement(ifmlModel);
 				if (result == null) result = caseElement(ifmlModel);
 				if (result == null) result = defaultCase(theEObject);
@@ -272,7 +253,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.MODULE_DEFINITION: {
 				ModuleDefinition moduleDefinition = (ModuleDefinition)theEObject;
-				Object result = caseModuleDefinition(moduleDefinition);
+				T result = caseModuleDefinition(moduleDefinition);
 				if (result == null) result = caseModularizationElement(moduleDefinition);
 				if (result == null) result = caseNamedElement(moduleDefinition);
 				if (result == null) result = caseInteractionFlowModelElement(moduleDefinition);
@@ -282,7 +263,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.BOOLEAN_EXPRESSION: {
 				BooleanExpression booleanExpression = (BooleanExpression)theEObject;
-				Object result = caseBooleanExpression(booleanExpression);
+				T result = caseBooleanExpression(booleanExpression);
 				if (result == null) result = caseExpression(booleanExpression);
 				if (result == null) result = caseInteractionFlowModelElement(booleanExpression);
 				if (result == null) result = caseElement(booleanExpression);
@@ -291,7 +272,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.INTERACTION_FLOW_ELEMENT: {
 				InteractionFlowElement interactionFlowElement = (InteractionFlowElement)theEObject;
-				Object result = caseInteractionFlowElement(interactionFlowElement);
+				T result = caseInteractionFlowElement(interactionFlowElement);
 				if (result == null) result = caseNamedElement(interactionFlowElement);
 				if (result == null) result = caseInteractionFlowModelElement(interactionFlowElement);
 				if (result == null) result = caseElement(interactionFlowElement);
@@ -300,7 +281,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.IFML_ACTION: {
 				IFMLAction ifmlAction = (IFMLAction)theEObject;
-				Object result = caseIFMLAction(ifmlAction);
+				T result = caseIFMLAction(ifmlAction);
 				if (result == null) result = caseInteractionFlowElement(ifmlAction);
 				if (result == null) result = caseNamedElement(ifmlAction);
 				if (result == null) result = caseInteractionFlowModelElement(ifmlAction);
@@ -310,7 +291,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.NAVIGATION_FLOW: {
 				NavigationFlow navigationFlow = (NavigationFlow)theEObject;
-				Object result = caseNavigationFlow(navigationFlow);
+				T result = caseNavigationFlow(navigationFlow);
 				if (result == null) result = caseInteractionFlow(navigationFlow);
 				if (result == null) result = caseInteractionFlowModelElement(navigationFlow);
 				if (result == null) result = caseElement(navigationFlow);
@@ -319,7 +300,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.PARAMETER_BINDING_GROUP: {
 				ParameterBindingGroup parameterBindingGroup = (ParameterBindingGroup)theEObject;
-				Object result = caseParameterBindingGroup(parameterBindingGroup);
+				T result = caseParameterBindingGroup(parameterBindingGroup);
 				if (result == null) result = caseInteractionFlowModelElement(parameterBindingGroup);
 				if (result == null) result = caseElement(parameterBindingGroup);
 				if (result == null) result = defaultCase(theEObject);
@@ -327,13 +308,13 @@ public class CoreSwitch {
 			}
 			case CorePackage.ELEMENT: {
 				Element element = (Element)theEObject;
-				Object result = caseElement(element);
+				T result = caseElement(element);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CorePackage.CONSTRAINT: {
 				Constraint constraint = (Constraint)theEObject;
-				Object result = caseConstraint(constraint);
+				T result = caseConstraint(constraint);
 				if (result == null) result = caseBooleanExpression(constraint);
 				if (result == null) result = caseExpression(constraint);
 				if (result == null) result = caseInteractionFlowModelElement(constraint);
@@ -343,7 +324,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.VIEW_COMPONENT: {
 				ViewComponent viewComponent = (ViewComponent)theEObject;
-				Object result = caseViewComponent(viewComponent);
+				T result = caseViewComponent(viewComponent);
 				if (result == null) result = caseViewElement(viewComponent);
 				if (result == null) result = caseInteractionFlowElement(viewComponent);
 				if (result == null) result = caseNamedElement(viewComponent);
@@ -354,7 +335,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.IFML_PARAMETER: {
 				IFMLParameter ifmlParameter = (IFMLParameter)theEObject;
-				Object result = caseIFMLParameter(ifmlParameter);
+				T result = caseIFMLParameter(ifmlParameter);
 				if (result == null) result = caseInteractionFlowModelElement(ifmlParameter);
 				if (result == null) result = caseNamedElement(ifmlParameter);
 				if (result == null) result = caseElement(ifmlParameter);
@@ -363,7 +344,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.DATA_BINDING: {
 				DataBinding dataBinding = (DataBinding)theEObject;
-				Object result = caseDataBinding(dataBinding);
+				T result = caseDataBinding(dataBinding);
 				if (result == null) result = caseContentBinding(dataBinding);
 				if (result == null) result = caseViewComponentPart(dataBinding);
 				if (result == null) result = caseInteractionFlowElement(dataBinding);
@@ -375,7 +356,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.CONDITIONAL_EXPRESSION: {
 				ConditionalExpression conditionalExpression = (ConditionalExpression)theEObject;
-				Object result = caseConditionalExpression(conditionalExpression);
+				T result = caseConditionalExpression(conditionalExpression);
 				if (result == null) result = caseExpression(conditionalExpression);
 				if (result == null) result = caseViewComponentPart(conditionalExpression);
 				if (result == null) result = caseInteractionFlowElement(conditionalExpression);
@@ -387,14 +368,14 @@ public class CoreSwitch {
 			}
 			case CorePackage.CONTEXT: {
 				Context context = (Context)theEObject;
-				Object result = caseContext(context);
+				T result = caseContext(context);
 				if (result == null) result = caseElement(context);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CorePackage.VISUALIZATION_ATTRIBUTE: {
 				VisualizationAttribute visualizationAttribute = (VisualizationAttribute)theEObject;
-				Object result = caseVisualizationAttribute(visualizationAttribute);
+				T result = caseVisualizationAttribute(visualizationAttribute);
 				if (result == null) result = caseViewComponentPart(visualizationAttribute);
 				if (result == null) result = caseInteractionFlowElement(visualizationAttribute);
 				if (result == null) result = caseNamedElement(visualizationAttribute);
@@ -405,7 +386,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.EVENT: {
 				Event event = (Event)theEObject;
-				Object result = caseEvent(event);
+				T result = caseEvent(event);
 				if (result == null) result = caseInteractionFlowElement(event);
 				if (result == null) result = caseNamedElement(event);
 				if (result == null) result = caseInteractionFlowModelElement(event);
@@ -415,14 +396,14 @@ public class CoreSwitch {
 			}
 			case CorePackage.INTERACTION_FLOW_MODEL_ELEMENT: {
 				InteractionFlowModelElement interactionFlowModelElement = (InteractionFlowModelElement)theEObject;
-				Object result = caseInteractionFlowModelElement(interactionFlowModelElement);
+				T result = caseInteractionFlowModelElement(interactionFlowModelElement);
 				if (result == null) result = caseElement(interactionFlowModelElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CorePackage.VIEW_ELEMENT_EVENT: {
 				ViewElementEvent viewElementEvent = (ViewElementEvent)theEObject;
-				Object result = caseViewElementEvent(viewElementEvent);
+				T result = caseViewElementEvent(viewElementEvent);
 				if (result == null) result = caseCatchingEvent(viewElementEvent);
 				if (result == null) result = caseEvent(viewElementEvent);
 				if (result == null) result = caseInteractionFlowElement(viewElementEvent);
@@ -434,13 +415,13 @@ public class CoreSwitch {
 			}
 			case CorePackage.ANNOTATION: {
 				Annotation annotation = (Annotation)theEObject;
-				Object result = caseAnnotation(annotation);
+				T result = caseAnnotation(annotation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CorePackage.MODULE_PACKAGE: {
 				ModulePackage modulePackage = (ModulePackage)theEObject;
-				Object result = caseModulePackage(modulePackage);
+				T result = caseModulePackage(modulePackage);
 				if (result == null) result = caseModularizationElement(modulePackage);
 				if (result == null) result = caseNamedElement(modulePackage);
 				if (result == null) result = caseInteractionFlowModelElement(modulePackage);
@@ -450,7 +431,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.MODULARIZATION_ELEMENT: {
 				ModularizationElement modularizationElement = (ModularizationElement)theEObject;
-				Object result = caseModularizationElement(modularizationElement);
+				T result = caseModularizationElement(modularizationElement);
 				if (result == null) result = caseNamedElement(modularizationElement);
 				if (result == null) result = caseInteractionFlowModelElement(modularizationElement);
 				if (result == null) result = caseElement(modularizationElement);
@@ -459,7 +440,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.IFML_MODULE: {
 				IFMLModule ifmlModule = (IFMLModule)theEObject;
-				Object result = caseIFMLModule(ifmlModule);
+				T result = caseIFMLModule(ifmlModule);
 				if (result == null) result = caseInteractionFlowElement(ifmlModule);
 				if (result == null) result = caseNamedElement(ifmlModule);
 				if (result == null) result = caseInteractionFlowModelElement(ifmlModule);
@@ -469,7 +450,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.IFML_PORT: {
 				IFMLPort ifmlPort = (IFMLPort)theEObject;
-				Object result = caseIFMLPort(ifmlPort);
+				T result = caseIFMLPort(ifmlPort);
 				if (result == null) result = caseInteractionFlowElement(ifmlPort);
 				if (result == null) result = caseNamedElement(ifmlPort);
 				if (result == null) result = caseInteractionFlowModelElement(ifmlPort);
@@ -479,7 +460,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.CATCHING_EVENT: {
 				CatchingEvent catchingEvent = (CatchingEvent)theEObject;
-				Object result = caseCatchingEvent(catchingEvent);
+				T result = caseCatchingEvent(catchingEvent);
 				if (result == null) result = caseEvent(catchingEvent);
 				if (result == null) result = caseInteractionFlowElement(catchingEvent);
 				if (result == null) result = caseNamedElement(catchingEvent);
@@ -490,7 +471,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.THROWING_EVENT: {
 				ThrowingEvent throwingEvent = (ThrowingEvent)theEObject;
-				Object result = caseThrowingEvent(throwingEvent);
+				T result = caseThrowingEvent(throwingEvent);
 				if (result == null) result = caseEvent(throwingEvent);
 				if (result == null) result = caseInteractionFlowElement(throwingEvent);
 				if (result == null) result = caseNamedElement(throwingEvent);
@@ -501,7 +482,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.BPMN_ACTIVITY_CONCEPT: {
 				BPMNActivityConcept bpmnActivityConcept = (BPMNActivityConcept)theEObject;
-				Object result = caseBPMNActivityConcept(bpmnActivityConcept);
+				T result = caseBPMNActivityConcept(bpmnActivityConcept);
 				if (result == null) result = caseActivityConcept(bpmnActivityConcept);
 				if (result == null) result = caseNamedElement(bpmnActivityConcept);
 				if (result == null) result = caseElement(bpmnActivityConcept);
@@ -510,7 +491,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.CONTEXT_VARIABLE: {
 				ContextVariable contextVariable = (ContextVariable)theEObject;
-				Object result = caseContextVariable(contextVariable);
+				T result = caseContextVariable(contextVariable);
 				if (result == null) result = caseNamedElement(contextVariable);
 				if (result == null) result = caseElement(contextVariable);
 				if (result == null) result = defaultCase(theEObject);
@@ -518,7 +499,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.SIMPLE_CONTEXT_VARIABLE: {
 				SimpleContextVariable simpleContextVariable = (SimpleContextVariable)theEObject;
-				Object result = caseSimpleContextVariable(simpleContextVariable);
+				T result = caseSimpleContextVariable(simpleContextVariable);
 				if (result == null) result = caseContextVariable(simpleContextVariable);
 				if (result == null) result = caseNamedElement(simpleContextVariable);
 				if (result == null) result = caseElement(simpleContextVariable);
@@ -527,7 +508,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.DATA_CONTEXT_VARIABLE: {
 				DataContextVariable dataContextVariable = (DataContextVariable)theEObject;
-				Object result = caseDataContextVariable(dataContextVariable);
+				T result = caseDataContextVariable(dataContextVariable);
 				if (result == null) result = caseContextVariable(dataContextVariable);
 				if (result == null) result = caseNamedElement(dataContextVariable);
 				if (result == null) result = caseElement(dataContextVariable);
@@ -536,7 +517,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.DOMAIN_CONCEPT: {
 				DomainConcept domainConcept = (DomainConcept)theEObject;
-				Object result = caseDomainConcept(domainConcept);
+				T result = caseDomainConcept(domainConcept);
 				if (result == null) result = caseDomainElement(domainConcept);
 				if (result == null) result = caseNamedElement(domainConcept);
 				if (result == null) result = caseElement(domainConcept);
@@ -545,7 +526,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.FEATURE_CONCEPT: {
 				FeatureConcept featureConcept = (FeatureConcept)theEObject;
-				Object result = caseFeatureConcept(featureConcept);
+				T result = caseFeatureConcept(featureConcept);
 				if (result == null) result = caseDomainElement(featureConcept);
 				if (result == null) result = caseNamedElement(featureConcept);
 				if (result == null) result = caseElement(featureConcept);
@@ -554,7 +535,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.BEHAVIOR_CONCEPT: {
 				BehaviorConcept behaviorConcept = (BehaviorConcept)theEObject;
-				Object result = caseBehaviorConcept(behaviorConcept);
+				T result = caseBehaviorConcept(behaviorConcept);
 				if (result == null) result = caseDomainElement(behaviorConcept);
 				if (result == null) result = caseNamedElement(behaviorConcept);
 				if (result == null) result = caseElement(behaviorConcept);
@@ -563,7 +544,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.BEHAVIORAL_FEATURE_CONCEPT: {
 				BehavioralFeatureConcept behavioralFeatureConcept = (BehavioralFeatureConcept)theEObject;
-				Object result = caseBehavioralFeatureConcept(behavioralFeatureConcept);
+				T result = caseBehavioralFeatureConcept(behavioralFeatureConcept);
 				if (result == null) result = caseDomainElement(behavioralFeatureConcept);
 				if (result == null) result = caseNamedElement(behavioralFeatureConcept);
 				if (result == null) result = caseElement(behavioralFeatureConcept);
@@ -572,7 +553,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.UML_BEHAVIOR: {
 				UMLBehavior umlBehavior = (UMLBehavior)theEObject;
-				Object result = caseUMLBehavior(umlBehavior);
+				T result = caseUMLBehavior(umlBehavior);
 				if (result == null) result = caseBehaviorConcept(umlBehavior);
 				if (result == null) result = caseDomainElement(umlBehavior);
 				if (result == null) result = caseNamedElement(umlBehavior);
@@ -582,7 +563,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.UML_BEHAVIORAL_FEATURE: {
 				UMLBehavioralFeature umlBehavioralFeature = (UMLBehavioralFeature)theEObject;
-				Object result = caseUMLBehavioralFeature(umlBehavioralFeature);
+				T result = caseUMLBehavioralFeature(umlBehavioralFeature);
 				if (result == null) result = caseBehavioralFeatureConcept(umlBehavioralFeature);
 				if (result == null) result = caseDomainElement(umlBehavioralFeature);
 				if (result == null) result = caseNamedElement(umlBehavioralFeature);
@@ -592,7 +573,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.UML_DOMAIN_CONCEPT: {
 				UMLDomainConcept umlDomainConcept = (UMLDomainConcept)theEObject;
-				Object result = caseUMLDomainConcept(umlDomainConcept);
+				T result = caseUMLDomainConcept(umlDomainConcept);
 				if (result == null) result = caseDomainConcept(umlDomainConcept);
 				if (result == null) result = caseDomainElement(umlDomainConcept);
 				if (result == null) result = caseNamedElement(umlDomainConcept);
@@ -602,7 +583,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.UML_STRUCTURAL_FEATURE: {
 				UMLStructuralFeature umlStructuralFeature = (UMLStructuralFeature)theEObject;
-				Object result = caseUMLStructuralFeature(umlStructuralFeature);
+				T result = caseUMLStructuralFeature(umlStructuralFeature);
 				if (result == null) result = caseFeatureConcept(umlStructuralFeature);
 				if (result == null) result = caseDomainElement(umlStructuralFeature);
 				if (result == null) result = caseNamedElement(umlStructuralFeature);
@@ -612,7 +593,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.ACTIVITY_CONCEPT: {
 				ActivityConcept activityConcept = (ActivityConcept)theEObject;
-				Object result = caseActivityConcept(activityConcept);
+				T result = caseActivityConcept(activityConcept);
 				if (result == null) result = caseNamedElement(activityConcept);
 				if (result == null) result = caseElement(activityConcept);
 				if (result == null) result = defaultCase(theEObject);
@@ -620,7 +601,7 @@ public class CoreSwitch {
 			}
 			case CorePackage.DOMAIN_ELEMENT: {
 				DomainElement domainElement = (DomainElement)theEObject;
-				Object result = caseDomainElement(domainElement);
+				T result = caseDomainElement(domainElement);
 				if (result == null) result = caseNamedElement(domainElement);
 				if (result == null) result = caseElement(domainElement);
 				if (result == null) result = defaultCase(theEObject);
@@ -641,7 +622,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseInteractionFlow(InteractionFlow object) {
+	public T caseInteractionFlow(InteractionFlow object) {
 		return null;
 	}
 
@@ -656,7 +637,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseInteractionFlowExpression(InteractionFlowExpression object) {
+	public T caseInteractionFlowExpression(InteractionFlowExpression object) {
 		return null;
 	}
 
@@ -671,7 +652,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseSystemEvent(SystemEvent object) {
+	public T caseSystemEvent(SystemEvent object) {
 		return null;
 	}
 
@@ -686,7 +667,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseParameterBinding(ParameterBinding object) {
+	public T caseParameterBinding(ParameterBinding object) {
 		return null;
 	}
 
@@ -701,7 +682,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseActionEvent(ActionEvent object) {
+	public T caseActionEvent(ActionEvent object) {
 		return null;
 	}
 
@@ -716,7 +697,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseDomainModel(DomainModel object) {
+	public T caseDomainModel(DomainModel object) {
 		return null;
 	}
 
@@ -731,7 +712,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseNamedElement(NamedElement object) {
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 
@@ -746,7 +727,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object casePortDefinition(PortDefinition object) {
+	public T casePortDefinition(PortDefinition object) {
 		return null;
 	}
 
@@ -761,7 +742,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseContentBinding(ContentBinding object) {
+	public T caseContentBinding(ContentBinding object) {
 		return null;
 	}
 
@@ -776,7 +757,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseViewElement(ViewElement object) {
+	public T caseViewElement(ViewElement object) {
 		return null;
 	}
 
@@ -791,7 +772,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseExpression(Expression object) {
+	public T caseExpression(Expression object) {
 		return null;
 	}
 
@@ -806,7 +787,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseDynamicBehavior(DynamicBehavior object) {
+	public T caseDynamicBehavior(DynamicBehavior object) {
 		return null;
 	}
 
@@ -821,7 +802,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseViewpoint(Viewpoint object) {
+	public T caseViewpoint(Viewpoint object) {
 		return null;
 	}
 
@@ -836,7 +817,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseDataFlow(DataFlow object) {
+	public T caseDataFlow(DataFlow object) {
 		return null;
 	}
 
@@ -851,7 +832,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseViewComponentPart(ViewComponentPart object) {
+	public T caseViewComponentPart(ViewComponentPart object) {
 		return null;
 	}
 
@@ -866,7 +847,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseViewContainer(ViewContainer object) {
+	public T caseViewContainer(ViewContainer object) {
 		return null;
 	}
 
@@ -881,7 +862,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseActivationExpression(ActivationExpression object) {
+	public T caseActivationExpression(ActivationExpression object) {
 		return null;
 	}
 
@@ -896,7 +877,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseInteractionFlowModel(InteractionFlowModel object) {
+	public T caseInteractionFlowModel(InteractionFlowModel object) {
 		return null;
 	}
 
@@ -911,7 +892,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseContextDimension(ContextDimension object) {
+	public T caseContextDimension(ContextDimension object) {
 		return null;
 	}
 
@@ -926,7 +907,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIFMLModel(IFMLModel object) {
+	public T caseIFMLModel(IFMLModel object) {
 		return null;
 	}
 
@@ -941,7 +922,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseModuleDefinition(ModuleDefinition object) {
+	public T caseModuleDefinition(ModuleDefinition object) {
 		return null;
 	}
 
@@ -956,7 +937,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBooleanExpression(BooleanExpression object) {
+	public T caseBooleanExpression(BooleanExpression object) {
 		return null;
 	}
 
@@ -971,7 +952,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseInteractionFlowElement(InteractionFlowElement object) {
+	public T caseInteractionFlowElement(InteractionFlowElement object) {
 		return null;
 	}
 
@@ -986,7 +967,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIFMLAction(IFMLAction object) {
+	public T caseIFMLAction(IFMLAction object) {
 		return null;
 	}
 
@@ -1001,7 +982,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseNavigationFlow(NavigationFlow object) {
+	public T caseNavigationFlow(NavigationFlow object) {
 		return null;
 	}
 
@@ -1016,7 +997,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseParameterBindingGroup(ParameterBindingGroup object) {
+	public T caseParameterBindingGroup(ParameterBindingGroup object) {
 		return null;
 	}
 
@@ -1031,7 +1012,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseElement(Element object) {
+	public T caseElement(Element object) {
 		return null;
 	}
 
@@ -1046,7 +1027,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseConstraint(Constraint object) {
+	public T caseConstraint(Constraint object) {
 		return null;
 	}
 
@@ -1061,7 +1042,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseViewComponent(ViewComponent object) {
+	public T caseViewComponent(ViewComponent object) {
 		return null;
 	}
 
@@ -1076,7 +1057,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIFMLParameter(IFMLParameter object) {
+	public T caseIFMLParameter(IFMLParameter object) {
 		return null;
 	}
 
@@ -1091,7 +1072,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseDataBinding(DataBinding object) {
+	public T caseDataBinding(DataBinding object) {
 		return null;
 	}
 
@@ -1106,7 +1087,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseConditionalExpression(ConditionalExpression object) {
+	public T caseConditionalExpression(ConditionalExpression object) {
 		return null;
 	}
 
@@ -1121,7 +1102,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseContext(Context object) {
+	public T caseContext(Context object) {
 		return null;
 	}
 
@@ -1136,7 +1117,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseVisualizationAttribute(VisualizationAttribute object) {
+	public T caseVisualizationAttribute(VisualizationAttribute object) {
 		return null;
 	}
 
@@ -1151,7 +1132,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseEvent(Event object) {
+	public T caseEvent(Event object) {
 		return null;
 	}
 
@@ -1166,7 +1147,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseInteractionFlowModelElement(InteractionFlowModelElement object) {
+	public T caseInteractionFlowModelElement(InteractionFlowModelElement object) {
 		return null;
 	}
 
@@ -1181,7 +1162,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseViewElementEvent(ViewElementEvent object) {
+	public T caseViewElementEvent(ViewElementEvent object) {
 		return null;
 	}
 
@@ -1196,7 +1177,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseAnnotation(Annotation object) {
+	public T caseAnnotation(Annotation object) {
 		return null;
 	}
 
@@ -1211,7 +1192,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseModulePackage(ModulePackage object) {
+	public T caseModulePackage(ModulePackage object) {
 		return null;
 	}
 
@@ -1226,7 +1207,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseModularizationElement(ModularizationElement object) {
+	public T caseModularizationElement(ModularizationElement object) {
 		return null;
 	}
 
@@ -1241,7 +1222,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIFMLModule(IFMLModule object) {
+	public T caseIFMLModule(IFMLModule object) {
 		return null;
 	}
 
@@ -1256,7 +1237,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIFMLPort(IFMLPort object) {
+	public T caseIFMLPort(IFMLPort object) {
 		return null;
 	}
 
@@ -1271,7 +1252,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseCatchingEvent(CatchingEvent object) {
+	public T caseCatchingEvent(CatchingEvent object) {
 		return null;
 	}
 
@@ -1286,7 +1267,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseThrowingEvent(ThrowingEvent object) {
+	public T caseThrowingEvent(ThrowingEvent object) {
 		return null;
 	}
 
@@ -1301,7 +1282,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBPMNActivityConcept(BPMNActivityConcept object) {
+	public T caseBPMNActivityConcept(BPMNActivityConcept object) {
 		return null;
 	}
 
@@ -1316,7 +1297,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseContextVariable(ContextVariable object) {
+	public T caseContextVariable(ContextVariable object) {
 		return null;
 	}
 
@@ -1331,7 +1312,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseSimpleContextVariable(SimpleContextVariable object) {
+	public T caseSimpleContextVariable(SimpleContextVariable object) {
 		return null;
 	}
 
@@ -1346,7 +1327,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseDataContextVariable(DataContextVariable object) {
+	public T caseDataContextVariable(DataContextVariable object) {
 		return null;
 	}
 
@@ -1361,7 +1342,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseDomainConcept(DomainConcept object) {
+	public T caseDomainConcept(DomainConcept object) {
 		return null;
 	}
 
@@ -1376,7 +1357,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseFeatureConcept(FeatureConcept object) {
+	public T caseFeatureConcept(FeatureConcept object) {
 		return null;
 	}
 
@@ -1391,7 +1372,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBehaviorConcept(BehaviorConcept object) {
+	public T caseBehaviorConcept(BehaviorConcept object) {
 		return null;
 	}
 
@@ -1406,7 +1387,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBehavioralFeatureConcept(BehavioralFeatureConcept object) {
+	public T caseBehavioralFeatureConcept(BehavioralFeatureConcept object) {
 		return null;
 	}
 
@@ -1421,7 +1402,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseUMLBehavior(UMLBehavior object) {
+	public T caseUMLBehavior(UMLBehavior object) {
 		return null;
 	}
 
@@ -1436,7 +1417,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseUMLBehavioralFeature(UMLBehavioralFeature object) {
+	public T caseUMLBehavioralFeature(UMLBehavioralFeature object) {
 		return null;
 	}
 
@@ -1451,7 +1432,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseUMLDomainConcept(UMLDomainConcept object) {
+	public T caseUMLDomainConcept(UMLDomainConcept object) {
 		return null;
 	}
 
@@ -1466,7 +1447,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseUMLStructuralFeature(UMLStructuralFeature object) {
+	public T caseUMLStructuralFeature(UMLStructuralFeature object) {
 		return null;
 	}
 
@@ -1481,7 +1462,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseActivityConcept(ActivityConcept object) {
+	public T caseActivityConcept(ActivityConcept object) {
 		return null;
 	}
 
@@ -1496,7 +1477,7 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseDomainElement(DomainElement object) {
+	public T caseDomainElement(DomainElement object) {
 		return null;
 	}
 
@@ -1511,7 +1492,8 @@ public class CoreSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	public Object defaultCase(EObject object) {
+	@Override
+	public T defaultCase(EObject object) {
 		return null;
 	}
 

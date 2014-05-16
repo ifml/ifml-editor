@@ -43,7 +43,7 @@ public class ContextImpl extends ElementImpl implements Context {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList contextDimensions;
+	protected EList<ContextDimension> contextDimensions;
 
 	/**
 	 * The cached value of the '{@link #getContextVariables() <em>Context Variables</em>}' containment reference list.
@@ -53,7 +53,7 @@ public class ContextImpl extends ElementImpl implements Context {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList contextVariables;
+	protected EList<ContextVariable> contextVariables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,6 +69,7 @@ public class ContextImpl extends ElementImpl implements Context {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.CONTEXT;
 	}
@@ -78,9 +79,9 @@ public class ContextImpl extends ElementImpl implements Context {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getContextDimensions() {
+	public EList<ContextDimension> getContextDimensions() {
 		if (contextDimensions == null) {
-			contextDimensions = new EObjectContainmentEList(ContextDimension.class, this, CorePackage.CONTEXT__CONTEXT_DIMENSIONS);
+			contextDimensions = new EObjectContainmentEList<ContextDimension>(ContextDimension.class, this, CorePackage.CONTEXT__CONTEXT_DIMENSIONS);
 		}
 		return contextDimensions;
 	}
@@ -90,9 +91,9 @@ public class ContextImpl extends ElementImpl implements Context {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getContextVariables() {
+	public EList<ContextVariable> getContextVariables() {
 		if (contextVariables == null) {
-			contextVariables = new EObjectContainmentWithInverseEList(ContextVariable.class, this, CorePackage.CONTEXT__CONTEXT_VARIABLES, CorePackage.CONTEXT_VARIABLE__CONTEXT);
+			contextVariables = new EObjectContainmentWithInverseEList<ContextVariable>(ContextVariable.class, this, CorePackage.CONTEXT__CONTEXT_VARIABLES, CorePackage.CONTEXT_VARIABLE__CONTEXT);
 		}
 		return contextVariables;
 	}
@@ -102,10 +103,12 @@ public class ContextImpl extends ElementImpl implements Context {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.CONTEXT__CONTEXT_VARIABLES:
-				return ((InternalEList)getContextVariables()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getContextVariables()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -115,12 +118,13 @@ public class ContextImpl extends ElementImpl implements Context {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.CONTEXT__CONTEXT_DIMENSIONS:
-				return ((InternalEList)getContextDimensions()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getContextDimensions()).basicRemove(otherEnd, msgs);
 			case CorePackage.CONTEXT__CONTEXT_VARIABLES:
-				return ((InternalEList)getContextVariables()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getContextVariables()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -130,6 +134,7 @@ public class ContextImpl extends ElementImpl implements Context {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.CONTEXT__CONTEXT_DIMENSIONS:
@@ -145,15 +150,17 @@ public class ContextImpl extends ElementImpl implements Context {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.CONTEXT__CONTEXT_DIMENSIONS:
 				getContextDimensions().clear();
-				getContextDimensions().addAll((Collection)newValue);
+				getContextDimensions().addAll((Collection<? extends ContextDimension>)newValue);
 				return;
 			case CorePackage.CONTEXT__CONTEXT_VARIABLES:
 				getContextVariables().clear();
-				getContextVariables().addAll((Collection)newValue);
+				getContextVariables().addAll((Collection<? extends ContextVariable>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -164,6 +171,7 @@ public class ContextImpl extends ElementImpl implements Context {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.CONTEXT__CONTEXT_DIMENSIONS:
@@ -181,6 +189,7 @@ public class ContextImpl extends ElementImpl implements Context {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.CONTEXT__CONTEXT_DIMENSIONS:

@@ -40,7 +40,7 @@ public class ModulePackageImpl extends ModularizationElementImpl implements Modu
 	 * @generated
 	 * @ordered
 	 */
-	protected EList modularizationElements;
+	protected EList<ModularizationElement> modularizationElements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -56,6 +56,7 @@ public class ModulePackageImpl extends ModularizationElementImpl implements Modu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.MODULE_PACKAGE;
 	}
@@ -65,9 +66,9 @@ public class ModulePackageImpl extends ModularizationElementImpl implements Modu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getModularizationElements() {
+	public EList<ModularizationElement> getModularizationElements() {
 		if (modularizationElements == null) {
-			modularizationElements = new EObjectContainmentWithInverseEList(ModularizationElement.class, this, CorePackage.MODULE_PACKAGE__MODULARIZATION_ELEMENTS, CorePackage.MODULARIZATION_ELEMENT__MODULE_PACKAGE);
+			modularizationElements = new EObjectContainmentWithInverseEList<ModularizationElement>(ModularizationElement.class, this, CorePackage.MODULE_PACKAGE__MODULARIZATION_ELEMENTS, CorePackage.MODULARIZATION_ELEMENT__MODULE_PACKAGE);
 		}
 		return modularizationElements;
 	}
@@ -77,10 +78,12 @@ public class ModulePackageImpl extends ModularizationElementImpl implements Modu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.MODULE_PACKAGE__MODULARIZATION_ELEMENTS:
-				return ((InternalEList)getModularizationElements()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getModularizationElements()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -90,10 +93,11 @@ public class ModulePackageImpl extends ModularizationElementImpl implements Modu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.MODULE_PACKAGE__MODULARIZATION_ELEMENTS:
-				return ((InternalEList)getModularizationElements()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getModularizationElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -103,6 +107,7 @@ public class ModulePackageImpl extends ModularizationElementImpl implements Modu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.MODULE_PACKAGE__MODULARIZATION_ELEMENTS:
@@ -116,11 +121,13 @@ public class ModulePackageImpl extends ModularizationElementImpl implements Modu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.MODULE_PACKAGE__MODULARIZATION_ELEMENTS:
 				getModularizationElements().clear();
-				getModularizationElements().addAll((Collection)newValue);
+				getModularizationElements().addAll((Collection<? extends ModularizationElement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -131,6 +138,7 @@ public class ModulePackageImpl extends ModularizationElementImpl implements Modu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.MODULE_PACKAGE__MODULARIZATION_ELEMENTS:
@@ -145,6 +153,7 @@ public class ModulePackageImpl extends ModularizationElementImpl implements Modu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.MODULE_PACKAGE__MODULARIZATION_ELEMENTS:

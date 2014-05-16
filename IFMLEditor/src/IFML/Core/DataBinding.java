@@ -35,10 +35,10 @@ public interface DataBinding extends ContentBinding {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Conditional Expression</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getDataBinding_ConditionalExpression()
-	 * @model type="IFML.Core.ConditionalExpression" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getConditionalExpression();
+	EList<ConditionalExpression> getConditionalExpression();
 
 	/**
 	 * Returns the value of the '<em><b>Visualization Attribute</b></em>' containment reference list.
@@ -51,10 +51,10 @@ public interface DataBinding extends ContentBinding {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Visualization Attribute</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getDataBinding_VisualizationAttribute()
-	 * @model type="IFML.Core.VisualizationAttribute" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getVisualizationAttribute();
+	EList<VisualizationAttribute> getVisualizationAttribute();
 
 	/**
 	 * Returns the value of the '<em><b>Data Context Variables</b></em>' reference list.
@@ -69,10 +69,10 @@ public interface DataBinding extends ContentBinding {
 	 * @return the value of the '<em>Data Context Variables</em>' reference list.
 	 * @see IFML.Core.CorePackage#getDataBinding_DataContextVariables()
 	 * @see IFML.Core.DataContextVariable#getDataBinding
-	 * @model type="IFML.Core.DataContextVariable" opposite="dataBinding" ordered="false"
+	 * @model opposite="dataBinding" ordered="false"
 	 * @generated
 	 */
-	EList getDataContextVariables();
+	EList<DataContextVariable> getDataContextVariables();
 
 	/**
 	 * Returns the value of the '<em><b>Domain Concept</b></em>' reference.

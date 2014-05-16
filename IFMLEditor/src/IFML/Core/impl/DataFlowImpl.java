@@ -31,6 +31,7 @@ public class DataFlowImpl extends InteractionFlowImpl implements DataFlow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.DATA_FLOW;
 	}

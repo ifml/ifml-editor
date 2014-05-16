@@ -40,7 +40,7 @@ public class InteractionFlowModelImpl extends NamedElementImpl implements Intera
 	 * @generated
 	 * @ordered
 	 */
-	protected EList interactionFlowModelElements;
+	protected EList<InteractionFlowModelElement> interactionFlowModelElements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -56,6 +56,7 @@ public class InteractionFlowModelImpl extends NamedElementImpl implements Intera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.INTERACTION_FLOW_MODEL;
 	}
@@ -65,9 +66,9 @@ public class InteractionFlowModelImpl extends NamedElementImpl implements Intera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getInteractionFlowModelElements() {
+	public EList<InteractionFlowModelElement> getInteractionFlowModelElements() {
 		if (interactionFlowModelElements == null) {
-			interactionFlowModelElements = new EObjectContainmentEList(InteractionFlowModelElement.class, this, CorePackage.INTERACTION_FLOW_MODEL__INTERACTION_FLOW_MODEL_ELEMENTS);
+			interactionFlowModelElements = new EObjectContainmentEList<InteractionFlowModelElement>(InteractionFlowModelElement.class, this, CorePackage.INTERACTION_FLOW_MODEL__INTERACTION_FLOW_MODEL_ELEMENTS);
 		}
 		return interactionFlowModelElements;
 	}
@@ -77,10 +78,11 @@ public class InteractionFlowModelImpl extends NamedElementImpl implements Intera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW_MODEL__INTERACTION_FLOW_MODEL_ELEMENTS:
-				return ((InternalEList)getInteractionFlowModelElements()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInteractionFlowModelElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -90,6 +92,7 @@ public class InteractionFlowModelImpl extends NamedElementImpl implements Intera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW_MODEL__INTERACTION_FLOW_MODEL_ELEMENTS:
@@ -103,11 +106,13 @@ public class InteractionFlowModelImpl extends NamedElementImpl implements Intera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW_MODEL__INTERACTION_FLOW_MODEL_ELEMENTS:
 				getInteractionFlowModelElements().clear();
-				getInteractionFlowModelElements().addAll((Collection)newValue);
+				getInteractionFlowModelElements().addAll((Collection<? extends InteractionFlowModelElement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -118,6 +123,7 @@ public class InteractionFlowModelImpl extends NamedElementImpl implements Intera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW_MODEL__INTERACTION_FLOW_MODEL_ELEMENTS:
@@ -132,6 +138,7 @@ public class InteractionFlowModelImpl extends NamedElementImpl implements Intera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW_MODEL__INTERACTION_FLOW_MODEL_ELEMENTS:

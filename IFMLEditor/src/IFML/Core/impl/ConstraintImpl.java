@@ -31,6 +31,7 @@ public class ConstraintImpl extends BooleanExpressionImpl implements Constraint 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.CONSTRAINT;
 	}
