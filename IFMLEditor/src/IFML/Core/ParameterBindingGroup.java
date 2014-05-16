@@ -32,9 +32,9 @@ public interface ParameterBindingGroup extends InteractionFlowModelElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameter Bindings</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getParameterBindingGroup_ParameterBindings()
-	 * @model type="IFML.Core.ParameterBinding" containment="true" required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
-	EList getParameterBindings();
+	EList<ParameterBinding> getParameterBindings();
 
 } // ParameterBindingGroup

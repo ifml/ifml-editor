@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -224,6 +225,9 @@ public class ExtensionsPackageImpl extends EPackageImpl implements ExtensionsPac
 		ExtensionsPackageImpl theExtensionsPackage = (ExtensionsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExtensionsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ExtensionsPackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		DataTypesPackageImpl theDataTypesPackage = (DataTypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI) instanceof DataTypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DataTypesPackage.eNS_URI) : DataTypesPackage.eINSTANCE);
@@ -572,6 +576,10 @@ public class ExtensionsPackageImpl extends EPackageImpl implements ExtensionsPac
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
+		// Create type parameters
+
+		// Set bounds for type parameters
+
 		// Add supertypes to classes
 		onSubmitEventEClass.getESuperTypes().add(theCorePackage.getViewElementEvent());
 		validationRuleEClass.getESuperTypes().add(theCorePackage.getConstraint());
@@ -595,7 +603,7 @@ public class ExtensionsPackageImpl extends EPackageImpl implements ExtensionsPac
 		landingEventEClass.getESuperTypes().add(theCorePackage.getCatchingEvent());
 		setContextEventEClass.getESuperTypes().add(theCorePackage.getThrowingEvent());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(onSubmitEventEClass, OnSubmitEvent.class, "OnSubmitEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(validationRuleEClass, ValidationRule.class, "ValidationRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

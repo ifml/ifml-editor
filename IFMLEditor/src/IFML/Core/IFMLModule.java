@@ -63,9 +63,9 @@ public interface IFMLModule extends NamedElement, InteractionFlowElement {
 	 * @return the value of the '<em>Ports</em>' reference list.
 	 * @see IFML.Core.CorePackage#getIFMLModule_Ports()
 	 * @see IFML.Core.IFMLPort#getModule
-	 * @model type="IFML.Core.IFMLPort" opposite="module" ordered="false"
+	 * @model opposite="module" ordered="false"
 	 * @generated
 	 */
-	EList getPorts();
+	EList<IFMLPort> getPorts();
 
 } // IFMLModule

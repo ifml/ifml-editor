@@ -34,9 +34,9 @@ public interface ModulePackage extends ModularizationElement {
 	 * @return the value of the '<em>Modularization Elements</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getModulePackage_ModularizationElements()
 	 * @see IFML.Core.ModularizationElement#getModulePackage
-	 * @model type="IFML.Core.ModularizationElement" opposite="modulePackage" containment="true" ordered="false"
+	 * @model opposite="modulePackage" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getModularizationElements();
+	EList<ModularizationElement> getModularizationElements();
 
 } // ModulePackage

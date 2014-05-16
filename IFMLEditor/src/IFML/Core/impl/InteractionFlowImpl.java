@@ -67,6 +67,7 @@ public abstract class InteractionFlowImpl extends InteractionFlowModelElementImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.INTERACTION_FLOW;
 	}
@@ -220,6 +221,7 @@ public abstract class InteractionFlowImpl extends InteractionFlowModelElementImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW__SOURCE_INTERACTION_FLOW_ELEMENT:
@@ -239,6 +241,7 @@ public abstract class InteractionFlowImpl extends InteractionFlowModelElementImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW__PARAMETER_BINDING_GROUP:
@@ -256,6 +259,7 @@ public abstract class InteractionFlowImpl extends InteractionFlowModelElementImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case CorePackage.INTERACTION_FLOW__SOURCE_INTERACTION_FLOW_ELEMENT:
@@ -269,6 +273,7 @@ public abstract class InteractionFlowImpl extends InteractionFlowModelElementImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW__PARAMETER_BINDING_GROUP:
@@ -287,6 +292,7 @@ public abstract class InteractionFlowImpl extends InteractionFlowModelElementImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW__PARAMETER_BINDING_GROUP:
@@ -307,6 +313,7 @@ public abstract class InteractionFlowImpl extends InteractionFlowModelElementImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW__PARAMETER_BINDING_GROUP:
@@ -327,6 +334,7 @@ public abstract class InteractionFlowImpl extends InteractionFlowModelElementImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW__PARAMETER_BINDING_GROUP:

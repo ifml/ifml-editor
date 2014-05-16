@@ -7,6 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: IFML.DataTypes.presentation.IFMLMetamodelEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: IFML.Core.presentation,
  IFML.DataTypes.presentation,
  IFML.Extensions.presentation
@@ -15,6 +16,8 @@ Require-Bundle: org.eclipse.core.runtime,
  IFMLEditor.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
- org.eclipse.ui.ide;visibility:=reexport
+ org.eclipse.ui.ide;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
+ org.eclipse.uml2.uml.edit;visibility:=reexport
 Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy

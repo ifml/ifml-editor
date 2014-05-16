@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface DomainModel extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Domain Elements</b></em>' reference list.
+	 * Returns the value of the '<em><b>Domain Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link IFML.Core.DomainElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -30,11 +30,11 @@ public interface DomainModel extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Domain Elements</em>' reference list.
+	 * @return the value of the '<em>Domain Elements</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getDomainModel_DomainElements()
-	 * @model type="IFML.Core.DomainElement" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getDomainElements();
+	EList<DomainElement> getDomainElements();
 
 } // DomainModel

@@ -42,7 +42,7 @@ public class LandingEventImpl extends CatchingEventImpl implements LandingEvent 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList jumpingEvents;
+	protected EList<JumpEvent> jumpingEvents;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,6 +58,7 @@ public class LandingEventImpl extends CatchingEventImpl implements LandingEvent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.LANDING_EVENT;
 	}
@@ -67,9 +68,9 @@ public class LandingEventImpl extends CatchingEventImpl implements LandingEvent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getJumpingEvents() {
+	public EList<JumpEvent> getJumpingEvents() {
 		if (jumpingEvents == null) {
-			jumpingEvents = new EObjectWithInverseResolvingEList(JumpEvent.class, this, ExtensionsPackage.LANDING_EVENT__JUMPING_EVENTS, ExtensionsPackage.JUMP_EVENT__LANDING_EVENT);
+			jumpingEvents = new EObjectWithInverseResolvingEList<JumpEvent>(JumpEvent.class, this, ExtensionsPackage.LANDING_EVENT__JUMPING_EVENTS, ExtensionsPackage.JUMP_EVENT__LANDING_EVENT);
 		}
 		return jumpingEvents;
 	}
@@ -79,10 +80,12 @@ public class LandingEventImpl extends CatchingEventImpl implements LandingEvent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ExtensionsPackage.LANDING_EVENT__JUMPING_EVENTS:
-				return ((InternalEList)getJumpingEvents()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getJumpingEvents()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -92,10 +95,11 @@ public class LandingEventImpl extends CatchingEventImpl implements LandingEvent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ExtensionsPackage.LANDING_EVENT__JUMPING_EVENTS:
-				return ((InternalEList)getJumpingEvents()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getJumpingEvents()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -105,6 +109,7 @@ public class LandingEventImpl extends CatchingEventImpl implements LandingEvent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ExtensionsPackage.LANDING_EVENT__JUMPING_EVENTS:
@@ -118,11 +123,13 @@ public class LandingEventImpl extends CatchingEventImpl implements LandingEvent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ExtensionsPackage.LANDING_EVENT__JUMPING_EVENTS:
 				getJumpingEvents().clear();
-				getJumpingEvents().addAll((Collection)newValue);
+				getJumpingEvents().addAll((Collection<? extends JumpEvent>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,6 +140,7 @@ public class LandingEventImpl extends CatchingEventImpl implements LandingEvent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ExtensionsPackage.LANDING_EVENT__JUMPING_EVENTS:
@@ -147,6 +155,7 @@ public class LandingEventImpl extends CatchingEventImpl implements LandingEvent 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ExtensionsPackage.LANDING_EVENT__JUMPING_EVENTS:

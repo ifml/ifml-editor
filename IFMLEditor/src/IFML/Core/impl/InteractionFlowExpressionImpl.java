@@ -36,7 +36,7 @@ public class InteractionFlowExpressionImpl extends ExpressionImpl implements Int
 	 * @generated
 	 * @ordered
 	 */
-	protected EList interactionFlow;
+	protected EList<InteractionFlow> interactionFlow;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -52,6 +52,7 @@ public class InteractionFlowExpressionImpl extends ExpressionImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.INTERACTION_FLOW_EXPRESSION;
 	}
@@ -61,9 +62,9 @@ public class InteractionFlowExpressionImpl extends ExpressionImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getInteractionFlow() {
+	public EList<InteractionFlow> getInteractionFlow() {
 		if (interactionFlow == null) {
-			interactionFlow = new EObjectResolvingEList(InteractionFlow.class, this, CorePackage.INTERACTION_FLOW_EXPRESSION__INTERACTION_FLOW);
+			interactionFlow = new EObjectResolvingEList<InteractionFlow>(InteractionFlow.class, this, CorePackage.INTERACTION_FLOW_EXPRESSION__INTERACTION_FLOW);
 		}
 		return interactionFlow;
 	}
@@ -73,6 +74,7 @@ public class InteractionFlowExpressionImpl extends ExpressionImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW_EXPRESSION__INTERACTION_FLOW:
@@ -86,11 +88,13 @@ public class InteractionFlowExpressionImpl extends ExpressionImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW_EXPRESSION__INTERACTION_FLOW:
 				getInteractionFlow().clear();
-				getInteractionFlow().addAll((Collection)newValue);
+				getInteractionFlow().addAll((Collection<? extends InteractionFlow>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -101,6 +105,7 @@ public class InteractionFlowExpressionImpl extends ExpressionImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW_EXPRESSION__INTERACTION_FLOW:
@@ -115,6 +120,7 @@ public class InteractionFlowExpressionImpl extends ExpressionImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.INTERACTION_FLOW_EXPRESSION__INTERACTION_FLOW:

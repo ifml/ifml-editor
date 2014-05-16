@@ -5,8 +5,7 @@ package IFML.DataTypes;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import org.eclipse.emf.common.util.AbstractEnumerator;
+import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +16,35 @@ import org.eclipse.emf.common.util.AbstractEnumerator;
  * @model
  * @generated
  */
-public final class Direction extends AbstractEnumerator {
+public enum Direction implements Enumerator
+{
+	/**
+	 * The '<em><b>In</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #IN_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	IN(0, "in", "in"),
+	/**
+	 * The '<em><b>Out</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #OUT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	OUT(0, "out", "out"),
+	/**
+	 * The '<em><b>Inout</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #INOUT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	INOUT(0, "inout", "inout");
 	/**
 	 * The '<em><b>In</b></em>' literal value.
 	 * <!-- begin-user-doc -->
@@ -26,12 +53,12 @@ public final class Direction extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #IN_LITERAL
+	 * @see #IN
 	 * @model name="in"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int IN = 0;
+	public static final int IN_VALUE = 0;
 
 	/**
 	 * The '<em><b>Out</b></em>' literal value.
@@ -41,12 +68,12 @@ public final class Direction extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #OUT_LITERAL
+	 * @see #OUT
 	 * @model name="out"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OUT = 0;
+	public static final int OUT_VALUE = 0;
 
 	/**
 	 * The '<em><b>Inout</b></em>' literal value.
@@ -56,42 +83,12 @@ public final class Direction extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #INOUT_LITERAL
+	 * @see #INOUT
 	 * @model name="inout"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INOUT = 0;
-
-	/**
-	 * The '<em><b>In</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #IN
-	 * @generated
-	 * @ordered
-	 */
-	public static final Direction IN_LITERAL = new Direction(IN, "in", "in");
-
-	/**
-	 * The '<em><b>Out</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #OUT
-	 * @generated
-	 * @ordered
-	 */
-	public static final Direction OUT_LITERAL = new Direction(OUT, "out", "out");
-
-	/**
-	 * The '<em><b>Inout</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #INOUT
-	 * @generated
-	 * @ordered
-	 */
-	public static final Direction INOUT_LITERAL = new Direction(INOUT, "inout", "inout");
+	public static final int INOUT_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>Direction</b></em>' enumerators.
@@ -101,9 +98,9 @@ public final class Direction extends AbstractEnumerator {
 	 */
 	private static final Direction[] VALUES_ARRAY =
 		new Direction[] {
-			IN_LITERAL,
-			OUT_LITERAL,
-			INOUT_LITERAL,
+			IN,
+			OUT,
+			INOUT,
 		};
 
 	/**
@@ -112,7 +109,7 @@ public final class Direction extends AbstractEnumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<Direction> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Direction</b></em>' literal with the specified literal value.
@@ -154,10 +151,31 @@ public final class Direction extends AbstractEnumerator {
 	 */
 	public static Direction get(int value) {
 		switch (value) {
-			case IN: return IN_LITERAL;
+			case IN_VALUE: return IN;
 		}
 		return null;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final int value;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String name;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String literal;
 
 	/**
 	 * Only this class can construct instances.
@@ -166,7 +184,46 @@ public final class Direction extends AbstractEnumerator {
 	 * @generated
 	 */
 	private Direction(int value, String name, String literal) {
-		super(value, name, literal);
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
 	}
 
-} //Direction
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getValue() {
+	  return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+	  return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLiteral() {
+	  return literal;
+	}
+
+	/**
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		return literal;
+	}
+}

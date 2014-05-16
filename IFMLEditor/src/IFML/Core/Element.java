@@ -62,10 +62,10 @@ public interface Element extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Constraints</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getElement_Constraints()
-	 * @model type="IFML.Core.Constraint" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getConstraints();
+	EList<Constraint> getConstraints();
 
 	/**
 	 * Returns the value of the '<em><b>Annotations</b></em>' containment reference list.
@@ -78,9 +78,9 @@ public interface Element extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Annotations</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getElement_Annotations()
-	 * @model type="IFML.Core.Annotation" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getAnnotations();
+	EList<Annotation> getAnnotations();
 
 } // Element

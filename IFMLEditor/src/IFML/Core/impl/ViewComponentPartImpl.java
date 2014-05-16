@@ -47,7 +47,7 @@ public class ViewComponentPartImpl extends InteractionFlowElementImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EList viewElementEvents;
+	protected EList<ViewElementEvent> viewElementEvents;
 
 	/**
 	 * The cached value of the '{@link #getActivationExpression() <em>Activation Expression</em>}' reference.
@@ -77,7 +77,7 @@ public class ViewComponentPartImpl extends InteractionFlowElementImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EList subViewComponentParts;
+	protected EList<ViewComponentPart> subViewComponentParts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,6 +93,7 @@ public class ViewComponentPartImpl extends InteractionFlowElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.VIEW_COMPONENT_PART;
 	}
@@ -102,9 +103,9 @@ public class ViewComponentPartImpl extends InteractionFlowElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getViewElementEvents() {
+	public EList<ViewElementEvent> getViewElementEvents() {
 		if (viewElementEvents == null) {
-			viewElementEvents = new EObjectContainmentEList(ViewElementEvent.class, this, CorePackage.VIEW_COMPONENT_PART__VIEW_ELEMENT_EVENTS);
+			viewElementEvents = new EObjectContainmentEList<ViewElementEvent>(ViewElementEvent.class, this, CorePackage.VIEW_COMPONENT_PART__VIEW_ELEMENT_EVENTS);
 		}
 		return viewElementEvents;
 	}
@@ -190,9 +191,9 @@ public class ViewComponentPartImpl extends InteractionFlowElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getSubViewComponentParts() {
+	public EList<ViewComponentPart> getSubViewComponentParts() {
 		if (subViewComponentParts == null) {
-			subViewComponentParts = new EObjectContainmentEList(ViewComponentPart.class, this, CorePackage.VIEW_COMPONENT_PART__SUB_VIEW_COMPONENT_PARTS);
+			subViewComponentParts = new EObjectContainmentEList<ViewComponentPart>(ViewComponentPart.class, this, CorePackage.VIEW_COMPONENT_PART__SUB_VIEW_COMPONENT_PARTS);
 		}
 		return subViewComponentParts;
 	}
@@ -202,12 +203,13 @@ public class ViewComponentPartImpl extends InteractionFlowElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.VIEW_COMPONENT_PART__VIEW_ELEMENT_EVENTS:
-				return ((InternalEList)getViewElementEvents()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getViewElementEvents()).basicRemove(otherEnd, msgs);
 			case CorePackage.VIEW_COMPONENT_PART__SUB_VIEW_COMPONENT_PARTS:
-				return ((InternalEList)getSubViewComponentParts()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getSubViewComponentParts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -217,6 +219,7 @@ public class ViewComponentPartImpl extends InteractionFlowElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.VIEW_COMPONENT_PART__VIEW_ELEMENT_EVENTS:
@@ -238,11 +241,13 @@ public class ViewComponentPartImpl extends InteractionFlowElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.VIEW_COMPONENT_PART__VIEW_ELEMENT_EVENTS:
 				getViewElementEvents().clear();
-				getViewElementEvents().addAll((Collection)newValue);
+				getViewElementEvents().addAll((Collection<? extends ViewElementEvent>)newValue);
 				return;
 			case CorePackage.VIEW_COMPONENT_PART__ACTIVATION_EXPRESSION:
 				setActivationExpression((ActivationExpression)newValue);
@@ -252,7 +257,7 @@ public class ViewComponentPartImpl extends InteractionFlowElementImpl implements
 				return;
 			case CorePackage.VIEW_COMPONENT_PART__SUB_VIEW_COMPONENT_PARTS:
 				getSubViewComponentParts().clear();
-				getSubViewComponentParts().addAll((Collection)newValue);
+				getSubViewComponentParts().addAll((Collection<? extends ViewComponentPart>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -263,6 +268,7 @@ public class ViewComponentPartImpl extends InteractionFlowElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.VIEW_COMPONENT_PART__VIEW_ELEMENT_EVENTS:
@@ -286,6 +292,7 @@ public class ViewComponentPartImpl extends InteractionFlowElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.VIEW_COMPONENT_PART__VIEW_ELEMENT_EVENTS:

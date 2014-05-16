@@ -108,7 +108,7 @@ public class ViewContainerImpl extends ViewElementImpl implements ViewContainer 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList viewElements;
+	protected EList<ViewElement> viewElements;
 
 	/**
 	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
@@ -118,7 +118,7 @@ public class ViewContainerImpl extends ViewElementImpl implements ViewContainer 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList actions;
+	protected EList<IFMLAction> actions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,6 +134,7 @@ public class ViewContainerImpl extends ViewElementImpl implements ViewContainer 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.VIEW_CONTAINER;
 	}
@@ -206,9 +207,9 @@ public class ViewContainerImpl extends ViewElementImpl implements ViewContainer 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getViewElements() {
+	public EList<ViewElement> getViewElements() {
 		if (viewElements == null) {
-			viewElements = new EObjectContainmentWithInverseEList(ViewElement.class, this, CorePackage.VIEW_CONTAINER__VIEW_ELEMENTS, CorePackage.VIEW_ELEMENT__VIEW_CONTAINER);
+			viewElements = new EObjectContainmentWithInverseEList<ViewElement>(ViewElement.class, this, CorePackage.VIEW_CONTAINER__VIEW_ELEMENTS, CorePackage.VIEW_ELEMENT__VIEW_CONTAINER);
 		}
 		return viewElements;
 	}
@@ -218,9 +219,9 @@ public class ViewContainerImpl extends ViewElementImpl implements ViewContainer 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getActions() {
+	public EList<IFMLAction> getActions() {
 		if (actions == null) {
-			actions = new EObjectContainmentWithInverseEList(IFMLAction.class, this, CorePackage.VIEW_CONTAINER__ACTIONS, CorePackage.IFML_ACTION__VIEW_CONTAINER);
+			actions = new EObjectContainmentWithInverseEList<IFMLAction>(IFMLAction.class, this, CorePackage.VIEW_CONTAINER__ACTIONS, CorePackage.IFML_ACTION__VIEW_CONTAINER);
 		}
 		return actions;
 	}
@@ -230,12 +231,14 @@ public class ViewContainerImpl extends ViewElementImpl implements ViewContainer 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.VIEW_CONTAINER__VIEW_ELEMENTS:
-				return ((InternalEList)getViewElements()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getViewElements()).basicAdd(otherEnd, msgs);
 			case CorePackage.VIEW_CONTAINER__ACTIONS:
-				return ((InternalEList)getActions()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getActions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -245,12 +248,13 @@ public class ViewContainerImpl extends ViewElementImpl implements ViewContainer 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.VIEW_CONTAINER__VIEW_ELEMENTS:
-				return ((InternalEList)getViewElements()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getViewElements()).basicRemove(otherEnd, msgs);
 			case CorePackage.VIEW_CONTAINER__ACTIONS:
-				return ((InternalEList)getActions()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -260,14 +264,15 @@ public class ViewContainerImpl extends ViewElementImpl implements ViewContainer 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.VIEW_CONTAINER__IS_LANDMARK:
-				return isIsLandmark() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsLandmark();
 			case CorePackage.VIEW_CONTAINER__IS_DEFAULT:
-				return isIsDefault() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsDefault();
 			case CorePackage.VIEW_CONTAINER__IS_XOR:
-				return isIsXOR() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsXOR();
 			case CorePackage.VIEW_CONTAINER__VIEW_ELEMENTS:
 				return getViewElements();
 			case CorePackage.VIEW_CONTAINER__ACTIONS:
@@ -281,24 +286,26 @@ public class ViewContainerImpl extends ViewElementImpl implements ViewContainer 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.VIEW_CONTAINER__IS_LANDMARK:
-				setIsLandmark(((Boolean)newValue).booleanValue());
+				setIsLandmark((Boolean)newValue);
 				return;
 			case CorePackage.VIEW_CONTAINER__IS_DEFAULT:
-				setIsDefault(((Boolean)newValue).booleanValue());
+				setIsDefault((Boolean)newValue);
 				return;
 			case CorePackage.VIEW_CONTAINER__IS_XOR:
-				setIsXOR(((Boolean)newValue).booleanValue());
+				setIsXOR((Boolean)newValue);
 				return;
 			case CorePackage.VIEW_CONTAINER__VIEW_ELEMENTS:
 				getViewElements().clear();
-				getViewElements().addAll((Collection)newValue);
+				getViewElements().addAll((Collection<? extends ViewElement>)newValue);
 				return;
 			case CorePackage.VIEW_CONTAINER__ACTIONS:
 				getActions().clear();
-				getActions().addAll((Collection)newValue);
+				getActions().addAll((Collection<? extends IFMLAction>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -309,6 +316,7 @@ public class ViewContainerImpl extends ViewElementImpl implements ViewContainer 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.VIEW_CONTAINER__IS_LANDMARK:
@@ -335,6 +343,7 @@ public class ViewContainerImpl extends ViewElementImpl implements ViewContainer 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.VIEW_CONTAINER__IS_LANDMARK:
@@ -356,6 +365,7 @@ public class ViewContainerImpl extends ViewElementImpl implements ViewContainer 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

@@ -167,6 +167,15 @@ public interface ExtensionsPackage extends EPackage {
 	int ON_SUBMIT_EVENT_FEATURE_COUNT = CorePackage.VIEW_ELEMENT_EVENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>On Submit Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_SUBMIT_EVENT_OPERATION_COUNT = CorePackage.VIEW_ELEMENT_EVENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.ValidationRuleImpl <em>Validation Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,6 +238,15 @@ public interface ExtensionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int VALIDATION_RULE_FEATURE_COUNT = CorePackage.CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Validation Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATION_RULE_OPERATION_COUNT = CorePackage.CONSTRAINT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.ListImpl <em>List</em>}' class.
@@ -358,6 +376,15 @@ public interface ExtensionsPackage extends EPackage {
 	int LIST_FEATURE_COUNT = CorePackage.VIEW_COMPONENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_OPERATION_COUNT = CorePackage.VIEW_COMPONENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.PositionImpl <em>Position</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -413,6 +440,15 @@ public interface ExtensionsPackage extends EPackage {
 	int POSITION_FEATURE_COUNT = CorePackage.CONTEXT_DIMENSION_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>Position</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POSITION_OPERATION_COUNT = CorePackage.CONTEXT_DIMENSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.UserRoleImpl <em>User Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -466,6 +502,15 @@ public interface ExtensionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int USER_ROLE_FEATURE_COUNT = CorePackage.CONTEXT_DIMENSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>User Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ROLE_OPERATION_COUNT = CorePackage.CONTEXT_DIMENSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.IFMLSlotImpl <em>IFML Slot</em>}' class.
@@ -604,6 +649,15 @@ public interface ExtensionsPackage extends EPackage {
 	int IFML_SLOT_FEATURE_COUNT = CorePackage.VIEW_COMPONENT_PART_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>IFML Slot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFML_SLOT_OPERATION_COUNT = CorePackage.VIEW_COMPONENT_PART_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.OnSelectEventImpl <em>On Select Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -711,6 +765,15 @@ public interface ExtensionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int ON_SELECT_EVENT_FEATURE_COUNT = CorePackage.VIEW_ELEMENT_EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>On Select Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_SELECT_EVENT_OPERATION_COUNT = CorePackage.VIEW_ELEMENT_EVENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.FieldImpl <em>Field</em>}' class.
@@ -849,6 +912,15 @@ public interface ExtensionsPackage extends EPackage {
 	int FIELD_FEATURE_COUNT = CorePackage.VIEW_COMPONENT_PART_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_OPERATION_COUNT = CorePackage.VIEW_COMPONENT_PART_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.FormImpl <em>Form</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -967,6 +1039,15 @@ public interface ExtensionsPackage extends EPackage {
 	int FORM_FEATURE_COUNT = CorePackage.VIEW_COMPONENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>Form</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_OPERATION_COUNT = CorePackage.VIEW_COMPONENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.DeviceImpl <em>Device</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1020,6 +1101,15 @@ public interface ExtensionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_FEATURE_COUNT = CorePackage.CONTEXT_DIMENSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Device</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_OPERATION_COUNT = CorePackage.CONTEXT_DIMENSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.SelectionFieldImpl <em>Selection Field</em>}' class.
@@ -1167,6 +1257,15 @@ public interface ExtensionsPackage extends EPackage {
 	int SELECTION_FIELD_FEATURE_COUNT = FIELD_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Selection Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION_FIELD_OPERATION_COUNT = FIELD_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.SimpleFieldImpl <em>Simple Field</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1303,6 +1402,15 @@ public interface ExtensionsPackage extends EPackage {
 	int SIMPLE_FIELD_FEATURE_COUNT = FIELD_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>Simple Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_FIELD_OPERATION_COUNT = FIELD_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.DetailsImpl <em>Details</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1419,6 +1527,15 @@ public interface ExtensionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int DETAILS_FEATURE_COUNT = CorePackage.VIEW_COMPONENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Details</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_OPERATION_COUNT = CorePackage.VIEW_COMPONENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.IFMLWindowImpl <em>IFML Window</em>}' class.
@@ -1593,6 +1710,15 @@ public interface ExtensionsPackage extends EPackage {
 	int IFML_WINDOW_FEATURE_COUNT = CorePackage.VIEW_CONTAINER_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>IFML Window</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFML_WINDOW_OPERATION_COUNT = CorePackage.VIEW_CONTAINER_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.OnLoadEventImpl <em>On Load Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1709,6 +1835,15 @@ public interface ExtensionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int ON_LOAD_EVENT_FEATURE_COUNT = CorePackage.SYSTEM_EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>On Load Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_LOAD_EVENT_OPERATION_COUNT = CorePackage.SYSTEM_EVENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.IFMLMenuImpl <em>IFML Menu</em>}' class.
@@ -1865,6 +2000,15 @@ public interface ExtensionsPackage extends EPackage {
 	int IFML_MENU_FEATURE_COUNT = CorePackage.VIEW_CONTAINER_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>IFML Menu</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFML_MENU_OPERATION_COUNT = CorePackage.VIEW_CONTAINER_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.JumpEventImpl <em>Jump Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1972,6 +2116,15 @@ public interface ExtensionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int JUMP_EVENT_FEATURE_COUNT = CorePackage.THROWING_EVENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Jump Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JUMP_EVENT_OPERATION_COUNT = CorePackage.THROWING_EVENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.LandingEventImpl <em>Landing Event</em>}' class.
@@ -2083,6 +2236,15 @@ public interface ExtensionsPackage extends EPackage {
 	int LANDING_EVENT_FEATURE_COUNT = CorePackage.CATCHING_EVENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Landing Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANDING_EVENT_OPERATION_COUNT = CorePackage.CATCHING_EVENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Extensions.impl.SetContextEventImpl <em>Set Context Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2181,6 +2343,16 @@ public interface ExtensionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int SET_CONTEXT_EVENT_FEATURE_COUNT = CorePackage.THROWING_EVENT_FEATURE_COUNT + 0;
+
+
+	/**
+	 * The number of operations of the '<em>Set Context Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_CONTEXT_EVENT_OPERATION_COUNT = CorePackage.THROWING_EVENT_OPERATION_COUNT + 0;
 
 
 	/**

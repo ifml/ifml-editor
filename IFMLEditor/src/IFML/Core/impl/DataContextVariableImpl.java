@@ -52,6 +52,7 @@ public class DataContextVariableImpl extends ContextVariableImpl implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.DATA_CONTEXT_VARIABLE;
 	}
@@ -121,6 +122,7 @@ public class DataContextVariableImpl extends ContextVariableImpl implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.DATA_CONTEXT_VARIABLE__DATA_BINDING:
@@ -136,6 +138,7 @@ public class DataContextVariableImpl extends ContextVariableImpl implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.DATA_CONTEXT_VARIABLE__DATA_BINDING:
@@ -149,6 +152,7 @@ public class DataContextVariableImpl extends ContextVariableImpl implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.DATA_CONTEXT_VARIABLE__DATA_BINDING:
@@ -163,6 +167,7 @@ public class DataContextVariableImpl extends ContextVariableImpl implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.DATA_CONTEXT_VARIABLE__DATA_BINDING:
@@ -177,6 +182,7 @@ public class DataContextVariableImpl extends ContextVariableImpl implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.DATA_CONTEXT_VARIABLE__DATA_BINDING:
@@ -191,6 +197,7 @@ public class DataContextVariableImpl extends ContextVariableImpl implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.DATA_CONTEXT_VARIABLE__DATA_BINDING:

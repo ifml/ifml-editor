@@ -33,6 +33,7 @@ public class PositionImpl extends ContextDimensionImpl implements Position {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.POSITION;
 	}

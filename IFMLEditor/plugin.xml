@@ -22,12 +22,26 @@
             genModel="model/IFML-Metamodel.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated IFML-Metamodel -->
+      <parser
+            type="core"
+            class="IFML.Core.util.CoreResourceFactoryImpl"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated IFML-Metamodel -->
       <package
             uri="http://www.omg.org/spec/20130218/ext"
             class="IFML.Extensions.ExtensionsPackage"
             genModel="model/IFML-Metamodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated IFML-Metamodel -->
+      <parser
+            type="extensions"
+            class="IFML.Extensions.util.ExtensionsResourceFactoryImpl"/>
    </extension>
 
 </plugin>

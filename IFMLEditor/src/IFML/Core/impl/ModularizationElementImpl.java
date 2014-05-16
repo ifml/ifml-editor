@@ -44,6 +44,7 @@ public class ModularizationElementImpl extends NamedElementImpl implements Modul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.MODULARIZATION_ELEMENT;
 	}
@@ -94,6 +95,7 @@ public class ModularizationElementImpl extends NamedElementImpl implements Modul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.MODULARIZATION_ELEMENT__MODULE_PACKAGE:
@@ -109,6 +111,7 @@ public class ModularizationElementImpl extends NamedElementImpl implements Modul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.MODULARIZATION_ELEMENT__MODULE_PACKAGE:
@@ -122,6 +125,7 @@ public class ModularizationElementImpl extends NamedElementImpl implements Modul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case CorePackage.MODULARIZATION_ELEMENT__MODULE_PACKAGE:
@@ -135,6 +139,7 @@ public class ModularizationElementImpl extends NamedElementImpl implements Modul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.MODULARIZATION_ELEMENT__MODULE_PACKAGE:
@@ -148,6 +153,7 @@ public class ModularizationElementImpl extends NamedElementImpl implements Modul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.MODULARIZATION_ELEMENT__MODULE_PACKAGE:
@@ -162,6 +168,7 @@ public class ModularizationElementImpl extends NamedElementImpl implements Modul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.MODULARIZATION_ELEMENT__MODULE_PACKAGE:
@@ -176,6 +183,7 @@ public class ModularizationElementImpl extends NamedElementImpl implements Modul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.MODULARIZATION_ELEMENT__MODULE_PACKAGE:

@@ -31,6 +31,7 @@ public class BooleanExpressionImpl extends ExpressionImpl implements BooleanExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.BOOLEAN_EXPRESSION;
 	}

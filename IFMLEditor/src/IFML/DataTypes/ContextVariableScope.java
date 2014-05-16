@@ -5,8 +5,7 @@ package IFML.DataTypes;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import org.eclipse.emf.common.util.AbstractEnumerator;
+import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +16,35 @@ import org.eclipse.emf.common.util.AbstractEnumerator;
  * @model
  * @generated
  */
-public final class ContextVariableScope extends AbstractEnumerator {
+public enum ContextVariableScope implements Enumerator
+{
+	/**
+	 * The '<em><b>Application Scope</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #APPLICATION_SCOPE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	APPLICATION_SCOPE(0, "ApplicationScope", "ApplicationScope"),
+	/**
+	 * The '<em><b>Session Scope</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SESSION_SCOPE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SESSION_SCOPE(0, "SessionScope", "SessionScope"),
+	/**
+	 * The '<em><b>View Container Scope</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #VIEW_CONTAINER_SCOPE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	VIEW_CONTAINER_SCOPE(0, "ViewContainerScope", "ViewContainerScope");
 	/**
 	 * The '<em><b>Application Scope</b></em>' literal value.
 	 * <!-- begin-user-doc -->
@@ -26,12 +53,12 @@ public final class ContextVariableScope extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #APPLICATION_SCOPE_LITERAL
+	 * @see #APPLICATION_SCOPE
 	 * @model name="ApplicationScope"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int APPLICATION_SCOPE = 0;
+	public static final int APPLICATION_SCOPE_VALUE = 0;
 
 	/**
 	 * The '<em><b>Session Scope</b></em>' literal value.
@@ -41,12 +68,12 @@ public final class ContextVariableScope extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SESSION_SCOPE_LITERAL
+	 * @see #SESSION_SCOPE
 	 * @model name="SessionScope"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SESSION_SCOPE = 0;
+	public static final int SESSION_SCOPE_VALUE = 0;
 
 	/**
 	 * The '<em><b>View Container Scope</b></em>' literal value.
@@ -56,42 +83,12 @@ public final class ContextVariableScope extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #VIEW_CONTAINER_SCOPE_LITERAL
+	 * @see #VIEW_CONTAINER_SCOPE
 	 * @model name="ViewContainerScope"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int VIEW_CONTAINER_SCOPE = 0;
-
-	/**
-	 * The '<em><b>Application Scope</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #APPLICATION_SCOPE
-	 * @generated
-	 * @ordered
-	 */
-	public static final ContextVariableScope APPLICATION_SCOPE_LITERAL = new ContextVariableScope(APPLICATION_SCOPE, "ApplicationScope", "ApplicationScope");
-
-	/**
-	 * The '<em><b>Session Scope</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SESSION_SCOPE
-	 * @generated
-	 * @ordered
-	 */
-	public static final ContextVariableScope SESSION_SCOPE_LITERAL = new ContextVariableScope(SESSION_SCOPE, "SessionScope", "SessionScope");
-
-	/**
-	 * The '<em><b>View Container Scope</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #VIEW_CONTAINER_SCOPE
-	 * @generated
-	 * @ordered
-	 */
-	public static final ContextVariableScope VIEW_CONTAINER_SCOPE_LITERAL = new ContextVariableScope(VIEW_CONTAINER_SCOPE, "ViewContainerScope", "ViewContainerScope");
+	public static final int VIEW_CONTAINER_SCOPE_VALUE = 0;
 
 	/**
 	 * An array of all the '<em><b>Context Variable Scope</b></em>' enumerators.
@@ -101,9 +98,9 @@ public final class ContextVariableScope extends AbstractEnumerator {
 	 */
 	private static final ContextVariableScope[] VALUES_ARRAY =
 		new ContextVariableScope[] {
-			APPLICATION_SCOPE_LITERAL,
-			SESSION_SCOPE_LITERAL,
-			VIEW_CONTAINER_SCOPE_LITERAL,
+			APPLICATION_SCOPE,
+			SESSION_SCOPE,
+			VIEW_CONTAINER_SCOPE,
 		};
 
 	/**
@@ -112,7 +109,7 @@ public final class ContextVariableScope extends AbstractEnumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ContextVariableScope> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Context Variable Scope</b></em>' literal with the specified literal value.
@@ -154,10 +151,31 @@ public final class ContextVariableScope extends AbstractEnumerator {
 	 */
 	public static ContextVariableScope get(int value) {
 		switch (value) {
-			case APPLICATION_SCOPE: return APPLICATION_SCOPE_LITERAL;
+			case APPLICATION_SCOPE_VALUE: return APPLICATION_SCOPE;
 		}
 		return null;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final int value;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String name;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String literal;
 
 	/**
 	 * Only this class can construct instances.
@@ -166,7 +184,46 @@ public final class ContextVariableScope extends AbstractEnumerator {
 	 * @generated
 	 */
 	private ContextVariableScope(int value, String name, String literal) {
-		super(value, name, literal);
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
 	}
 
-} //ContextVariableScope
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getValue() {
+	  return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+	  return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLiteral() {
+	  return literal;
+	}
+
+	/**
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		return literal;
+	}
+}

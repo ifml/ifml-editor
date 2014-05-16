@@ -60,7 +60,7 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Direction DIRECTION_EDEFAULT = Direction.IN_LITERAL;
+	protected static final Direction DIRECTION_EDEFAULT = Direction.IN;
 
 	/**
 	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -96,6 +96,7 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.IFML_PARAMETER;
 	}
@@ -185,6 +186,7 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.IFML_PARAMETER__NAME:
@@ -203,6 +205,7 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.IFML_PARAMETER__NAME:
@@ -223,6 +226,7 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.IFML_PARAMETER__NAME:
@@ -243,6 +247,7 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.IFML_PARAMETER__NAME:
@@ -260,7 +265,8 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class baseClass) {
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
 				case CorePackage.IFML_PARAMETER__NAME: return CorePackage.NAMED_ELEMENT__NAME;
@@ -275,7 +281,8 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class baseClass) {
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.NAMED_ELEMENT__NAME: return CorePackage.IFML_PARAMETER__NAME;
@@ -290,6 +297,7 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

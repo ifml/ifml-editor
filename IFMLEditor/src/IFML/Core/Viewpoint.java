@@ -33,10 +33,10 @@ public interface Viewpoint extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interaction Flow Model Elements</em>' reference list.
 	 * @see IFML.Core.CorePackage#getViewpoint_InteractionFlowModelElements()
-	 * @model type="IFML.Core.InteractionFlowModelElement" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getInteractionFlowModelElements();
+	EList<InteractionFlowModelElement> getInteractionFlowModelElements();
 
 	/**
 	 * Returns the value of the '<em><b>Context</b></em>' reference.

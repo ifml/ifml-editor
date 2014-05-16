@@ -31,6 +31,7 @@ public class CatchingEventImpl extends EventImpl implements CatchingEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.CATCHING_EVENT;
 	}

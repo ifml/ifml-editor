@@ -43,7 +43,7 @@ public class ViewpointImpl extends NamedElementImpl implements Viewpoint {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList interactionFlowModelElements;
+	protected EList<InteractionFlowModelElement> interactionFlowModelElements;
 
 	/**
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
@@ -69,6 +69,7 @@ public class ViewpointImpl extends NamedElementImpl implements Viewpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.VIEWPOINT;
 	}
@@ -78,9 +79,9 @@ public class ViewpointImpl extends NamedElementImpl implements Viewpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getInteractionFlowModelElements() {
+	public EList<InteractionFlowModelElement> getInteractionFlowModelElements() {
 		if (interactionFlowModelElements == null) {
-			interactionFlowModelElements = new EObjectResolvingEList(InteractionFlowModelElement.class, this, CorePackage.VIEWPOINT__INTERACTION_FLOW_MODEL_ELEMENTS);
+			interactionFlowModelElements = new EObjectResolvingEList<InteractionFlowModelElement>(InteractionFlowModelElement.class, this, CorePackage.VIEWPOINT__INTERACTION_FLOW_MODEL_ELEMENTS);
 		}
 		return interactionFlowModelElements;
 	}
@@ -128,6 +129,7 @@ public class ViewpointImpl extends NamedElementImpl implements Viewpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.VIEWPOINT__INTERACTION_FLOW_MODEL_ELEMENTS:
@@ -144,11 +146,13 @@ public class ViewpointImpl extends NamedElementImpl implements Viewpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.VIEWPOINT__INTERACTION_FLOW_MODEL_ELEMENTS:
 				getInteractionFlowModelElements().clear();
-				getInteractionFlowModelElements().addAll((Collection)newValue);
+				getInteractionFlowModelElements().addAll((Collection<? extends InteractionFlowModelElement>)newValue);
 				return;
 			case CorePackage.VIEWPOINT__CONTEXT:
 				setContext((Context)newValue);
@@ -162,6 +166,7 @@ public class ViewpointImpl extends NamedElementImpl implements Viewpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.VIEWPOINT__INTERACTION_FLOW_MODEL_ELEMENTS:
@@ -179,6 +184,7 @@ public class ViewpointImpl extends NamedElementImpl implements Viewpoint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.VIEWPOINT__INTERACTION_FLOW_MODEL_ELEMENTS:

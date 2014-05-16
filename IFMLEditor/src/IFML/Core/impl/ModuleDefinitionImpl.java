@@ -51,7 +51,7 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * @generated
 	 * @ordered
 	 */
-	protected EList inputPorts;
+	protected EList<PortDefinition> inputPorts;
 
 	/**
 	 * The cached value of the '{@link #getOutputPorts() <em>Output Ports</em>}' containment reference list.
@@ -61,7 +61,7 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * @generated
 	 * @ordered
 	 */
-	protected EList outputPorts;
+	protected EList<PortDefinition> outputPorts;
 
 	/**
 	 * The cached value of the '{@link #getInteractionFlowModelElement() <em>Interaction Flow Model Element</em>}' containment reference list.
@@ -71,7 +71,7 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * @generated
 	 * @ordered
 	 */
-	protected EList interactionFlowModelElement;
+	protected EList<InteractionFlowModelElement> interactionFlowModelElement;
 
 	/**
 	 * The cached value of the '{@link #getModules() <em>Modules</em>}' reference list.
@@ -81,7 +81,7 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * @generated
 	 * @ordered
 	 */
-	protected EList modules;
+	protected EList<IFMLModule> modules;
 
 	/**
 	 * The cached value of the '{@link #getActivityConcept() <em>Activity Concept</em>}' reference.
@@ -107,6 +107,7 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.MODULE_DEFINITION;
 	}
@@ -116,9 +117,9 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getInputPorts() {
+	public EList<PortDefinition> getInputPorts() {
 		if (inputPorts == null) {
-			inputPorts = new EObjectContainmentEList(PortDefinition.class, this, CorePackage.MODULE_DEFINITION__INPUT_PORTS);
+			inputPorts = new EObjectContainmentEList<PortDefinition>(PortDefinition.class, this, CorePackage.MODULE_DEFINITION__INPUT_PORTS);
 		}
 		return inputPorts;
 	}
@@ -128,9 +129,9 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getOutputPorts() {
+	public EList<PortDefinition> getOutputPorts() {
 		if (outputPorts == null) {
-			outputPorts = new EObjectContainmentEList(PortDefinition.class, this, CorePackage.MODULE_DEFINITION__OUTPUT_PORTS);
+			outputPorts = new EObjectContainmentEList<PortDefinition>(PortDefinition.class, this, CorePackage.MODULE_DEFINITION__OUTPUT_PORTS);
 		}
 		return outputPorts;
 	}
@@ -140,9 +141,9 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getInteractionFlowModelElement() {
+	public EList<InteractionFlowModelElement> getInteractionFlowModelElement() {
 		if (interactionFlowModelElement == null) {
-			interactionFlowModelElement = new EObjectContainmentEList(InteractionFlowModelElement.class, this, CorePackage.MODULE_DEFINITION__INTERACTION_FLOW_MODEL_ELEMENT);
+			interactionFlowModelElement = new EObjectContainmentEList<InteractionFlowModelElement>(InteractionFlowModelElement.class, this, CorePackage.MODULE_DEFINITION__INTERACTION_FLOW_MODEL_ELEMENT);
 		}
 		return interactionFlowModelElement;
 	}
@@ -152,9 +153,9 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getModules() {
+	public EList<IFMLModule> getModules() {
 		if (modules == null) {
-			modules = new EObjectWithInverseResolvingEList(IFMLModule.class, this, CorePackage.MODULE_DEFINITION__MODULES, CorePackage.IFML_MODULE__MODULE_DEFINITION);
+			modules = new EObjectWithInverseResolvingEList<IFMLModule>(IFMLModule.class, this, CorePackage.MODULE_DEFINITION__MODULES, CorePackage.IFML_MODULE__MODULE_DEFINITION);
 		}
 		return modules;
 	}
@@ -224,10 +225,12 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.MODULE_DEFINITION__MODULES:
-				return ((InternalEList)getModules()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getModules()).basicAdd(otherEnd, msgs);
 			case CorePackage.MODULE_DEFINITION__ACTIVITY_CONCEPT:
 				if (activityConcept != null)
 					msgs = ((InternalEObject)activityConcept).eInverseRemove(this, CorePackage.ACTIVITY_CONCEPT__MODULE_DEFINITION, ActivityConcept.class, msgs);
@@ -241,16 +244,17 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.MODULE_DEFINITION__INPUT_PORTS:
-				return ((InternalEList)getInputPorts()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInputPorts()).basicRemove(otherEnd, msgs);
 			case CorePackage.MODULE_DEFINITION__OUTPUT_PORTS:
-				return ((InternalEList)getOutputPorts()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getOutputPorts()).basicRemove(otherEnd, msgs);
 			case CorePackage.MODULE_DEFINITION__INTERACTION_FLOW_MODEL_ELEMENT:
-				return ((InternalEList)getInteractionFlowModelElement()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getInteractionFlowModelElement()).basicRemove(otherEnd, msgs);
 			case CorePackage.MODULE_DEFINITION__MODULES:
-				return ((InternalEList)getModules()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getModules()).basicRemove(otherEnd, msgs);
 			case CorePackage.MODULE_DEFINITION__ACTIVITY_CONCEPT:
 				return basicSetActivityConcept(null, msgs);
 		}
@@ -262,6 +266,7 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.MODULE_DEFINITION__INPUT_PORTS:
@@ -284,23 +289,25 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.MODULE_DEFINITION__INPUT_PORTS:
 				getInputPorts().clear();
-				getInputPorts().addAll((Collection)newValue);
+				getInputPorts().addAll((Collection<? extends PortDefinition>)newValue);
 				return;
 			case CorePackage.MODULE_DEFINITION__OUTPUT_PORTS:
 				getOutputPorts().clear();
-				getOutputPorts().addAll((Collection)newValue);
+				getOutputPorts().addAll((Collection<? extends PortDefinition>)newValue);
 				return;
 			case CorePackage.MODULE_DEFINITION__INTERACTION_FLOW_MODEL_ELEMENT:
 				getInteractionFlowModelElement().clear();
-				getInteractionFlowModelElement().addAll((Collection)newValue);
+				getInteractionFlowModelElement().addAll((Collection<? extends InteractionFlowModelElement>)newValue);
 				return;
 			case CorePackage.MODULE_DEFINITION__MODULES:
 				getModules().clear();
-				getModules().addAll((Collection)newValue);
+				getModules().addAll((Collection<? extends IFMLModule>)newValue);
 				return;
 			case CorePackage.MODULE_DEFINITION__ACTIVITY_CONCEPT:
 				setActivityConcept((ActivityConcept)newValue);
@@ -314,6 +321,7 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.MODULE_DEFINITION__INPUT_PORTS:
@@ -340,6 +348,7 @@ public class ModuleDefinitionImpl extends ModularizationElementImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.MODULE_DEFINITION__INPUT_PORTS:

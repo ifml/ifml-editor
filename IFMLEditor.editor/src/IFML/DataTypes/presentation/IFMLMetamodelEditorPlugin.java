@@ -7,6 +7,8 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+import org.eclipse.uml2.uml.edit.UMLEditPlugin;
 
 /**
  * This is the central singleton for the IFML-Metamodel editor plugin.
@@ -40,6 +42,8 @@ public final class IFMLMetamodelEditorPlugin extends EMFPlugin {
 	public IFMLMetamodelEditorPlugin() {
 		super
 			(new ResourceLocator [] {
+				EcoreEditPlugin.INSTANCE,
+				UMLEditPlugin.INSTANCE,
 			});
 	}
 
@@ -50,6 +54,7 @@ public final class IFMLMetamodelEditorPlugin extends EMFPlugin {
 	 * @return the singleton instance.
 	 * @generated
 	 */
+	@Override
 	public ResourceLocator getPluginResourceLocator() {
 		return plugin;
 	}

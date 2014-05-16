@@ -43,7 +43,7 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Direction DIRECTION_EDEFAULT = Direction.IN_LITERAL;
+	protected static final Direction DIRECTION_EDEFAULT = Direction.IN;
 
 	/**
 	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -79,6 +79,7 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.IFML_SLOT;
 	}
@@ -147,6 +148,7 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ExtensionsPackage.IFML_SLOT__DIRECTION:
@@ -163,6 +165,7 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ExtensionsPackage.IFML_SLOT__DIRECTION:
@@ -180,6 +183,7 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ExtensionsPackage.IFML_SLOT__DIRECTION:
@@ -197,6 +201,7 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ExtensionsPackage.IFML_SLOT__DIRECTION:
@@ -212,7 +217,8 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class baseClass) {
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == IFMLParameter.class) {
 			switch (derivedFeatureID) {
 				case ExtensionsPackage.IFML_SLOT__DIRECTION: return CorePackage.IFML_PARAMETER__DIRECTION;
@@ -228,7 +234,8 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class baseClass) {
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == IFMLParameter.class) {
 			switch (baseFeatureID) {
 				case CorePackage.IFML_PARAMETER__DIRECTION: return ExtensionsPackage.IFML_SLOT__DIRECTION;
@@ -244,6 +251,7 @@ public class IFMLSlotImpl extends ViewComponentPartImpl implements IFMLSlot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

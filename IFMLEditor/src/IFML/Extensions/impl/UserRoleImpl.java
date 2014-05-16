@@ -33,6 +33,7 @@ public class UserRoleImpl extends ContextDimensionImpl implements UserRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.USER_ROLE;
 	}

@@ -42,7 +42,7 @@ public class ListImpl extends ViewComponentImpl implements List {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList selectEvent;
+	protected EList<OnSelectEvent> selectEvent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,6 +58,7 @@ public class ListImpl extends ViewComponentImpl implements List {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.LIST;
 	}
@@ -67,9 +68,9 @@ public class ListImpl extends ViewComponentImpl implements List {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getSelectEvent() {
+	public EList<OnSelectEvent> getSelectEvent() {
 		if (selectEvent == null) {
-			selectEvent = new EObjectContainmentEList(OnSelectEvent.class, this, ExtensionsPackage.LIST__SELECT_EVENT);
+			selectEvent = new EObjectContainmentEList<OnSelectEvent>(OnSelectEvent.class, this, ExtensionsPackage.LIST__SELECT_EVENT);
 		}
 		return selectEvent;
 	}
@@ -79,10 +80,11 @@ public class ListImpl extends ViewComponentImpl implements List {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ExtensionsPackage.LIST__SELECT_EVENT:
-				return ((InternalEList)getSelectEvent()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getSelectEvent()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -92,6 +94,7 @@ public class ListImpl extends ViewComponentImpl implements List {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ExtensionsPackage.LIST__SELECT_EVENT:
@@ -105,11 +108,13 @@ public class ListImpl extends ViewComponentImpl implements List {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ExtensionsPackage.LIST__SELECT_EVENT:
 				getSelectEvent().clear();
-				getSelectEvent().addAll((Collection)newValue);
+				getSelectEvent().addAll((Collection<? extends OnSelectEvent>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -120,6 +125,7 @@ public class ListImpl extends ViewComponentImpl implements List {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ExtensionsPackage.LIST__SELECT_EVENT:
@@ -134,6 +140,7 @@ public class ListImpl extends ViewComponentImpl implements List {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ExtensionsPackage.LIST__SELECT_EVENT:

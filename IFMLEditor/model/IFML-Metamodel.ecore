@@ -46,7 +46,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="ActionEvent" eSuperTypes="#//Core/CatchingEvent"/>
     <eClassifiers xsi:type="ecore:EClass" name="DomainModel" eSuperTypes="#//Core/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="domainElements" ordered="false"
-          upperBound="-1" eType="#//Core/DomainElement"/>
+          upperBound="-1" eType="#//Core/DomainElement" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//Core/Element">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
@@ -270,19 +270,19 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="UMLBehavior" eSuperTypes="#//Core/BehaviorConcept">
       <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" ordered="false"
-          eType="#//Core/DynamicBehavior"/>
+          eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Behavior"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="UMLBehavioralFeature" eSuperTypes="#//Core/BehavioralFeatureConcept">
       <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralFeature" ordered="false"
-          eType="#//Core/UMLBehavior"/>
+          eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//BehavioralFeature"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="UMLDomainConcept" eSuperTypes="#//Core/DomainConcept">
       <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" ordered="false"
-          eType="#//Core/UMLDomainConcept"/>
+          eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Classifier"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="UMLStructuralFeature" eSuperTypes="#//Core/FeatureConcept">
       <eStructuralFeatures xsi:type="ecore:EReference" name="structuralFeature" ordered="false"
-          eType="#//Core/UMLStructuralFeature"/>
+          eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//StructuralFeature"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ActivityConcept" eSuperTypes="#//Core/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="moduleDefinition" ordered="false"

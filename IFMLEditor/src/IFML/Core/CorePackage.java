@@ -102,6 +102,15 @@ public interface CorePackage extends EPackage {
 	int ELEMENT_FEATURE_COUNT = 3;
 
 	/**
+	 * The number of operations of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.InteractionFlowModelElementImpl <em>Interaction Flow Model Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,6 +155,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERACTION_FLOW_MODEL_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Interaction Flow Model Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION_FLOW_MODEL_ELEMENT_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.InteractionFlowImpl <em>Interaction Flow</em>}' class.
@@ -221,6 +239,15 @@ public interface CorePackage extends EPackage {
 	int INTERACTION_FLOW_FEATURE_COUNT = INTERACTION_FLOW_MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The number of operations of the '<em>Interaction Flow</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION_FLOW_OPERATION_COUNT = INTERACTION_FLOW_MODEL_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ExpressionImpl <em>Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -283,6 +310,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int EXPRESSION_FEATURE_COUNT = INTERACTION_FLOW_MODEL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_OPERATION_COUNT = INTERACTION_FLOW_MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.InteractionFlowExpressionImpl <em>Interaction Flow Expression</em>}' class.
@@ -358,6 +394,15 @@ public interface CorePackage extends EPackage {
 	int INTERACTION_FLOW_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Interaction Flow Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION_FLOW_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.NamedElementImpl <em>Named Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -411,6 +456,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int NAMED_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.InteractionFlowElementImpl <em>Interaction Flow Element</em>}' class.
@@ -493,6 +547,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERACTION_FLOW_ELEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Interaction Flow Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION_FLOW_ELEMENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.EventImpl <em>Event</em>}' class.
@@ -595,6 +658,15 @@ public interface CorePackage extends EPackage {
 	int EVENT_FEATURE_COUNT = INTERACTION_FLOW_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_OPERATION_COUNT = INTERACTION_FLOW_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.CatchingEventImpl <em>Catching Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -693,6 +765,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int CATCHING_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Catching Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATCHING_EVENT_OPERATION_COUNT = EVENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.SystemEventImpl <em>System Event</em>}' class.
@@ -813,6 +894,15 @@ public interface CorePackage extends EPackage {
 	int SYSTEM_EVENT_FEATURE_COUNT = CATCHING_EVENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>System Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_EVENT_OPERATION_COUNT = CATCHING_EVENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ParameterBindingImpl <em>Parameter Binding</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -875,6 +965,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_BINDING_FEATURE_COUNT = INTERACTION_FLOW_MODEL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Parameter Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING_OPERATION_COUNT = INTERACTION_FLOW_MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ActionEventImpl <em>Action Event</em>}' class.
@@ -977,6 +1076,15 @@ public interface CorePackage extends EPackage {
 	int ACTION_EVENT_FEATURE_COUNT = CATCHING_EVENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>Action Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_EVENT_OPERATION_COUNT = CATCHING_EVENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.DomainModelImpl <em>Domain Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1023,7 +1131,7 @@ public interface CorePackage extends EPackage {
 	int DOMAIN_MODEL__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Domain Elements</b></em>' reference list.
+	 * The feature id for the '<em><b>Domain Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1039,6 +1147,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int DOMAIN_MODEL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Domain Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN_MODEL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.PortDefinitionImpl <em>Port Definition</em>}' class.
@@ -1130,6 +1247,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int PORT_DEFINITION_FEATURE_COUNT = INTERACTION_FLOW_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Port Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_DEFINITION_OPERATION_COUNT = INTERACTION_FLOW_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ViewComponentPartImpl <em>View Component Part</em>}' class.
@@ -1248,6 +1374,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int VIEW_COMPONENT_PART_FEATURE_COUNT = INTERACTION_FLOW_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>View Component Part</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_COMPONENT_PART_OPERATION_COUNT = INTERACTION_FLOW_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ContentBindingImpl <em>Content Binding</em>}' class.
@@ -1377,6 +1512,15 @@ public interface CorePackage extends EPackage {
 	int CONTENT_BINDING_FEATURE_COUNT = VIEW_COMPONENT_PART_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Content Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT_BINDING_OPERATION_COUNT = VIEW_COMPONENT_PART_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ViewElementImpl <em>View Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1484,6 +1628,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int VIEW_ELEMENT_FEATURE_COUNT = INTERACTION_FLOW_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>View Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_ELEMENT_OPERATION_COUNT = INTERACTION_FLOW_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.DynamicBehaviorImpl <em>Dynamic Behavior</em>}' class.
@@ -1631,6 +1784,15 @@ public interface CorePackage extends EPackage {
 	int DYNAMIC_BEHAVIOR_FEATURE_COUNT = CONTENT_BINDING_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>Dynamic Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_BEHAVIOR_OPERATION_COUNT = CONTENT_BINDING_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ViewpointImpl <em>Viewpoint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1704,6 +1866,15 @@ public interface CorePackage extends EPackage {
 	int VIEWPOINT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>Viewpoint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.DataFlowImpl <em>Data Flow</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1775,6 +1946,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_FLOW_FEATURE_COUNT = INTERACTION_FLOW_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Data Flow</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FLOW_OPERATION_COUNT = INTERACTION_FLOW_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ViewContainerImpl <em>View Container</em>}' class.
@@ -1931,6 +2111,15 @@ public interface CorePackage extends EPackage {
 	int VIEW_CONTAINER_FEATURE_COUNT = VIEW_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The number of operations of the '<em>View Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_CONTAINER_OPERATION_COUNT = VIEW_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1993,6 +2182,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOLEAN_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Boolean Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ActivationExpressionImpl <em>Activation Expression</em>}' class.
@@ -2059,6 +2257,15 @@ public interface CorePackage extends EPackage {
 	int ACTIVATION_EXPRESSION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>Activation Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVATION_EXPRESSION_OPERATION_COUNT = BOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.InteractionFlowModelImpl <em>Interaction Flow Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2123,6 +2330,15 @@ public interface CorePackage extends EPackage {
 	int INTERACTION_FLOW_MODEL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Interaction Flow Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERACTION_FLOW_MODEL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ContextDimensionImpl <em>Context Dimension</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2176,6 +2392,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTEXT_DIMENSION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Context Dimension</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_DIMENSION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.IFMLModelImpl <em>IFML Model</em>}' class.
@@ -2260,6 +2485,15 @@ public interface CorePackage extends EPackage {
 	int IFML_MODEL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The number of operations of the '<em>IFML Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFML_MODEL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ModularizationElementImpl <em>Modularization Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2322,6 +2556,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int MODULARIZATION_ELEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Modularization Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULARIZATION_ELEMENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ModuleDefinitionImpl <em>Module Definition</em>}' class.
@@ -2433,6 +2676,15 @@ public interface CorePackage extends EPackage {
 	int MODULE_DEFINITION_FEATURE_COUNT = MODULARIZATION_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The number of operations of the '<em>Module Definition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE_DEFINITION_OPERATION_COUNT = MODULARIZATION_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.IFMLActionImpl <em>IFML Action</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2542,6 +2794,15 @@ public interface CorePackage extends EPackage {
 	int IFML_ACTION_FEATURE_COUNT = INTERACTION_FLOW_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The number of operations of the '<em>IFML Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFML_ACTION_OPERATION_COUNT = INTERACTION_FLOW_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.NavigationFlowImpl <em>Navigation Flow</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2615,6 +2876,15 @@ public interface CorePackage extends EPackage {
 	int NAVIGATION_FLOW_FEATURE_COUNT = INTERACTION_FLOW_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>Navigation Flow</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAVIGATION_FLOW_OPERATION_COUNT = INTERACTION_FLOW_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ParameterBindingGroupImpl <em>Parameter Binding Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2668,6 +2938,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_BINDING_GROUP_FEATURE_COUNT = INTERACTION_FLOW_MODEL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Parameter Binding Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_BINDING_GROUP_OPERATION_COUNT = INTERACTION_FLOW_MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -2732,6 +3011,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONSTRAINT_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT_OPERATION_COUNT = BOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ViewComponentImpl <em>View Component</em>}' class.
@@ -2852,6 +3140,15 @@ public interface CorePackage extends EPackage {
 	int VIEW_COMPONENT_FEATURE_COUNT = VIEW_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>View Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_COMPONENT_OPERATION_COUNT = VIEW_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.IFMLParameterImpl <em>IFML Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2923,6 +3220,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int IFML_PARAMETER_FEATURE_COUNT = INTERACTION_FLOW_MODEL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>IFML Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFML_PARAMETER_OPERATION_COUNT = INTERACTION_FLOW_MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.DataBindingImpl <em>Data Binding</em>}' class.
@@ -3088,6 +3394,15 @@ public interface CorePackage extends EPackage {
 	int DATA_BINDING_FEATURE_COUNT = CONTENT_BINDING_FEATURE_COUNT + 4;
 
 	/**
+	 * The number of operations of the '<em>Data Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_BINDING_OPERATION_COUNT = CONTENT_BINDING_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ConditionalExpressionImpl <em>Conditional Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3224,6 +3539,15 @@ public interface CorePackage extends EPackage {
 	int CONDITIONAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 8;
 
 	/**
+	 * The number of operations of the '<em>Conditional Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ContextImpl <em>Context</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3286,6 +3610,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTEXT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Context</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.VisualizationAttributeImpl <em>Visualization Attribute</em>}' class.
@@ -3415,6 +3748,15 @@ public interface CorePackage extends EPackage {
 	int VISUALIZATION_ATTRIBUTE_FEATURE_COUNT = VIEW_COMPONENT_PART_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Visualization Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VISUALIZATION_ATTRIBUTE_OPERATION_COUNT = VIEW_COMPONENT_PART_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ViewElementEventImpl <em>View Element Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3524,6 +3866,15 @@ public interface CorePackage extends EPackage {
 	int VIEW_ELEMENT_EVENT_FEATURE_COUNT = CATCHING_EVENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>View Element Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_ELEMENT_EVENT_OPERATION_COUNT = CATCHING_EVENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.AnnotationImpl <em>Annotation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3550,6 +3901,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int ANNOTATION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Annotation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANNOTATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ModulePackageImpl <em>Module Package</em>}' class.
@@ -3623,6 +3983,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int MODULE_PACKAGE_FEATURE_COUNT = MODULARIZATION_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Module Package</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE_PACKAGE_OPERATION_COUNT = MODULARIZATION_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.IFMLModuleImpl <em>IFML Module</em>}' class.
@@ -3725,6 +4094,15 @@ public interface CorePackage extends EPackage {
 	int IFML_MODULE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The number of operations of the '<em>IFML Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFML_MODULE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.IFMLPortImpl <em>IFML Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3823,6 +4201,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int IFML_PORT_FEATURE_COUNT = INTERACTION_FLOW_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>IFML Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFML_PORT_OPERATION_COUNT = INTERACTION_FLOW_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ThrowingEventImpl <em>Throwing Event</em>}' class.
@@ -3925,6 +4312,15 @@ public interface CorePackage extends EPackage {
 	int THROWING_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>Throwing Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THROWING_EVENT_OPERATION_COUNT = EVENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ActivityConceptImpl <em>Activity Concept</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3989,6 +4385,15 @@ public interface CorePackage extends EPackage {
 	int ACTIVITY_CONCEPT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Activity Concept</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CONCEPT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.BPMNActivityConceptImpl <em>BPMN Activity Concept</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4051,6 +4456,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int BPMN_ACTIVITY_CONCEPT_FEATURE_COUNT = ACTIVITY_CONCEPT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>BPMN Activity Concept</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BPMN_ACTIVITY_CONCEPT_OPERATION_COUNT = ACTIVITY_CONCEPT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.ContextVariableImpl <em>Context Variable</em>}' class.
@@ -4126,6 +4540,15 @@ public interface CorePackage extends EPackage {
 	int CONTEXT_VARIABLE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>Context Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_VARIABLE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.SimpleContextVariableImpl <em>Simple Context Variable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4197,6 +4620,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int SIMPLE_CONTEXT_VARIABLE_FEATURE_COUNT = CONTEXT_VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Simple Context Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_CONTEXT_VARIABLE_OPERATION_COUNT = CONTEXT_VARIABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.DataContextVariableImpl <em>Data Context Variable</em>}' class.
@@ -4281,6 +4713,15 @@ public interface CorePackage extends EPackage {
 	int DATA_CONTEXT_VARIABLE_FEATURE_COUNT = CONTEXT_VARIABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Data Context Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_CONTEXT_VARIABLE_OPERATION_COUNT = CONTEXT_VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.DomainElementImpl <em>Domain Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4334,6 +4775,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int DOMAIN_ELEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Domain Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN_ELEMENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.DomainConceptImpl <em>Domain Concept</em>}' class.
@@ -4400,6 +4850,15 @@ public interface CorePackage extends EPackage {
 	int DOMAIN_CONCEPT_FEATURE_COUNT = DOMAIN_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Domain Concept</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN_CONCEPT_OPERATION_COUNT = DOMAIN_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.FeatureConceptImpl <em>Feature Concept</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4462,6 +4921,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE_CONCEPT_FEATURE_COUNT = DOMAIN_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Feature Concept</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_CONCEPT_OPERATION_COUNT = DOMAIN_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.BehaviorConceptImpl <em>Behavior Concept</em>}' class.
@@ -4528,6 +4996,15 @@ public interface CorePackage extends EPackage {
 	int BEHAVIOR_CONCEPT_FEATURE_COUNT = DOMAIN_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Behavior Concept</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_CONCEPT_OPERATION_COUNT = DOMAIN_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.BehavioralFeatureConceptImpl <em>Behavioral Feature Concept</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4590,6 +5067,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int BEHAVIORAL_FEATURE_CONCEPT_FEATURE_COUNT = DOMAIN_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Behavioral Feature Concept</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_FEATURE_CONCEPT_OPERATION_COUNT = DOMAIN_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.UMLBehaviorImpl <em>UML Behavior</em>}' class.
@@ -4665,6 +5151,15 @@ public interface CorePackage extends EPackage {
 	int UML_BEHAVIOR_FEATURE_COUNT = BEHAVIOR_CONCEPT_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>UML Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UML_BEHAVIOR_OPERATION_COUNT = BEHAVIOR_CONCEPT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.UMLBehavioralFeatureImpl <em>UML Behavioral Feature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4736,6 +5231,15 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int UML_BEHAVIORAL_FEATURE_FEATURE_COUNT = BEHAVIORAL_FEATURE_CONCEPT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>UML Behavioral Feature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UML_BEHAVIORAL_FEATURE_OPERATION_COUNT = BEHAVIORAL_FEATURE_CONCEPT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link IFML.Core.impl.UMLDomainConceptImpl <em>UML Domain Concept</em>}' class.
@@ -4811,6 +5315,15 @@ public interface CorePackage extends EPackage {
 	int UML_DOMAIN_CONCEPT_FEATURE_COUNT = DOMAIN_CONCEPT_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>UML Domain Concept</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UML_DOMAIN_CONCEPT_OPERATION_COUNT = DOMAIN_CONCEPT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link IFML.Core.impl.UMLStructuralFeatureImpl <em>UML Structural Feature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4882,6 +5395,16 @@ public interface CorePackage extends EPackage {
 	 * @ordered
 	 */
 	int UML_STRUCTURAL_FEATURE_FEATURE_COUNT = FEATURE_CONCEPT_FEATURE_COUNT + 1;
+
+
+	/**
+	 * The number of operations of the '<em>UML Structural Feature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UML_STRUCTURAL_FEATURE_OPERATION_COUNT = FEATURE_CONCEPT_OPERATION_COUNT + 0;
 
 
 	/**
@@ -5033,10 +5556,10 @@ public interface CorePackage extends EPackage {
 	EClass getDomainModel();
 
 	/**
-	 * Returns the meta object for the reference list '{@link IFML.Core.DomainModel#getDomainElements <em>Domain Elements</em>}'.
+	 * Returns the meta object for the containment reference list '{@link IFML.Core.DomainModel#getDomainElements <em>Domain Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Domain Elements</em>'.
+	 * @return the meta object for the containment reference list '<em>Domain Elements</em>'.
 	 * @see IFML.Core.DomainModel#getDomainElements()
 	 * @see #getDomainModel()
 	 * @generated
@@ -6502,7 +7025,7 @@ public interface CorePackage extends EPackage {
 		EClass DOMAIN_MODEL = eINSTANCE.getDomainModel();
 
 		/**
-		 * The meta object literal for the '<em><b>Domain Elements</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Domain Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

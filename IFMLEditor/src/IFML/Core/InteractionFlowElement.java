@@ -34,10 +34,10 @@ public interface InteractionFlowElement extends NamedElement, InteractionFlowMod
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getInteractionFlowElement_Parameters()
-	 * @model type="IFML.Core.IFMLParameter" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getParameters();
+	EList<IFMLParameter> getParameters();
 
 	/**
 	 * Returns the value of the '<em><b>Out Interaction Flows</b></em>' containment reference list.
@@ -52,10 +52,10 @@ public interface InteractionFlowElement extends NamedElement, InteractionFlowMod
 	 * @return the value of the '<em>Out Interaction Flows</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getInteractionFlowElement_OutInteractionFlows()
 	 * @see IFML.Core.InteractionFlow#getSourceInteractionFlowElement
-	 * @model type="IFML.Core.InteractionFlow" opposite="sourceInteractionFlowElement" containment="true" ordered="false"
+	 * @model opposite="sourceInteractionFlowElement" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getOutInteractionFlows();
+	EList<InteractionFlow> getOutInteractionFlows();
 
 	/**
 	 * Returns the value of the '<em><b>In Interaction Flows</b></em>' reference list.
@@ -70,9 +70,9 @@ public interface InteractionFlowElement extends NamedElement, InteractionFlowMod
 	 * @return the value of the '<em>In Interaction Flows</em>' reference list.
 	 * @see IFML.Core.CorePackage#getInteractionFlowElement_InInteractionFlows()
 	 * @see IFML.Core.InteractionFlow#getTargetInteractionFlowElement
-	 * @model type="IFML.Core.InteractionFlow" opposite="targetInteractionFlowElement" ordered="false"
+	 * @model opposite="targetInteractionFlowElement" ordered="false"
 	 * @generated
 	 */
-	EList getInInteractionFlows();
+	EList<InteractionFlow> getInInteractionFlows();
 
 } // InteractionFlowElement

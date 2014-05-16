@@ -33,6 +33,7 @@ public class DetailsImpl extends ViewComponentImpl implements Details {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.DETAILS;
 	}

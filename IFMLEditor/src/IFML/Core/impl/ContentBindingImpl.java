@@ -4,11 +4,8 @@ package IFML.Core.impl;
 
 import IFML.Core.ContentBinding;
 import IFML.Core.CorePackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -59,6 +56,7 @@ public abstract class ContentBindingImpl extends ViewComponentPartImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.CONTENT_BINDING;
 	}
@@ -89,6 +87,7 @@ public abstract class ContentBindingImpl extends ViewComponentPartImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.CONTENT_BINDING__UNIFORM_RESOURCE_IDENTIFIER:
@@ -102,6 +101,7 @@ public abstract class ContentBindingImpl extends ViewComponentPartImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.CONTENT_BINDING__UNIFORM_RESOURCE_IDENTIFIER:
@@ -116,6 +116,7 @@ public abstract class ContentBindingImpl extends ViewComponentPartImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.CONTENT_BINDING__UNIFORM_RESOURCE_IDENTIFIER:
@@ -130,6 +131,7 @@ public abstract class ContentBindingImpl extends ViewComponentPartImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.CONTENT_BINDING__UNIFORM_RESOURCE_IDENTIFIER:
@@ -143,6 +145,7 @@ public abstract class ContentBindingImpl extends ViewComponentPartImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

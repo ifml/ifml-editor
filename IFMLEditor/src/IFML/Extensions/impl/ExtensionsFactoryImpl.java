@@ -53,6 +53,7 @@ public class ExtensionsFactoryImpl extends EFactoryImpl implements ExtensionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ExtensionsPackage.ON_SUBMIT_EVENT: return createOnSubmitEvent();
@@ -273,6 +274,7 @@ public class ExtensionsFactoryImpl extends EFactoryImpl implements ExtensionsFac
 	 * @deprecated
 	 * @generated
 	 */
+	@Deprecated
 	public static ExtensionsPackage getPackage() {
 		return ExtensionsPackage.eINSTANCE;
 	}

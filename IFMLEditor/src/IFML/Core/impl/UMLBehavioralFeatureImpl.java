@@ -3,15 +3,12 @@
 package IFML.Core.impl;
 
 import IFML.Core.CorePackage;
-import IFML.Core.UMLBehavior;
 import IFML.Core.UMLBehavioralFeature;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.uml2.uml.BehavioralFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +32,7 @@ public class UMLBehavioralFeatureImpl extends BehavioralFeatureConceptImpl imple
 	 * @generated
 	 * @ordered
 	 */
-	protected UMLBehavior behavioralFeature;
+	protected BehavioralFeature behavioralFeature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -51,6 +48,7 @@ public class UMLBehavioralFeatureImpl extends BehavioralFeatureConceptImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.UML_BEHAVIORAL_FEATURE;
 	}
@@ -60,10 +58,10 @@ public class UMLBehavioralFeatureImpl extends BehavioralFeatureConceptImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLBehavior getBehavioralFeature() {
+	public BehavioralFeature getBehavioralFeature() {
 		if (behavioralFeature != null && behavioralFeature.eIsProxy()) {
 			InternalEObject oldBehavioralFeature = (InternalEObject)behavioralFeature;
-			behavioralFeature = (UMLBehavior)eResolveProxy(oldBehavioralFeature);
+			behavioralFeature = (BehavioralFeature)eResolveProxy(oldBehavioralFeature);
 			if (behavioralFeature != oldBehavioralFeature) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.UML_BEHAVIORAL_FEATURE__BEHAVIORAL_FEATURE, oldBehavioralFeature, behavioralFeature));
@@ -77,7 +75,7 @@ public class UMLBehavioralFeatureImpl extends BehavioralFeatureConceptImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLBehavior basicGetBehavioralFeature() {
+	public BehavioralFeature basicGetBehavioralFeature() {
 		return behavioralFeature;
 	}
 
@@ -86,8 +84,8 @@ public class UMLBehavioralFeatureImpl extends BehavioralFeatureConceptImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBehavioralFeature(UMLBehavior newBehavioralFeature) {
-		UMLBehavior oldBehavioralFeature = behavioralFeature;
+	public void setBehavioralFeature(BehavioralFeature newBehavioralFeature) {
+		BehavioralFeature oldBehavioralFeature = behavioralFeature;
 		behavioralFeature = newBehavioralFeature;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.UML_BEHAVIORAL_FEATURE__BEHAVIORAL_FEATURE, oldBehavioralFeature, behavioralFeature));
@@ -98,6 +96,7 @@ public class UMLBehavioralFeatureImpl extends BehavioralFeatureConceptImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.UML_BEHAVIORAL_FEATURE__BEHAVIORAL_FEATURE:
@@ -112,10 +111,11 @@ public class UMLBehavioralFeatureImpl extends BehavioralFeatureConceptImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.UML_BEHAVIORAL_FEATURE__BEHAVIORAL_FEATURE:
-				setBehavioralFeature((UMLBehavior)newValue);
+				setBehavioralFeature((BehavioralFeature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,10 +126,11 @@ public class UMLBehavioralFeatureImpl extends BehavioralFeatureConceptImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.UML_BEHAVIORAL_FEATURE__BEHAVIORAL_FEATURE:
-				setBehavioralFeature((UMLBehavior)null);
+				setBehavioralFeature((BehavioralFeature)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -140,6 +141,7 @@ public class UMLBehavioralFeatureImpl extends BehavioralFeatureConceptImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.UML_BEHAVIORAL_FEATURE__BEHAVIORAL_FEATURE:

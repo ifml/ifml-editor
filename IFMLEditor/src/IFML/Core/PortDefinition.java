@@ -34,9 +34,9 @@ public interface PortDefinition extends InteractionFlowElement {
 	 * @return the value of the '<em>Ports</em>' reference list.
 	 * @see IFML.Core.CorePackage#getPortDefinition_Ports()
 	 * @see IFML.Core.IFMLPort#getPortDefinition
-	 * @model type="IFML.Core.IFMLPort" opposite="portDefinition" ordered="false"
+	 * @model opposite="portDefinition" ordered="false"
 	 * @generated
 	 */
-	EList getPorts();
+	EList<IFMLPort> getPorts();
 
 } // PortDefinition

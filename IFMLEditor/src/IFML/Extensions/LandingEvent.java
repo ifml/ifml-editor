@@ -36,9 +36,9 @@ public interface LandingEvent extends CatchingEvent {
 	 * @return the value of the '<em>Jumping Events</em>' reference list.
 	 * @see IFML.Extensions.ExtensionsPackage#getLandingEvent_JumpingEvents()
 	 * @see IFML.Extensions.JumpEvent#getLandingEvent
-	 * @model type="IFML.Extensions.JumpEvent" opposite="landingEvent" ordered="false"
+	 * @model opposite="landingEvent" ordered="false"
 	 * @generated
 	 */
-	EList getJumpingEvents();
+	EList<JumpEvent> getJumpingEvents();
 
 } // LandingEvent

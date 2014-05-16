@@ -41,7 +41,7 @@ public class ContextVariableImpl extends NamedElementImpl implements ContextVari
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ContextVariableScope SCOPE_EDEFAULT = ContextVariableScope.APPLICATION_SCOPE_LITERAL;
+	protected static final ContextVariableScope SCOPE_EDEFAULT = ContextVariableScope.APPLICATION_SCOPE;
 
 	/**
 	 * The cached value of the '{@link #getScope() <em>Scope</em>}' attribute.
@@ -67,6 +67,7 @@ public class ContextVariableImpl extends NamedElementImpl implements ContextVari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.CONTEXT_VARIABLE;
 	}
@@ -138,6 +139,7 @@ public class ContextVariableImpl extends NamedElementImpl implements ContextVari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.CONTEXT_VARIABLE__CONTEXT:
@@ -153,6 +155,7 @@ public class ContextVariableImpl extends NamedElementImpl implements ContextVari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.CONTEXT_VARIABLE__CONTEXT:
@@ -166,6 +169,7 @@ public class ContextVariableImpl extends NamedElementImpl implements ContextVari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case CorePackage.CONTEXT_VARIABLE__CONTEXT:
@@ -179,6 +183,7 @@ public class ContextVariableImpl extends NamedElementImpl implements ContextVari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.CONTEXT_VARIABLE__CONTEXT:
@@ -194,6 +199,7 @@ public class ContextVariableImpl extends NamedElementImpl implements ContextVari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.CONTEXT_VARIABLE__CONTEXT:
@@ -211,6 +217,7 @@ public class ContextVariableImpl extends NamedElementImpl implements ContextVari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.CONTEXT_VARIABLE__CONTEXT:
@@ -228,6 +235,7 @@ public class ContextVariableImpl extends NamedElementImpl implements ContextVari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.CONTEXT_VARIABLE__CONTEXT:
@@ -243,6 +251,7 @@ public class ContextVariableImpl extends NamedElementImpl implements ContextVari
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

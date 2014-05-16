@@ -34,10 +34,10 @@ public interface IFMLAction extends InteractionFlowElement, NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Action Events</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getIFMLAction_ActionEvents()
-	 * @model type="IFML.Core.ActionEvent" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getActionEvents();
+	EList<ActionEvent> getActionEvents();
 
 	/**
 	 * Returns the value of the '<em><b>Dynamic Behavior</b></em>' reference.

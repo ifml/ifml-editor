@@ -32,9 +32,9 @@ public interface InteractionFlowModel extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interaction Flow Model Elements</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getInteractionFlowModel_InteractionFlowModelElements()
-	 * @model type="IFML.Core.InteractionFlowModelElement" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getInteractionFlowModelElements();
+	EList<InteractionFlowModelElement> getInteractionFlowModelElements();
 
 } // InteractionFlowModel

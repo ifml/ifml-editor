@@ -32,9 +32,9 @@ public interface InteractionFlowExpression extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interaction Flow</em>' reference list.
 	 * @see IFML.Core.CorePackage#getInteractionFlowExpression_InteractionFlow()
-	 * @model type="IFML.Core.InteractionFlow" lower="2" ordered="false"
+	 * @model lower="2" ordered="false"
 	 * @generated
 	 */
-	EList getInteractionFlow();
+	EList<InteractionFlow> getInteractionFlow();
 
 } // InteractionFlowExpression

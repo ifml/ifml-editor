@@ -53,6 +53,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case CorePackage.INTERACTION_FLOW_EXPRESSION: return createInteractionFlowExpression();
@@ -636,6 +637,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 * @deprecated
 	 * @generated
 	 */
+	@Deprecated
 	public static CorePackage getPackage() {
 		return CorePackage.eINSTANCE;
 	}

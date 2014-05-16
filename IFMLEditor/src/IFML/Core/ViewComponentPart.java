@@ -35,10 +35,10 @@ public interface ViewComponentPart extends InteractionFlowElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View Element Events</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getViewComponentPart_ViewElementEvents()
-	 * @model type="IFML.Core.ViewElementEvent" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getViewElementEvents();
+	EList<ViewElementEvent> getViewElementEvents();
 
 	/**
 	 * Returns the value of the '<em><b>Activation Expression</b></em>' reference.
@@ -103,9 +103,9 @@ public interface ViewComponentPart extends InteractionFlowElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sub View Component Parts</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getViewComponentPart_SubViewComponentParts()
-	 * @model type="IFML.Core.ViewComponentPart" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getSubViewComponentParts();
+	EList<ViewComponentPart> getSubViewComponentParts();
 
 } // ViewComponentPart

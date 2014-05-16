@@ -3,15 +3,12 @@
 package IFML.Core.impl;
 
 import IFML.Core.CorePackage;
-import IFML.Core.DynamicBehavior;
 import IFML.Core.UMLBehavior;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.uml2.uml.Behavior;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +32,7 @@ public class UMLBehaviorImpl extends BehaviorConceptImpl implements UMLBehavior 
 	 * @generated
 	 * @ordered
 	 */
-	protected DynamicBehavior behavior;
+	protected Behavior behavior;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -51,6 +48,7 @@ public class UMLBehaviorImpl extends BehaviorConceptImpl implements UMLBehavior 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.UML_BEHAVIOR;
 	}
@@ -60,10 +58,10 @@ public class UMLBehaviorImpl extends BehaviorConceptImpl implements UMLBehavior 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DynamicBehavior getBehavior() {
+	public Behavior getBehavior() {
 		if (behavior != null && behavior.eIsProxy()) {
 			InternalEObject oldBehavior = (InternalEObject)behavior;
-			behavior = (DynamicBehavior)eResolveProxy(oldBehavior);
+			behavior = (Behavior)eResolveProxy(oldBehavior);
 			if (behavior != oldBehavior) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.UML_BEHAVIOR__BEHAVIOR, oldBehavior, behavior));
@@ -77,7 +75,7 @@ public class UMLBehaviorImpl extends BehaviorConceptImpl implements UMLBehavior 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DynamicBehavior basicGetBehavior() {
+	public Behavior basicGetBehavior() {
 		return behavior;
 	}
 
@@ -86,8 +84,8 @@ public class UMLBehaviorImpl extends BehaviorConceptImpl implements UMLBehavior 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBehavior(DynamicBehavior newBehavior) {
-		DynamicBehavior oldBehavior = behavior;
+	public void setBehavior(Behavior newBehavior) {
+		Behavior oldBehavior = behavior;
 		behavior = newBehavior;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.UML_BEHAVIOR__BEHAVIOR, oldBehavior, behavior));
@@ -98,6 +96,7 @@ public class UMLBehaviorImpl extends BehaviorConceptImpl implements UMLBehavior 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.UML_BEHAVIOR__BEHAVIOR:
@@ -112,10 +111,11 @@ public class UMLBehaviorImpl extends BehaviorConceptImpl implements UMLBehavior 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.UML_BEHAVIOR__BEHAVIOR:
-				setBehavior((DynamicBehavior)newValue);
+				setBehavior((Behavior)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,10 +126,11 @@ public class UMLBehaviorImpl extends BehaviorConceptImpl implements UMLBehavior 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.UML_BEHAVIOR__BEHAVIOR:
-				setBehavior((DynamicBehavior)null);
+				setBehavior((Behavior)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -140,6 +141,7 @@ public class UMLBehaviorImpl extends BehaviorConceptImpl implements UMLBehavior 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.UML_BEHAVIOR__BEHAVIOR:

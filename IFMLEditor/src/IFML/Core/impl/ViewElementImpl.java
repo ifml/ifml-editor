@@ -48,7 +48,7 @@ public class ViewElementImpl extends InteractionFlowElementImpl implements ViewE
 	 * @generated
 	 * @ordered
 	 */
-	protected EList viewElementEvents;
+	protected EList<ViewElementEvent> viewElementEvents;
 
 	/**
 	 * The cached value of the '{@link #getActivationExpression() <em>Activation Expression</em>}' reference.
@@ -74,6 +74,7 @@ public class ViewElementImpl extends InteractionFlowElementImpl implements ViewE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.VIEW_ELEMENT;
 	}
@@ -83,9 +84,9 @@ public class ViewElementImpl extends InteractionFlowElementImpl implements ViewE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getViewElementEvents() {
+	public EList<ViewElementEvent> getViewElementEvents() {
 		if (viewElementEvents == null) {
-			viewElementEvents = new EObjectContainmentEList(ViewElementEvent.class, this, CorePackage.VIEW_ELEMENT__VIEW_ELEMENT_EVENTS);
+			viewElementEvents = new EObjectContainmentEList<ViewElementEvent>(ViewElementEvent.class, this, CorePackage.VIEW_ELEMENT__VIEW_ELEMENT_EVENTS);
 		}
 		return viewElementEvents;
 	}
@@ -174,6 +175,7 @@ public class ViewElementImpl extends InteractionFlowElementImpl implements ViewE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.VIEW_ELEMENT__VIEW_CONTAINER:
@@ -189,10 +191,11 @@ public class ViewElementImpl extends InteractionFlowElementImpl implements ViewE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CorePackage.VIEW_ELEMENT__VIEW_ELEMENT_EVENTS:
-				return ((InternalEList)getViewElementEvents()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getViewElementEvents()).basicRemove(otherEnd, msgs);
 			case CorePackage.VIEW_ELEMENT__VIEW_CONTAINER:
 				return basicSetViewContainer(null, msgs);
 		}
@@ -204,6 +207,7 @@ public class ViewElementImpl extends InteractionFlowElementImpl implements ViewE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case CorePackage.VIEW_ELEMENT__VIEW_CONTAINER:
@@ -217,6 +221,7 @@ public class ViewElementImpl extends InteractionFlowElementImpl implements ViewE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CorePackage.VIEW_ELEMENT__VIEW_ELEMENT_EVENTS:
@@ -235,11 +240,13 @@ public class ViewElementImpl extends InteractionFlowElementImpl implements ViewE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.VIEW_ELEMENT__VIEW_ELEMENT_EVENTS:
 				getViewElementEvents().clear();
-				getViewElementEvents().addAll((Collection)newValue);
+				getViewElementEvents().addAll((Collection<? extends ViewElementEvent>)newValue);
 				return;
 			case CorePackage.VIEW_ELEMENT__ACTIVATION_EXPRESSION:
 				setActivationExpression((ActivationExpression)newValue);
@@ -256,6 +263,7 @@ public class ViewElementImpl extends InteractionFlowElementImpl implements ViewE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.VIEW_ELEMENT__VIEW_ELEMENT_EVENTS:
@@ -276,6 +284,7 @@ public class ViewElementImpl extends InteractionFlowElementImpl implements ViewE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CorePackage.VIEW_ELEMENT__VIEW_ELEMENT_EVENTS:

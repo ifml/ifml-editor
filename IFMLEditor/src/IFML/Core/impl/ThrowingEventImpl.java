@@ -31,6 +31,7 @@ public class ThrowingEventImpl extends EventImpl implements ThrowingEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return CorePackage.Literals.THROWING_EVENT;
 	}

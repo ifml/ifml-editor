@@ -82,6 +82,7 @@ public class IFMLWindowImpl extends ViewContainerImpl implements IFMLWindow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.IFML_WINDOW;
 	}
@@ -133,12 +134,13 @@ public class IFMLWindowImpl extends ViewContainerImpl implements IFMLWindow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ExtensionsPackage.IFML_WINDOW__IS_MODAL:
-				return isIsModal() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsModal();
 			case ExtensionsPackage.IFML_WINDOW__IS_NEW_WINDOW:
-				return isIsNewWindow() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsNewWindow();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,13 +150,14 @@ public class IFMLWindowImpl extends ViewContainerImpl implements IFMLWindow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ExtensionsPackage.IFML_WINDOW__IS_MODAL:
-				setIsModal(((Boolean)newValue).booleanValue());
+				setIsModal((Boolean)newValue);
 				return;
 			case ExtensionsPackage.IFML_WINDOW__IS_NEW_WINDOW:
-				setIsNewWindow(((Boolean)newValue).booleanValue());
+				setIsNewWindow((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -165,6 +168,7 @@ public class IFMLWindowImpl extends ViewContainerImpl implements IFMLWindow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ExtensionsPackage.IFML_WINDOW__IS_MODAL:
@@ -182,6 +186,7 @@ public class IFMLWindowImpl extends ViewContainerImpl implements IFMLWindow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ExtensionsPackage.IFML_WINDOW__IS_MODAL:
@@ -197,6 +202,7 @@ public class IFMLWindowImpl extends ViewContainerImpl implements IFMLWindow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

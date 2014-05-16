@@ -34,9 +34,9 @@ public interface List extends ViewComponent {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Select Event</em>' containment reference list.
 	 * @see IFML.Extensions.ExtensionsPackage#getList_SelectEvent()
-	 * @model type="IFML.Extensions.OnSelectEvent" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getSelectEvent();
+	EList<OnSelectEvent> getSelectEvent();
 
 } // List

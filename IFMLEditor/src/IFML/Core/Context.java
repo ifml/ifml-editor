@@ -33,10 +33,10 @@ public interface Context extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Context Dimensions</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getContext_ContextDimensions()
-	 * @model type="IFML.Core.ContextDimension" containment="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getContextDimensions();
+	EList<ContextDimension> getContextDimensions();
 
 	/**
 	 * Returns the value of the '<em><b>Context Variables</b></em>' containment reference list.
@@ -51,9 +51,9 @@ public interface Context extends Element {
 	 * @return the value of the '<em>Context Variables</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getContext_ContextVariables()
 	 * @see IFML.Core.ContextVariable#getContext
-	 * @model type="IFML.Core.ContextVariable" opposite="context" containment="true" ordered="false"
+	 * @model opposite="context" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList getContextVariables();
+	EList<ContextVariable> getContextVariables();
 
 } // Context

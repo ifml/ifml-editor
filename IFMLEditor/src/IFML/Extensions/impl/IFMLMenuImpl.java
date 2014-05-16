@@ -33,6 +33,7 @@ public class IFMLMenuImpl extends ViewContainerImpl implements IFMLMenu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.IFML_MENU;
 	}

@@ -33,6 +33,7 @@ public class ValidationRuleImpl extends ConstraintImpl implements ValidationRule
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.VALIDATION_RULE;
 	}

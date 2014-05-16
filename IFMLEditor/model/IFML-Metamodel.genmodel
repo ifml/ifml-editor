@@ -2,10 +2,12 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/IFMLEditor/src" modelPluginID="IFMLEditor" modelName="IFML-Metamodel"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
-    copyrightFields="false" operationReflection="false" importOrganizing="true">
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>IFML-Metamodel.ecore</foreignModel>
   <genPackages prefix="IFML" disposableProviderFactory="true" ecorePackage="IFML-Metamodel.ecore#/">
-    <nestedGenPackages prefix="DataTypes" disposableProviderFactory="true" ecorePackage="IFML-Metamodel.ecore#//DataTypes">
+    <nestedGenPackages prefix="DataTypes" basePackage="IFML" disposableProviderFactory="true"
+        ecorePackage="IFML-Metamodel.ecore#//DataTypes">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="IFML-Metamodel.ecore#//DataTypes/Direction">
         <genEnumLiterals ecoreEnumLiteral="IFML-Metamodel.ecore#//DataTypes/Direction/in"/>
         <genEnumLiterals ecoreEnumLiteral="IFML-Metamodel.ecore#//DataTypes/Direction/out"/>
@@ -22,7 +24,8 @@
         <genEnumLiterals ecoreEnumLiteral="IFML-Metamodel.ecore#//DataTypes/ContextVariableScope/ViewContainerScope"/>
       </genEnums>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Core" disposableProviderFactory="true" ecorePackage="IFML-Metamodel.ecore#//Core">
+    <nestedGenPackages prefix="Core" basePackage="IFML" resource="XML" disposableProviderFactory="true"
+        ecorePackage="IFML-Metamodel.ecore#//Core">
       <genClasses image="false" ecoreClass="IFML-Metamodel.ecore#//Core/InteractionFlow">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFML-Metamodel.ecore#//Core/InteractionFlow/parameterBindingGroup"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference IFML-Metamodel.ecore#//Core/InteractionFlow/sourceInteractionFlowElement"/>
@@ -45,8 +48,7 @@
       </genClasses>
       <genClasses ecoreClass="IFML-Metamodel.ecore#//Core/ActionEvent"/>
       <genClasses ecoreClass="IFML-Metamodel.ecore#//Core/DomainModel">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference IFML-Metamodel.ecore#//Core/DomainModel/domainElements"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFML-Metamodel.ecore#//Core/DomainModel/domainElements"/>
       </genClasses>
       <genClasses image="false" ecoreClass="IFML-Metamodel.ecore#//Core/NamedElement">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFML-Metamodel.ecore#//Core/NamedElement/name"/>
@@ -244,7 +246,8 @@
       </genClasses>
       <genClasses ecoreClass="IFML-Metamodel.ecore#//Core/DomainElement"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Extensions" disposableProviderFactory="true" ecorePackage="IFML-Metamodel.ecore#//Extensions">
+    <nestedGenPackages prefix="Extensions" basePackage="IFML" resource="XML" disposableProviderFactory="true"
+        ecorePackage="IFML-Metamodel.ecore#//Extensions">
       <genClasses ecoreClass="IFML-Metamodel.ecore#//Extensions/OnSubmitEvent"/>
       <genClasses ecoreClass="IFML-Metamodel.ecore#//Extensions/ValidationRule"/>
       <genClasses ecoreClass="IFML-Metamodel.ecore#//Extensions/List">

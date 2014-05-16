@@ -6,6 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: IFML.Core,
  IFML.Core.impl,
  IFML.Core.util,
@@ -15,6 +16,9 @@ Export-Package: IFML.Core,
  IFML.Extensions.impl,
  IFML.Extensions.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.uml2.types;visibility:=reexport,
+ org.eclipse.uml2.uml;visibility:=reexport
 Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy

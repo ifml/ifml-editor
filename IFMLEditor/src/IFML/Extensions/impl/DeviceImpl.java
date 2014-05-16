@@ -33,6 +33,7 @@ public class DeviceImpl extends ContextDimensionImpl implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ExtensionsPackage.Literals.DEVICE;
 	}
