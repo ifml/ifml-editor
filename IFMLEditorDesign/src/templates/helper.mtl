@@ -1,3 +1,4 @@
+[comment encoding = UTF-8 /]
 [module helper('http://www.omg.org/spec/20130218/core', 'http://www.omg.org/spec/20130218/ext')/]
 
 [query public getInteractionFlowModel(ifml_model : IFMLModel) : InteractionFlowModel = 
@@ -355,7 +356,12 @@
 					else 
 						if (v.oclIsTypeOf(ConditionalExpression)) 
 						then '«ConditionalExpression» '
-						else 'ERRORE'
+						else
+							if(v.oclIsTypeOf(VisualizationAttribute))
+							then  '«VisualisationAttribute» '
+							else
+								'ERRORE'
+							endif
 						endif
 					endif
 				endif
