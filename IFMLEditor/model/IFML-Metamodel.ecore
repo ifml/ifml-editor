@@ -179,6 +179,7 @@
           lowerBound="1" eType="#//DataTypes/Direction" defaultValueLiteral="in"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="defaultValue" ordered="false"
           lowerBound="1" eType="#//Core/Expression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Type"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DataBinding" eSuperTypes="#//Core/ContentBinding">
       <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalExpression"

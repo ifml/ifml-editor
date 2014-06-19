@@ -640,13 +640,22 @@ public interface ExtensionsPackage extends EPackage {
 	int IFML_SLOT__DEFAULT_VALUE = CorePackage.VIEW_COMPONENT_PART_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFML_SLOT__TYPE = CorePackage.VIEW_COMPONENT_PART_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>IFML Slot</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IFML_SLOT_FEATURE_COUNT = CorePackage.VIEW_COMPONENT_PART_FEATURE_COUNT + 2;
+	int IFML_SLOT_FEATURE_COUNT = CorePackage.VIEW_COMPONENT_PART_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>IFML Slot</em>' class.
@@ -903,13 +912,22 @@ public interface ExtensionsPackage extends EPackage {
 	int FIELD__DEFAULT_VALUE = CorePackage.VIEW_COMPONENT_PART_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__TYPE = CorePackage.VIEW_COMPONENT_PART_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = CorePackage.VIEW_COMPONENT_PART_FEATURE_COUNT + 2;
+	int FIELD_FEATURE_COUNT = CorePackage.VIEW_COMPONENT_PART_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Field</em>' class.
@@ -1239,6 +1257,15 @@ public interface ExtensionsPackage extends EPackage {
 	int SELECTION_FIELD__DEFAULT_VALUE = FIELD__DEFAULT_VALUE;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION_FIELD__TYPE = FIELD__TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Is Multi Selection</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1391,6 +1418,15 @@ public interface ExtensionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int SIMPLE_FIELD__DEFAULT_VALUE = FIELD__DEFAULT_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_FIELD__TYPE = FIELD__TYPE;
 
 	/**
 	 * The number of structural features of the '<em>Simple Field</em>' class.

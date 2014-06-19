@@ -147,6 +147,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFML-Metamodel.ecore#//Core/IFMLParameter/direction"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference IFML-Metamodel.ecore#//Core/IFMLParameter/defaultValue"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference IFML-Metamodel.ecore#//Core/IFMLParameter/type"/>
       </genClasses>
       <genClasses ecoreClass="IFML-Metamodel.ecore#//Core/DataBinding">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFML-Metamodel.ecore#//Core/DataBinding/conditionalExpression"/>

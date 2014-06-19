@@ -1307,6 +1307,15 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getIFMLParameter_Type() {
+		return (EReference)ifmlParameterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDataBinding() {
 		return dataBindingEClass;
 	}
@@ -1954,6 +1963,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		ifmlParameterEClass = createEClass(IFML_PARAMETER);
 		createEAttribute(ifmlParameterEClass, IFML_PARAMETER__DIRECTION);
 		createEReference(ifmlParameterEClass, IFML_PARAMETER__DEFAULT_VALUE);
+		createEReference(ifmlParameterEClass, IFML_PARAMETER__TYPE);
 
 		dataBindingEClass = createEClass(DATA_BINDING);
 		createEReference(dataBindingEClass, DATA_BINDING__CONDITIONAL_EXPRESSION);
@@ -2248,6 +2258,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEClass(ifmlParameterEClass, IFMLParameter.class, "IFMLParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIFMLParameter_Direction(), theDataTypesPackage.getDirection(), "direction", "in", 1, 1, IFMLParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIFMLParameter_DefaultValue(), this.getExpression(), null, "defaultValue", null, 1, 1, IFMLParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getIFMLParameter_Type(), theUMLPackage.getType(), null, "type", null, 0, 1, IFMLParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataBindingEClass, DataBinding.class, "DataBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataBinding_ConditionalExpression(), this.getConditionalExpression(), null, "conditionalExpression", null, 0, -1, DataBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

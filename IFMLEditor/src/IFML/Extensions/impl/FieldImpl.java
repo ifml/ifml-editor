@@ -5,20 +5,15 @@ package IFML.Extensions.impl;
 import IFML.Core.CorePackage;
 import IFML.Core.Expression;
 import IFML.Core.IFMLParameter;
-
 import IFML.Core.impl.ViewComponentPartImpl;
-
 import IFML.DataTypes.Direction;
-
 import IFML.Extensions.ExtensionsPackage;
 import IFML.Extensions.Field;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.uml2.uml.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link IFML.Extensions.impl.FieldImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link IFML.Extensions.impl.FieldImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link IFML.Extensions.impl.FieldImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,6 +60,16 @@ public abstract class FieldImpl extends ViewComponentPartImpl implements Field {
 	 * @ordered
 	 */
 	protected Expression defaultValue;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected Type type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,6 +154,44 @@ public abstract class FieldImpl extends ViewComponentPartImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Type getType() {
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject)type;
+			type = (Type)eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExtensionsPackage.FIELD__TYPE, oldType, type));
+			}
+		}
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Type basicGetType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(Type newType) {
+		Type oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExtensionsPackage.FIELD__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -156,6 +200,9 @@ public abstract class FieldImpl extends ViewComponentPartImpl implements Field {
 			case ExtensionsPackage.FIELD__DEFAULT_VALUE:
 				if (resolve) return getDefaultValue();
 				return basicGetDefaultValue();
+			case ExtensionsPackage.FIELD__TYPE:
+				if (resolve) return getType();
+				return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +212,7 @@ public abstract class FieldImpl extends ViewComponentPartImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -173,6 +221,9 @@ public abstract class FieldImpl extends ViewComponentPartImpl implements Field {
 				return;
 			case ExtensionsPackage.FIELD__DEFAULT_VALUE:
 				setDefaultValue((Expression)newValue);
+				return;
+			case ExtensionsPackage.FIELD__TYPE:
+				setType((Type)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,6 +243,9 @@ public abstract class FieldImpl extends ViewComponentPartImpl implements Field {
 			case ExtensionsPackage.FIELD__DEFAULT_VALUE:
 				setDefaultValue((Expression)null);
 				return;
+			case ExtensionsPackage.FIELD__TYPE:
+				setType((Type)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -208,6 +262,8 @@ public abstract class FieldImpl extends ViewComponentPartImpl implements Field {
 				return direction != DIRECTION_EDEFAULT;
 			case ExtensionsPackage.FIELD__DEFAULT_VALUE:
 				return defaultValue != null;
+			case ExtensionsPackage.FIELD__TYPE:
+				return type != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -223,6 +279,7 @@ public abstract class FieldImpl extends ViewComponentPartImpl implements Field {
 			switch (derivedFeatureID) {
 				case ExtensionsPackage.FIELD__DIRECTION: return CorePackage.IFML_PARAMETER__DIRECTION;
 				case ExtensionsPackage.FIELD__DEFAULT_VALUE: return CorePackage.IFML_PARAMETER__DEFAULT_VALUE;
+				case ExtensionsPackage.FIELD__TYPE: return CorePackage.IFML_PARAMETER__TYPE;
 				default: return -1;
 			}
 		}
@@ -240,6 +297,7 @@ public abstract class FieldImpl extends ViewComponentPartImpl implements Field {
 			switch (baseFeatureID) {
 				case CorePackage.IFML_PARAMETER__DIRECTION: return ExtensionsPackage.FIELD__DIRECTION;
 				case CorePackage.IFML_PARAMETER__DEFAULT_VALUE: return ExtensionsPackage.FIELD__DEFAULT_VALUE;
+				case CorePackage.IFML_PARAMETER__TYPE: return ExtensionsPackage.FIELD__TYPE;
 				default: return -1;
 			}
 		}

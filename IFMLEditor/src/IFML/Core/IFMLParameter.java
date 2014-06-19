@@ -3,6 +3,7 @@
 package IFML.Core;
 
 import IFML.DataTypes.Direction;
+import org.eclipse.uml2.uml.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,7 @@ import IFML.DataTypes.Direction;
  * <ul>
  *   <li>{@link IFML.Core.IFMLParameter#getDirection <em>Direction</em>}</li>
  *   <li>{@link IFML.Core.IFMLParameter#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link IFML.Core.IFMLParameter#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,5 +79,31 @@ public interface IFMLParameter extends InteractionFlowModelElement, NamedElement
 	 * @generated
 	 */
 	void setDefaultValue(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' reference.
+	 * @see #setType(Type)
+	 * @see IFML.Core.CorePackage#getIFMLParameter_Type()
+	 * @model
+	 * @generated
+	 */
+	Type getType();
+
+	/**
+	 * Sets the value of the '{@link IFML.Core.IFMLParameter#getType <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' reference.
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(Type value);
 
 } // IFMLParameter
