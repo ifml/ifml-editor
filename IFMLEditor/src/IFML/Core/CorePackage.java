@@ -3213,13 +3213,22 @@ public interface CorePackage extends EPackage {
 	int IFML_PARAMETER__DEFAULT_VALUE = INTERACTION_FLOW_MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFML_PARAMETER__TYPE = INTERACTION_FLOW_MODEL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>IFML Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IFML_PARAMETER_FEATURE_COUNT = INTERACTION_FLOW_MODEL_ELEMENT_FEATURE_COUNT + 3;
+	int IFML_PARAMETER_FEATURE_COUNT = INTERACTION_FLOW_MODEL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>IFML Parameter</em>' class.
@@ -6280,6 +6289,17 @@ public interface CorePackage extends EPackage {
 	EReference getIFMLParameter_DefaultValue();
 
 	/**
+	 * Returns the meta object for the reference '{@link IFML.Core.IFMLParameter#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see IFML.Core.IFMLParameter#getType()
+	 * @see #getIFMLParameter()
+	 * @generated
+	 */
+	EReference getIFMLParameter_Type();
+
+	/**
 	 * Returns the meta object for class '{@link IFML.Core.DataBinding <em>Data Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7615,6 +7635,14 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference IFML_PARAMETER__DEFAULT_VALUE = eINSTANCE.getIFMLParameter_DefaultValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IFML_PARAMETER__TYPE = eINSTANCE.getIFMLParameter_Type();
 
 		/**
 		 * The meta object literal for the '{@link IFML.Core.impl.DataBindingImpl <em>Data Binding</em>}' class.

@@ -20,14 +20,10 @@ import IFML.Core.ViewComponentPart;
 import IFML.Core.ViewContainer;
 import IFML.Core.ViewElement;
 import IFML.Core.ViewElementEvent;
-
 import IFML.Extensions.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

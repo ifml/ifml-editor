@@ -206,7 +206,7 @@
 		else 
 			if (v.oclIsTypeOf(ViewContainer)) 
 			then getViewContainerLabel(getViewContainer(v)) + '«ViewContainer» '
-			else 'ERRORE'
+			else 'ERROR'
 			endif
 		endif
 	endif
@@ -240,7 +240,7 @@
 			else 
 				if (v.oclIsTypeOf(Details)) 
 				then '«Details» '
-				else 'ERRORE'
+				else 'ERROR'
 				endif
 			endif
 		endif
@@ -360,7 +360,7 @@
 							if(v.oclIsTypeOf(VisualizationAttribute))
 							then  '«VisualisationAttribute» '
 							else
-								'ERRORE'
+								'ERROR'
 							endif
 						endif
 					endif

@@ -6,15 +6,12 @@ import IFML.Core.CorePackage;
 import IFML.Core.Expression;
 import IFML.Core.IFMLParameter;
 import IFML.Core.NamedElement;
-
 import IFML.DataTypes.Direction;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.uml2.uml.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link IFML.Core.impl.IFMLParameterImpl#getName <em>Name</em>}</li>
  *   <li>{@link IFML.Core.impl.IFMLParameterImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link IFML.Core.impl.IFMLParameterImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link IFML.Core.impl.IFMLParameterImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,6 +79,16 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 	 * @ordered
 	 */
 	protected Expression defaultValue;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected Type type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,6 +194,44 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Type getType() {
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject)type;
+			type = (Type)eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.IFML_PARAMETER__TYPE, oldType, type));
+			}
+		}
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Type basicGetType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(Type newType) {
+		Type oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.IFML_PARAMETER__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -196,6 +242,9 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 			case CorePackage.IFML_PARAMETER__DEFAULT_VALUE:
 				if (resolve) return getDefaultValue();
 				return basicGetDefaultValue();
+			case CorePackage.IFML_PARAMETER__TYPE:
+				if (resolve) return getType();
+				return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,6 +254,7 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -216,6 +266,9 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 				return;
 			case CorePackage.IFML_PARAMETER__DEFAULT_VALUE:
 				setDefaultValue((Expression)newValue);
+				return;
+			case CorePackage.IFML_PARAMETER__TYPE:
+				setType((Type)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -238,6 +291,9 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 			case CorePackage.IFML_PARAMETER__DEFAULT_VALUE:
 				setDefaultValue((Expression)null);
 				return;
+			case CorePackage.IFML_PARAMETER__TYPE:
+				setType((Type)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -256,6 +312,8 @@ public class IFMLParameterImpl extends InteractionFlowModelElementImpl implement
 				return direction != DIRECTION_EDEFAULT;
 			case CorePackage.IFML_PARAMETER__DEFAULT_VALUE:
 				return defaultValue != null;
+			case CorePackage.IFML_PARAMETER__TYPE:
+				return type != null;
 		}
 		return super.eIsSet(featureID);
 	}

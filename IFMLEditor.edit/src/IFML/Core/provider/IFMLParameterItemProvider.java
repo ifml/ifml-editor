@@ -60,6 +60,7 @@ public class IFMLParameterItemProvider
 			addNamePropertyDescriptor(object);
 			addDirectionPropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -122,6 +123,28 @@ public class IFMLParameterItemProvider
 				 getString("_UI_IFMLParameter_defaultValue_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_IFMLParameter_defaultValue_feature", "_UI_IFMLParameter_type"),
 				 CorePackage.Literals.IFML_PARAMETER__DEFAULT_VALUE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IFMLParameter_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IFMLParameter_type_feature", "_UI_IFMLParameter_type"),
+				 CorePackage.Literals.IFML_PARAMETER__TYPE,
 				 true,
 				 false,
 				 true,
