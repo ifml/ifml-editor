@@ -1,0 +1,4 @@
+<associateSites>
+<associateSite label="Epsilon" url="http://download.eclipse.org/epsilon/updates/site.xml"/>
+<associateSite label="Sirius" url="http://download.eclipse.org/sirius/updates/releases/1.0.0/luna"/>
+</associateSites>
