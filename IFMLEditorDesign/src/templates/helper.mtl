@@ -206,7 +206,7 @@
 		else 
 			if (v.oclIsTypeOf(ViewContainer)) 
 			then getViewContainerLabel(getViewContainer(v)) + '«ViewContainer» '
-			else 'ERROR'
+			else 'RRR'
 			endif
 		endif
 	endif
@@ -240,7 +240,7 @@
 			else 
 				if (v.oclIsTypeOf(Details)) 
 				then '«Details» '
-				else 'ERROR'
+				else 'RRR'
 				endif
 			endif
 		endif
@@ -258,7 +258,7 @@
 			if (v.oclIsTypeOf(JumpEvent)) 
 			then '«JumpEvent» '
 			else 
-				'ERROR'
+				'RRR'
 			endif
 		endif
 	endif
@@ -293,7 +293,7 @@
 									if (v.oclIsTypeOf(OnSubmitEvent)) 
 									then '«OnSubmitEvent» '
 									else 
-										'ERROR'
+										'RRR'
 									endif
 								endif
 							endif
@@ -312,7 +312,7 @@
 	else 
 		if (v.oclIsTypeOf(OnLoadEvent)) 
 		then '«OnLoadEvent» '
-		else 'ERROR'
+		else 'RRR'
 		endif
 	endif
 /]
@@ -327,7 +327,7 @@
 		else 
 			if (v.oclIsTypeOf(OnSubmitEvent)) 
 			then '«OnSubmitEvent» '
-			else 'ERROR'
+			else 'RRR'
 			endif
 		endif
 	endif
@@ -360,7 +360,7 @@
 							if(v.oclIsTypeOf(VisualizationAttribute))
 							then  '«VisualisationAttribute» '
 							else
-								'ERROR'
+								'RRR'
 							endif
 						endif
 					endif
