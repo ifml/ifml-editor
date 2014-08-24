@@ -1,0 +1,442 @@
+[comment encoding = UTF-8 /]
+[module helper('http://www.omg.org/spec/20130218/core', 'http://www.omg.org/spec/20130218/ext')/]
+
+[query public getInteractionFlowModel(ifml_model : IFMLModel) : InteractionFlowModel = 
+	ifml_model.interactionFlowModel
+/]
+
+[query public getViewContainerLabel(vc : ViewContainer) : String = 
+		if (vc.isLandmark and vc.isDefault and not vc.isXOR) 
+		then '[L][D]'
+		else 
+			if(vc.isLandmark and not vc.isDefault and not vc.isXOR)
+			then '[L]'
+			else
+				if(not vc.isLandmark and vc.isDefault and not vc.isXOR)
+				then '[D]'
+				else 
+					if(vc.isLandmark and not vc.isDefault and vc.isXOR)
+					then '[L][XOR]'
+					else
+						if(not vc.isLandmark and vc.isDefault and vc.isXOR)
+						then '[D][XOR]'
+						else
+							if(vc.isLandmark and vc.isDefault and vc.isXOR)
+							then '[L][D][XOR]'
+							else
+								if(not vc.isLandmark and not vc.isDefault and vc.isXOR)
+								then '[XOR]'
+								else
+									''
+								endif
+							endif
+						endif
+					endif
+				endif
+			endif
+		endif
+/]
+
+[query public getMenuLabel(m : IFMLMenu) : String = 
+		if (m.isLandmark and m.isDefault and not m.isXOR) 
+		then '[L][D]'
+		else 
+			if(m.isLandmark and not m.isDefault and not m.isXOR)
+			then '[L]'
+			else
+				if(not m.isLandmark and m.isDefault and not m.isXOR)
+				then '[D]'
+				else 
+					if(m.isLandmark and not m.isDefault and m.isXOR)
+					then '[L][XOR]'
+					else
+						if(not m.isLandmark and m.isDefault and m.isXOR)
+						then '[D][XOR]'
+						else
+							if(m.isLandmark and m.isDefault and m.isXOR)
+							then '[L][D][XOR]'
+							else
+								if(not m.isLandmark and not m.isDefault and m.isXOR)
+								then '[XOR]'
+								else
+									''
+								endif
+							endif
+						endif
+					endif
+				endif
+			endif
+		endif
+/]
+
+
+
+[query public getWindowLabel(w : IFMLWindow) : String = 
+	if (w.isLandmark and w.isDefault and not w.isXOR and not w.isModal and not w.isNewWindow) 
+	then '[L][D]'
+	else 
+		if(w.isLandmark and not w.isDefault and not w.isXOR and not w.isModal and not w.isNewWindow)
+		then '[L]'
+		else
+			if(not w.isLandmark and w.isDefault and not w.isXOR and not w.isModal and not w.isNewWindow)
+			then '[D]'
+			else 
+				if(w.isLandmark and not w.isDefault and w.isXOR and not w.isModal and not w.isNewWindow)
+				then '[L][XOR]'
+				else
+					if(not w.isLandmark and w.isDefault and w.isXOR and not w.isModal and not w.isNewWindow)
+					then '[D][XOR]'
+					else
+						if(w.isLandmark and w.isDefault and w.isXOR and not w.isModal and not w.isNewWindow)
+						then '[L][D][XOR]'
+						else
+							if(not w.isLandmark and not w.isDefault and w.isXOR and not w.isModal and not w.isNewWindow)
+							then '[XOR]'
+							else
+								if(not w.isLandmark and not w.isDefault and not w.isXOR and w.isModal and w.isNewWindow)
+								then '[M][NW]'
+								else
+									if(w.isLandmark and w.isDefault and w.isXOR and w.isModal and w.isNewWindow)
+									then '[L][D][XOR][M][NW]'
+									else
+										if(not w.isLandmark and w.isDefault and w.isXOR and w.isModal and w.isNewWindow)
+										then '[D][XOR][M][NW]'
+										else
+											if(w.isLandmark and not w.isDefault and w.isXOR and w.isModal and w.isNewWindow)
+											then '[L][XOR][M][NW]'
+											else
+												if(w.isLandmark and w.isDefault and not w.isXOR and w.isModal and w.isNewWindow)
+												then '[L][D][M][NW]'
+												else
+													if(w.isLandmark and w.isDefault and w.isXOR and not w.isModal and w.isNewWindow)
+													then '[L][D][XOR][NW]'
+													else
+														if(w.isLandmark and w.isDefault and w.isXOR and w.isModal and not w.isNewWindow)
+														then '[L][D][XOR][M]'
+														else
+															if(not w.isLandmark and not w.isDefault and w.isXOR and w.isModal and not w.isNewWindow)
+															then '[XOR][M][NW]'
+															else
+																if(not w.isLandmark and w.isDefault and not w.isXOR and w.isModal and not w.isNewWindow)
+																then '[D][M]'
+																else
+																	if(not w.isLandmark and not w.isDefault and not w.isXOR and w.isModal and not w.isNewWindow)
+																	then '[M]'
+																	else
+																		if(not w.isLandmark and not w.isDefault and not w.isXOR and not w.isModal and w.isNewWindow)
+																		then '[NW]'
+																		else
+																			if(not w.isLandmark and not w.isDefault and not w.isXOR and not w.isModal and not w.isNewWindow)
+																			then ''
+																			else
+																				if(w.isLandmark and w.isDefault and not w.isXOR and w.isModal and not w.isNewWindow)
+																				then '[L][D][M]'
+																				else
+																					if(not w.isLandmark and w.isDefault and w.isXOR and w.isModal and not w.isNewWindow)
+																					then '[D][XOR][M]'
+																					else
+																						if(not w.isLandmark and w.isDefault and not w.isXOR and w.isModal and w.isNewWindow)
+																						then '[D][M][NW]'
+																						else
+																							if(not w.isLandmark and w.isDefault and w.isXOR and not w.isModal and w.isNewWindow)
+																							then '[D][XOR][NW]'
+																							else
+																								if(not w.isLandmark and w.isDefault and not w.isXOR and not w.isModal and w.isNewWindow)
+																								then '[D][NW]'
+																								else
+																									if(w.isLandmark and w.isDefault and not w.isXOR and not w.isModal and w.isNewWindow)
+																									then '[L][D][NW]'
+																									else
+																										if(not w.isLandmark and not w.isDefault and w.isXOR and not w.isModal and w.isNewWindow)
+																										then '[XOR][NW]'
+																										else
+																											if(w.isLandmark and not w.isDefault and not w.isXOR and not w.isModal and w.isNewWindow)
+																											then '[L][NW]'
+																											else
+																												if(w.isLandmark and not w.isDefault and not w.isXOR and w.isModal and not w.isNewWindow)
+																												then '[L][M]'
+																												else
+																													if(w.isLandmark and not w.isDefault and not w.isXOR and w.isModal and w.isNewWindow)
+																													then '[L][M][NW]'
+																													else
+																														if(w.isLandmark and not w.isDefault and w.isXOR and not w.isModal and w.isNewWindow)
+																														then '[L][XOR][NW]'
+																														else
+																															'TODO!!'
+																														endif
+																													endif
+																												endif
+																											endif
+																										endif
+																									endif
+																								endif
+																							endif
+																						endif
+																					endif
+																				endif
+																			endif
+																		endif
+																	endif
+																endif
+															endif
+														endif
+													endif
+												endif
+											endif
+										endif
+									endif
+								endif
+							endif
+						endif
+					endif
+				endif
+			endif
+		endif
+	endif
+
+/]
+
+[query public getExtContainer(v :OclAny) : String = 
+	
+	if (v.oclIsTypeOf(IFMLWindow)) 
+	then getWindowLabel(getWindow(v)) + '«Window» '
+	else 
+		if (v.oclIsTypeOf(IFMLMenu)) 
+		then getMenuLabel(getMenu(v)) + '«Menu» '
+		else 
+			if (v.oclIsTypeOf(ViewContainer)) 
+			then getViewContainerLabel(getViewContainer(v)) + '«ViewContainer» '
+			else 'RRR'
+			endif
+		endif
+	endif
+/]
+
+[query public getViewContainer(v :OclAny) : ViewContainer = 
+	
+	v.oclAsType(ViewContainer)
+/]
+
+[query public getWindow(v :OclAny) : IFMLWindow = 
+	
+	v.oclAsType(IFMLWindow)
+/]
+
+[query public getMenu(v :OclAny) : IFMLMenu = 
+	
+	v.oclAsType(IFMLMenu)
+/]
+
+[query public getViewComponentLabel(v :OclAny) : String = 
+	
+	if (v.oclIsTypeOf(ViewComponent)) 
+	then '«ViewComponent» '
+	else 
+		if (v.oclIsTypeOf(List)) 
+		then '«List» '
+		else 
+			if (v.oclIsTypeOf(Form)) 
+			then '«Form» '
+			else 
+				if (v.oclIsTypeOf(Details)) 
+				then '«Details» '
+				else 'RRR'
+				endif
+			endif
+		endif
+	endif
+/]
+
+[query public getThrowingEventLabel(v :OclAny) : String = 
+	
+	if (v.oclIsTypeOf(ThrowingEvent)) 
+	then '«ThrowingEvent» '
+	else 
+		if (v.oclIsTypeOf(SetContextEvent)) 
+		then '«SetContextEvent» '
+		else 
+			if (v.oclIsTypeOf(JumpEvent)) 
+			then '«JumpEvent» '
+			else 
+				'RRR'
+			endif
+		endif
+	endif
+/]
+
+[query public getCatchingEventLabel(v :OclAny) : String = 
+	
+	if (v.oclIsTypeOf(CatchingEvent)) 
+	then '«CatchingEvent» '
+	else 
+		if (v.oclIsTypeOf(SystemEvent)) 
+		then '«SystemEvent» '
+		else 
+			if (v.oclIsTypeOf(OnLoadEvent)) 
+			then '«OnLoadEvent» '
+			else 
+				if (v.oclIsTypeOf(ActionEvent)) 
+				then '«ActionEvent» '
+				else 
+					if (v.oclIsTypeOf(LandingEvent)) 
+					then '«LandingEvent» '
+					else 
+						if (v.oclIsTypeOf(ViewElementEvent)) 
+						then '«ViewElementEvent» '
+						else 
+							if (v.oclIsTypeOf(ViewElementEvent)) 
+							then '«ViewElementEvent» '
+							else 
+								if (v.oclIsTypeOf(OnSelectEvent)) 
+								then '«OnSelectEvent» '
+								else 
+									if (v.oclIsTypeOf(OnSubmitEvent)) 
+									then '«OnSubmitEvent» '
+									else 
+										'RRR'
+									endif
+								endif
+							endif
+						endif
+					endif
+				endif
+			endif
+		endif
+	endif
+/]
+
+[query public getSystemEvent(v :OclAny) : String = 
+	
+	if (v.oclIsTypeOf(SystemEvent)) 
+	then '«SystemEvent» '
+	else 
+		if (v.oclIsTypeOf(OnLoadEvent)) 
+		then '«OnLoadEvent» '
+		else 'RRR'
+		endif
+	endif
+/]
+
+[query public getViewElementEvent(v :OclAny) : String = 
+	
+	if (v.oclIsTypeOf(ViewElementEvent)) 
+	then '«ViewElementEvent» '
+	else 
+		if (v.oclIsTypeOf(OnSelectEvent)) 
+		then '«OnSelectEvent» '
+		else 
+			if (v.oclIsTypeOf(OnSubmitEvent)) 
+			then '«OnSubmitEvent» '
+			else 'RRR'
+			endif
+		endif
+	endif
+/]
+
+[query public getViewComponentPartLabel(v :OclAny) : String = 
+	
+	if (v.oclIsTypeOf(ViewComponentPart)) 
+	then '«ViewComponentPart» '
+	else 
+		if (v.oclIsTypeOf(SelectionField)) 
+		then 
+			if (v.oclAsType(SelectionField).isMultiSelection) 
+			then '[MS]«SelectionField» '
+			else '«SelectionField» '
+			endif
+		else 
+			if (v.oclIsTypeOf(SimpleField)) 
+			then '«SimpleField» '
+			else
+				if (v.oclIsTypeOf(IFMLSlot)) 
+				then '«Slot» '
+				else 
+					if (v.oclIsTypeOf(DataBinding)) 
+					then '«DataBinding» '
+					else 
+						if (v.oclIsTypeOf(ConditionalExpression)) 
+						then '«ConditionalExpression» '
+						else
+							if(v.oclIsTypeOf(VisualizationAttribute))
+							then  '«VisualisationAttribute» '
+							else
+								'RRR'
+							endif
+						endif
+					endif
+				endif
+			endif
+		endif
+	endif
+/]
+
+[query public getParameterBinding(pb :ParameterBinding) : String = 
+	if(not pb.sourceParameter.oclIsUndefined() and not pb.targetParameter.oclIsUndefined())
+	then pb.sourceParameter.name + '-->' + pb.targetParameter.name
+	else 
+		if(pb.sourceParameter.oclIsUndefined() and not pb.targetParameter.oclIsUndefined())
+		then '?' + '-->' + pb.targetParameter.name
+		else 
+			if(not pb.sourceParameter.oclIsUndefined() and pb.targetParameter.oclIsUndefined())
+			then pb.sourceParameter.name + '-->' + '?'
+			else '? --> ?'
+			endif
+		endif
+	endif
+/]
+
+[query public isWindow(o:OclAny) : Boolean = 
+	if(o.oclIsTypeOf(IFMLWindow))
+	then true
+	else false
+	endif
+/]
+
+[query public isViewContainer(o:OclAny) : Boolean = 
+	if(o.oclIsTypeOf(ViewContainer))
+	then true
+	else false
+	endif
+/]
+
+[query public isMenu(o:OclAny) : Boolean = 
+	if(o.oclIsTypeOf(IFMLMenu))
+	then true
+	else false
+	endif
+/]
+
+[query public isModuleDefinition(o:OclAny) : Boolean = 
+	if(o.oclIsTypeOf(ModuleDefinition))
+	then true
+	else false
+	endif
+/]
+
+[query public isIFMLModel(o:OclAny) : Boolean = 
+	if(o.oclIsTypeOf(IFMLModel))
+	then true
+	else false
+	endif
+/]
+
+[query public isModulePackage(o:OclAny) : Boolean = 
+	if(o.oclIsTypeOf(ModulePackage))
+	then true
+	else false
+	endif
+/]
+
+[query public getModelDefinitionReference(mod:IFMLModule) : String = 
+	if(mod.moduleDefinition.oclIsUndefined())
+	then ''
+	else 'Module Definition: ' + mod.moduleDefinition.name
+	endif
+/]
+
+[query public getPortDefinitionReference(port:IFMLPort) : String = 
+	if(port.portDefinition.oclIsUndefined())
+	then ''
+	else 'Port Definition: ' + port.portDefinition.name
+	endif
+/]
