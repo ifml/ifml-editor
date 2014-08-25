@@ -6,7 +6,7 @@ The open source IFML editor - Based on Sirius
 Using the tool
 ==============
 
-The tool is available at <a href="https://ifml.github.io">https://ifml.atlanmod.github.io</a>
+The tool is available at <a href="http://ifml.github.io">http://ifml.github.io</a>
 
 Projects
 =========
