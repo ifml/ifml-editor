@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_5ATRMIPREeGsVZAesWUgWw" name="UML Model" URI="">
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_VK2hkJ6QEeGdnpRmAZh-dQ" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_YGTmEJ6QEeGdnpRmAZh-dQ" name="Integer"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_d3ZQENs8EeOsnrVUDdvbPA" name="org" URI="">
+    <packagedElement xmi:type="uml:Package" xmi:id="_h37GQNs8EeOsnrVUDdvbPA" name="automobile" URI="">
+      <packagedElement xmi:type="uml:Class" xmi:id="__W1boJ6PEeGdnpRmAZh-dQ" name="Movie">
+        <ownedAttribute xmi:id="_jEpi8J6QEeGdnpRmAZh-dQ" name="title" type="_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+        <ownedAttribute xmi:id="_jm9l0J6QEeGdnpRmAZh-dQ" name="year" type="_YGTmEJ6QEeGdnpRmAZh-dQ"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
