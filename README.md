@@ -1,12 +1,15 @@
 IFML Editor
 ===========
 
-The open source IFML editor - Based on Sirius
+The open source Eclipse editor for [IFML](http://www.ifml.org/) (Interaction Flow Modeling Language). 
+
+The editor is based on [Sirius](http://www.eclipse.org/sirius/) an Eclipse project to facilitate the creation of modeling editors.
 
 Using the tool
 ==============
 
-The tool is available at <a href="http://ifml.github.io">http://ifml.github.io</a>
+Instructions on how to install and get started with the tool are available in the [tool web page](http://ifml.github.io)
+
 
 Projects
 =========
@@ -39,3 +42,8 @@ Remarks
         - changing the variable ID_EDEFAULT value from null to "":
           protected static final String ID_DEFAULT = ""
 ```
+
+Authors
+=======
+
+IFML Editor is the result of a collaboration between [WebRatio](http://www.webratio.com/), [Politecnico di Milano](http://www.polimi.it/en/) and the INRIA research team [AtlanMod](http://www.emn.fr/z-info/atlanmod/index.php/Main_Page).  
