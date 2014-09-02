@@ -8,7 +8,7 @@ The editor is based on [Sirius](http://www.eclipse.org/sirius/) an Eclipse proje
 Using the tool
 ==============
 
-Instructions on how to install and get started with the tool are available in the [tool web page](http://ifml.github.io)
+Instructions on how to install and get started with the tool are available in the [tool web page](http://ifml.github.io) 
 
 
 Projects
