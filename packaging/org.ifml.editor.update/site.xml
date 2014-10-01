@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site
       associateSitesURL="http://ifml.github.io/update/associateSites.xml">
-   <feature url="features/org.ifml.editor.feature_1.0.0.201408250121.jar" id="org.ifml.editor.feature" version="1.0.0.201408250121">
+   <feature url="features/org.ifml.editor.feature_1.0.0.201410011749.jar" id="org.ifml.editor.feature" version="1.0.0.201410011749">
       <category name="IFML"/>
    </feature>
    <category-def name="IFML" label="IFML"/>
