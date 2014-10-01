@@ -440,3 +440,73 @@
 	else 'Port Definition: ' + port.portDefinition.name
 	endif
 /]
+[query public isIFMLParameter(o:OclAny) : Boolean = 
+	if(o.oclIsKindOf(IFMLParameter))
+	then true
+	else false
+	endif
+/]
+[query public isVisualizationAttribute(o:OclAny) : Boolean = 
+	if(o.oclIsTypeOf(VisualizationAttribute))
+	then true
+	else false
+	endif
+/]
+
+[query public isViewComponentPart(o:OclAny) : Boolean = 
+	if(o.oclIsKindOf(ViewComponentPart))
+	then true
+	else false
+	endif
+/]
+
+[query public isViewComponent(o:OclAny) : Boolean = 
+	if(o.oclIsKindOf(ViewComponent))
+	then true
+	else false
+	endif
+/]
+
+[query public getVisualizationAttributeLabel(aVisualizationAttribute:VisualizationAttribute) : String =
+if (aVisualizationAttribute.featureConcept.oclAsType(UMLStructuralFeature).structuralFeature.type.name.oclIsUndefined())
+then self.getViewComponentPartLabel()+' '+ self.name + ':'+' '+'Invalid FeatureConcept'
+else 
+self.getViewComponentPartLabel()+' '+ self.name + ':'+' '+self.featureConcept.oclAsType(UMLStructuralFeature).structuralFeature.type.name
+endif
+/]
+
+[query public getIFMLParameterLabel(aParameter:IFMLParameter) : String =
+	if ( aParameter.oclIsTypeOf(IFMLParameter)  and aParameter.type.name.oclIsUndefined())
+	then '«Parameter»' + self.name + ':'+' '+ 'Invalid Type'
+	else
+		if ( aParameter.oclIsTypeOf(IFMLParameter)  and not aParameter.type.name.oclIsUndefined())
+		then '«Parameter»' + self.name + ':'+' '+self.type.name
+		else 
+			if ( aParameter.oclIsTypeOf(IFMLSlot)  and aParameter.type.name.oclIsUndefined())
+			then '«Slot»' + self.name + ':'+' '+ 'Invalid Type'
+			else
+				if ( aParameter.oclIsTypeOf(IFMLSlot)  and not aParameter.type.name.oclIsUndefined())
+				then '«Slot»' + self.name + ':'+' '+self.type.name
+				else 
+					if ( aParameter.oclIsTypeOf(SimpleField)  and aParameter.type.name.oclIsUndefined())
+					then '«SimpleField»' + self.name + ':'+' '+ 'Invalid Type'
+					else
+						if ( aParameter.oclIsTypeOf(SimpleField)  and not aParameter.type.name.oclIsUndefined())
+						then '«SimpleField»' + self.name + ':'+' '+self.type.name
+						else 
+							if ( aParameter.oclIsTypeOf(SelectionField)  and aParameter.type.name.oclIsUndefined())
+							then '«SelectionField»' + self.name + ':'+' '+ 'Invalid Type'
+							else
+								if ( aParameter.oclIsTypeOf(SelectionField)  and not aParameter.type.name.oclIsUndefined())
+								then '«SelectionField»' + self.name + ':'+' '+self.type.name
+								else 'Error'
+
+							endif
+						endif
+					endif
+				endif
+			endif
+		endif
+	endif
+endif
+/]
