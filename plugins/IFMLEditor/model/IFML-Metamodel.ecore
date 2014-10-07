@@ -200,7 +200,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="VisualizationAttribute" eSuperTypes="#//Core/ViewComponentPart">
       <eStructuralFeatures xsi:type="ecore:EReference" name="featureConcept" ordered="false"
-          lowerBound="1" eType="#//Core/FeatureConcept" eOpposite="#//Core/FeatureConcept/visualizationAttribute"/>
+          lowerBound="1" eType="#//Core/FeatureConcept"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//Core/InteractionFlowElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="activationExpression"
@@ -259,7 +259,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FeatureConcept" eSuperTypes="#//Core/DomainElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="visualizationAttribute"
-          ordered="false" eType="#//Core/VisualizationAttribute" eOpposite="#//Core/VisualizationAttribute/featureConcept"/>
+          ordered="false" eType="#//Core/VisualizationAttribute"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BehaviorConcept" eSuperTypes="#//Core/DomainElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicBehavior" ordered="false"

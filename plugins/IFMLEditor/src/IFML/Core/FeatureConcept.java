@@ -22,7 +22,6 @@ package IFML.Core;
 public interface FeatureConcept extends DomainElement {
 	/**
 	 * Returns the value of the '<em><b>Visualization Attribute</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link IFML.Core.VisualizationAttribute#getFeatureConcept <em>Feature Concept</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Visualization Attribute</em>' reference isn't clear,
@@ -32,8 +31,7 @@ public interface FeatureConcept extends DomainElement {
 	 * @return the value of the '<em>Visualization Attribute</em>' reference.
 	 * @see #setVisualizationAttribute(VisualizationAttribute)
 	 * @see IFML.Core.CorePackage#getFeatureConcept_VisualizationAttribute()
-	 * @see IFML.Core.VisualizationAttribute#getFeatureConcept
-	 * @model opposite="featureConcept" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	VisualizationAttribute getVisualizationAttribute();

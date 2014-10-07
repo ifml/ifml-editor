@@ -5,13 +5,9 @@ package IFML.Core.impl;
 import IFML.Core.CorePackage;
 import IFML.Core.FeatureConcept;
 import IFML.Core.VisualizationAttribute;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -88,63 +84,11 @@ public class VisualizationAttributeImpl extends ViewComponentPartImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetFeatureConcept(FeatureConcept newFeatureConcept, NotificationChain msgs) {
+	public void setFeatureConcept(FeatureConcept newFeatureConcept) {
 		FeatureConcept oldFeatureConcept = featureConcept;
 		featureConcept = newFeatureConcept;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.VISUALIZATION_ATTRIBUTE__FEATURE_CONCEPT, oldFeatureConcept, newFeatureConcept);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFeatureConcept(FeatureConcept newFeatureConcept) {
-		if (newFeatureConcept != featureConcept) {
-			NotificationChain msgs = null;
-			if (featureConcept != null)
-				msgs = ((InternalEObject)featureConcept).eInverseRemove(this, CorePackage.FEATURE_CONCEPT__VISUALIZATION_ATTRIBUTE, FeatureConcept.class, msgs);
-			if (newFeatureConcept != null)
-				msgs = ((InternalEObject)newFeatureConcept).eInverseAdd(this, CorePackage.FEATURE_CONCEPT__VISUALIZATION_ATTRIBUTE, FeatureConcept.class, msgs);
-			msgs = basicSetFeatureConcept(newFeatureConcept, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.VISUALIZATION_ATTRIBUTE__FEATURE_CONCEPT, newFeatureConcept, newFeatureConcept));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CorePackage.VISUALIZATION_ATTRIBUTE__FEATURE_CONCEPT:
-				if (featureConcept != null)
-					msgs = ((InternalEObject)featureConcept).eInverseRemove(this, CorePackage.FEATURE_CONCEPT__VISUALIZATION_ATTRIBUTE, FeatureConcept.class, msgs);
-				return basicSetFeatureConcept((FeatureConcept)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case CorePackage.VISUALIZATION_ATTRIBUTE__FEATURE_CONCEPT:
-				return basicSetFeatureConcept(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.VISUALIZATION_ATTRIBUTE__FEATURE_CONCEPT, oldFeatureConcept, featureConcept));
 	}
 
 	/**
