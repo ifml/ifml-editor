@@ -14,7 +14,7 @@
         <viewElementEvents id="_39BQwM7pEeOGsv3AxEnrmw" name="Add a movie" viewElement="#//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0">
           <outInteractionFlows xsi:type="core:NavigationFlow" id="_KOqcIM7qEeOGsv3AxEnrmw" targetInteractionFlowElement="#//@interactionFlowModel/@interactionFlowModelElements.2/@viewElements.0"/>
         </viewElementEvents>
-        <viewComponentParts xsi:type="core:DataBinding" id="_qDrfMM7lEeOGsv3AxEnrmw" name="Movie" uniformResourceIdentifier="" domainConcept="#//@domainModel/@domainElements.0"/>
+        <viewComponentParts xsi:type="core:DataBinding" id="_qDrfMM7lEeOGsv3AxEnrmw" name="Movie" uniformResourceIdentifier=""/>
         <viewComponentParts xsi:type="core:VisualizationAttribute" id="_-0rev9wnEeOqpair1RTJJg" name="Title" featureConcept="#//@domainModel/@domainElements.1"/>
         <viewComponentParts xsi:type="core:VisualizationAttribute" id="_L9A8D9wqEeOkXZCL_xSeWQ" name="Year" featureConcept="#//@domainModel/@domainElements.2"/>
       </viewElements>
@@ -22,9 +22,9 @@
     <interactionFlowModelElements xsi:type="ext:IFMLWindow" id="_ozHbwM7QEeOGsv3AxEnrmw" name="Movie">
       <viewElements xsi:type="ext:Details" id="_3WzcwM7SEeOGsv3AxEnrmw" name="Movie" inInteractionFlows="#//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0">
         <parameters id="_9mUi8s7mEeOGsv3AxEnrmw" name="Movie" type="uml:Class model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
-        <viewComponentParts xsi:type="core:DataBinding" id="_UYQxkNnbEeObZ68aDe8jUQ" name="Movie"/>
-        <viewComponentParts xsi:type="core:VisualizationAttribute" id="_K7PiL_35EeOlue9C3AA28A" name="Title"/>
-        <viewComponentParts xsi:type="core:VisualizationAttribute" id="_OAATr_35EeOlue9C3AA28A" name="Year"/>
+        <viewComponentParts xsi:type="core:DataBinding" id="_UYQxkNnbEeObZ68aDe8jUQ" name="Movie" domainConcept="#//@domainModel/@domainElements.0"/>
+        <viewComponentParts xsi:type="core:VisualizationAttribute" id="_K7PiL_35EeOlue9C3AA28A" name="Title" featureConcept="#//@domainModel/@domainElements.1"/>
+        <viewComponentParts xsi:type="core:VisualizationAttribute" id="_OAATr_35EeOlue9C3AA28A" name="Year" featureConcept="#//@domainModel/@domainElements.2"/>
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="ext:IFMLWindow" id="_TGGo0M7oEeOGsv3AxEnrmw" name="AddMovieForm">
@@ -49,7 +49,7 @@
     </interactionFlowModelElements>
   </interactionFlowModel>
   <domainModel id="_7A_iA9t0EeOsnrVUDdvbPA">
-    <domainElements xsi:type="core:UMLDomainConcept" id="_OZNSotwfEeOOS_SwvB-iFQ" name="MovieConcept" dataBinding="#//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewComponentParts.0" classifier="uml:Class model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
+    <domainElements xsi:type="core:UMLDomainConcept" id="_OZNSotwfEeOOS_SwvB-iFQ" name="MovieConcept" dataBinding="#//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.0/@viewComponentParts.0" classifier="uml:Class model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
     <domainElements xsi:type="core:UMLStructuralFeature" id="_FOW9mtwoEeOqpair1RTJJg" name="Title" visualizationAttribute="#//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewComponentParts.1" structuralFeature="uml:Property model.uml#_jEpi8J6QEeGdnpRmAZh-dQ"/>
     <domainElements xsi:type="core:UMLStructuralFeature" id="_9yZQatwpEeOkXZCL_xSeWQ" name="Year" visualizationAttribute="#//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewComponentParts.2" structuralFeature="uml:Property model.uml#_jm9l0J6QEeGdnpRmAZh-dQ"/>
   </domainModel>
