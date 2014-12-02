@@ -189,7 +189,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="dataContextVariables"
           ordered="false" upperBound="-1" eType="#//Core/DataContextVariable" eOpposite="#//Core/DataContextVariable/dataBinding"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="domainConcept" ordered="false"
-          lowerBound="1" eType="#//Core/DomainConcept" eOpposite="#//Core/DomainConcept/dataBinding"/>
+          eType="#//Core/DomainConcept" eOpposite="#//Core/DomainConcept/dataBinding"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConditionalExpression" eSuperTypes="#//Core/Expression #//Core/ViewComponentPart"/>
     <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="#//Core/Element">

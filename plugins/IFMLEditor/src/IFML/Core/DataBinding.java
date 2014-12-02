@@ -87,7 +87,7 @@ public interface DataBinding extends ContentBinding {
 	 * @see #setDomainConcept(DomainConcept)
 	 * @see IFML.Core.CorePackage#getDataBinding_DomainConcept()
 	 * @see IFML.Core.DomainConcept#getDataBinding
-	 * @model opposite="dataBinding" required="true" ordered="false"
+	 * @model opposite="dataBinding" ordered="false"
 	 * @generated
 	 */
 	DomainConcept getDomainConcept();
