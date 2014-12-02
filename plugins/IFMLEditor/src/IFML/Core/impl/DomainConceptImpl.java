@@ -6,6 +6,7 @@ import IFML.Core.CorePackage;
 import IFML.Core.DataBinding;
 import IFML.Core.DomainConcept;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -84,11 +85,63 @@ public class DomainConceptImpl extends DomainElementImpl implements DomainConcep
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDataBinding(DataBinding newDataBinding) {
+	public NotificationChain basicSetDataBinding(DataBinding newDataBinding, NotificationChain msgs) {
 		DataBinding oldDataBinding = dataBinding;
 		dataBinding = newDataBinding;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.DOMAIN_CONCEPT__DATA_BINDING, oldDataBinding, dataBinding));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.DOMAIN_CONCEPT__DATA_BINDING, oldDataBinding, newDataBinding);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDataBinding(DataBinding newDataBinding) {
+		if (newDataBinding != dataBinding) {
+			NotificationChain msgs = null;
+			if (dataBinding != null)
+				msgs = ((InternalEObject)dataBinding).eInverseRemove(this, CorePackage.DATA_BINDING__DOMAIN_CONCEPT, DataBinding.class, msgs);
+			if (newDataBinding != null)
+				msgs = ((InternalEObject)newDataBinding).eInverseAdd(this, CorePackage.DATA_BINDING__DOMAIN_CONCEPT, DataBinding.class, msgs);
+			msgs = basicSetDataBinding(newDataBinding, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.DOMAIN_CONCEPT__DATA_BINDING, newDataBinding, newDataBinding));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CorePackage.DOMAIN_CONCEPT__DATA_BINDING:
+				if (dataBinding != null)
+					msgs = ((InternalEObject)dataBinding).eInverseRemove(this, CorePackage.DATA_BINDING__DOMAIN_CONCEPT, DataBinding.class, msgs);
+				return basicSetDataBinding((DataBinding)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CorePackage.DOMAIN_CONCEPT__DATA_BINDING:
+				return basicSetDataBinding(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

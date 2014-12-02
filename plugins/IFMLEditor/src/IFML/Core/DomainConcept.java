@@ -22,6 +22,7 @@ package IFML.Core;
 public interface DomainConcept extends DomainElement {
 	/**
 	 * Returns the value of the '<em><b>Data Binding</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link IFML.Core.DataBinding#getDomainConcept <em>Domain Concept</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data Binding</em>' reference isn't clear,
@@ -31,7 +32,8 @@ public interface DomainConcept extends DomainElement {
 	 * @return the value of the '<em>Data Binding</em>' reference.
 	 * @see #setDataBinding(DataBinding)
 	 * @see IFML.Core.CorePackage#getDomainConcept_DataBinding()
-	 * @model ordered="false"
+	 * @see IFML.Core.DataBinding#getDomainConcept
+	 * @model opposite="domainConcept" ordered="false"
 	 * @generated
 	 */
 	DataBinding getDataBinding();

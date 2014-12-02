@@ -50,7 +50,7 @@ public interface IFMLAction extends InteractionFlowElement, NamedElement {
 	 * @return the value of the '<em>Dynamic Behavior</em>' reference.
 	 * @see #setDynamicBehavior(DynamicBehavior)
 	 * @see IFML.Core.CorePackage#getIFMLAction_DynamicBehavior()
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	DynamicBehavior getDynamicBehavior();

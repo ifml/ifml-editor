@@ -152,7 +152,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="actionEvents" ordered="false"
           upperBound="-1" eType="#//Core/ActionEvent" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicBehavior" ordered="false"
-          lowerBound="1" eType="#//Core/DynamicBehavior"/>
+          eType="#//Core/DynamicBehavior"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="viewContainer" ordered="false"
           eType="#//Core/ViewContainer" eOpposite="#//Core/ViewContainer/actions"/>
     </eClassifiers>
@@ -189,7 +189,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="dataContextVariables"
           ordered="false" upperBound="-1" eType="#//Core/DataContextVariable" eOpposite="#//Core/DataContextVariable/dataBinding"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="domainConcept" ordered="false"
-          lowerBound="1" eType="#//Core/DomainConcept"/>
+          lowerBound="1" eType="#//Core/DomainConcept" eOpposite="#//Core/DomainConcept/dataBinding"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConditionalExpression" eSuperTypes="#//Core/Expression #//Core/ViewComponentPart"/>
     <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="#//Core/Element">
@@ -255,7 +255,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DomainConcept" eSuperTypes="#//Core/DomainElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="dataBinding" ordered="false"
-          eType="#//Core/DataBinding"/>
+          eType="#//Core/DataBinding" eOpposite="#//Core/DataBinding/domainConcept"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FeatureConcept" eSuperTypes="#//Core/DomainElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="visualizationAttribute"
