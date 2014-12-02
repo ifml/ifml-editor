@@ -168,33 +168,11 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDomainConcept(DomainConcept newDomainConcept, NotificationChain msgs) {
+	public void setDomainConcept(DomainConcept newDomainConcept) {
 		DomainConcept oldDomainConcept = domainConcept;
 		domainConcept = newDomainConcept;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.DATA_BINDING__DOMAIN_CONCEPT, oldDomainConcept, newDomainConcept);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDomainConcept(DomainConcept newDomainConcept) {
-		if (newDomainConcept != domainConcept) {
-			NotificationChain msgs = null;
-			if (domainConcept != null)
-				msgs = ((InternalEObject)domainConcept).eInverseRemove(this, CorePackage.DOMAIN_CONCEPT__DATA_BINDING, DomainConcept.class, msgs);
-			if (newDomainConcept != null)
-				msgs = ((InternalEObject)newDomainConcept).eInverseAdd(this, CorePackage.DOMAIN_CONCEPT__DATA_BINDING, DomainConcept.class, msgs);
-			msgs = basicSetDomainConcept(newDomainConcept, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.DATA_BINDING__DOMAIN_CONCEPT, newDomainConcept, newDomainConcept));
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.DATA_BINDING__DOMAIN_CONCEPT, oldDomainConcept, domainConcept));
 	}
 
 	/**
@@ -208,10 +186,6 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 		switch (featureID) {
 			case CorePackage.DATA_BINDING__DATA_CONTEXT_VARIABLES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDataContextVariables()).basicAdd(otherEnd, msgs);
-			case CorePackage.DATA_BINDING__DOMAIN_CONCEPT:
-				if (domainConcept != null)
-					msgs = ((InternalEObject)domainConcept).eInverseRemove(this, CorePackage.DOMAIN_CONCEPT__DATA_BINDING, DomainConcept.class, msgs);
-				return basicSetDomainConcept((DomainConcept)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -230,8 +204,6 @@ public class DataBindingImpl extends ContentBindingImpl implements DataBinding {
 				return ((InternalEList<?>)getVisualizationAttribute()).basicRemove(otherEnd, msgs);
 			case CorePackage.DATA_BINDING__DATA_CONTEXT_VARIABLES:
 				return ((InternalEList<?>)getDataContextVariables()).basicRemove(otherEnd, msgs);
-			case CorePackage.DATA_BINDING__DOMAIN_CONCEPT:
-				return basicSetDomainConcept(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

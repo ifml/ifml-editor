@@ -65,7 +65,7 @@ public interface IFMLParameter extends InteractionFlowModelElement, NamedElement
 	 * @return the value of the '<em>Default Value</em>' reference.
 	 * @see #setDefaultValue(Expression)
 	 * @see IFML.Core.CorePackage#getIFMLParameter_DefaultValue()
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	Expression getDefaultValue();

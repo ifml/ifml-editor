@@ -76,7 +76,6 @@ public interface DataBinding extends ContentBinding {
 
 	/**
 	 * Returns the value of the '<em><b>Domain Concept</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link IFML.Core.DomainConcept#getDataBinding <em>Data Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Domain Concept</em>' reference isn't clear,
@@ -86,8 +85,7 @@ public interface DataBinding extends ContentBinding {
 	 * @return the value of the '<em>Domain Concept</em>' reference.
 	 * @see #setDomainConcept(DomainConcept)
 	 * @see IFML.Core.CorePackage#getDataBinding_DomainConcept()
-	 * @see IFML.Core.DomainConcept#getDataBinding
-	 * @model opposite="dataBinding" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	DomainConcept getDomainConcept();
