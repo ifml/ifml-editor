@@ -145,7 +145,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_naO0Ek4CEeSitL3ywiMx2Q"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_naNl8U4CEeSitL3ywiMx2Q" fontName="Ubuntu" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_naNl8k4CEeSitL3ywiMx2Q" x="492" y="288"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_naNl8k4CEeSitL3ywiMx2Q" x="492" y="288" width="1213" height="277"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_naO0E04CEeSitL3ywiMx2Q" type="2002" element="_nXJrMU4CEeSitL3ywiMx2Q">
             <children xmi:type="notation:Node" xmi:id="_naPbIE4CEeSitL3ywiMx2Q" type="5006"/>
