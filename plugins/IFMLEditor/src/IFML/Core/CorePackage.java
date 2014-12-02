@@ -1349,7 +1349,7 @@ public interface CorePackage extends EPackage {
 	int VIEW_COMPONENT_PART__ACTIVATION_EXPRESSION = INTERACTION_FLOW_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Parent View Component Part</b></em>' reference.
+	 * The feature id for the '<em><b>Parent View Component Part</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1476,7 +1476,7 @@ public interface CorePackage extends EPackage {
 	int CONTENT_BINDING__ACTIVATION_EXPRESSION = VIEW_COMPONENT_PART__ACTIVATION_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Parent View Component Part</b></em>' reference.
+	 * The feature id for the '<em><b>Parent View Component Part</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1730,7 +1730,7 @@ public interface CorePackage extends EPackage {
 	int DYNAMIC_BEHAVIOR__ACTIVATION_EXPRESSION = CONTENT_BINDING__ACTIVATION_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Parent View Component Part</b></em>' reference.
+	 * The feature id for the '<em><b>Parent View Component Part</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3331,7 +3331,7 @@ public interface CorePackage extends EPackage {
 	int DATA_BINDING__ACTIVATION_EXPRESSION = CONTENT_BINDING__ACTIVATION_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Parent View Component Part</b></em>' reference.
+	 * The feature id for the '<em><b>Parent View Component Part</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3521,7 +3521,7 @@ public interface CorePackage extends EPackage {
 	int CONDITIONAL_EXPRESSION__ACTIVATION_EXPRESSION = EXPRESSION_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Parent View Component Part</b></em>' reference.
+	 * The feature id for the '<em><b>Parent View Component Part</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3721,7 +3721,7 @@ public interface CorePackage extends EPackage {
 	int VISUALIZATION_ATTRIBUTE__ACTIVATION_EXPRESSION = VIEW_COMPONENT_PART__ACTIVATION_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Parent View Component Part</b></em>' reference.
+	 * The feature id for the '<em><b>Parent View Component Part</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5820,10 +5820,10 @@ public interface CorePackage extends EPackage {
 	EReference getViewComponentPart_ActivationExpression();
 
 	/**
-	 * Returns the meta object for the reference '{@link IFML.Core.ViewComponentPart#getParentViewComponentPart <em>Parent View Component Part</em>}'.
+	 * Returns the meta object for the container reference '{@link IFML.Core.ViewComponentPart#getParentViewComponentPart <em>Parent View Component Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parent View Component Part</em>'.
+	 * @return the meta object for the container reference '<em>Parent View Component Part</em>'.
 	 * @see IFML.Core.ViewComponentPart#getParentViewComponentPart()
 	 * @see #getViewComponentPart()
 	 * @generated
@@ -7255,7 +7255,7 @@ public interface CorePackage extends EPackage {
 		EReference VIEW_COMPONENT_PART__ACTIVATION_EXPRESSION = eINSTANCE.getViewComponentPart_ActivationExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent View Component Part</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Parent View Component Part</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

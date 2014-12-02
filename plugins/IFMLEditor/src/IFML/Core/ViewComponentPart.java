@@ -67,26 +67,28 @@ public interface ViewComponentPart extends InteractionFlowElement {
 	void setActivationExpression(ActivationExpression value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent View Component Part</b></em>' reference.
+	 * Returns the value of the '<em><b>Parent View Component Part</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link IFML.Core.ViewComponentPart#getSubViewComponentParts <em>Sub View Component Parts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent View Component Part</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent View Component Part</em>' reference.
+	 * @return the value of the '<em>Parent View Component Part</em>' container reference.
 	 * @see #setParentViewComponentPart(ViewComponentPart)
 	 * @see IFML.Core.CorePackage#getViewComponentPart_ParentViewComponentPart()
-	 * @model required="true" ordered="false"
+	 * @see IFML.Core.ViewComponentPart#getSubViewComponentParts
+	 * @model opposite="subViewComponentParts" transient="false" ordered="false"
 	 * @generated
 	 */
 	ViewComponentPart getParentViewComponentPart();
 
 	/**
-	 * Sets the value of the '{@link IFML.Core.ViewComponentPart#getParentViewComponentPart <em>Parent View Component Part</em>}' reference.
+	 * Sets the value of the '{@link IFML.Core.ViewComponentPart#getParentViewComponentPart <em>Parent View Component Part</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent View Component Part</em>' reference.
+	 * @param value the new value of the '<em>Parent View Component Part</em>' container reference.
 	 * @see #getParentViewComponentPart()
 	 * @generated
 	 */
@@ -95,6 +97,7 @@ public interface ViewComponentPart extends InteractionFlowElement {
 	/**
 	 * Returns the value of the '<em><b>Sub View Component Parts</b></em>' containment reference list.
 	 * The list contents are of type {@link IFML.Core.ViewComponentPart}.
+	 * It is bidirectional and its opposite is '{@link IFML.Core.ViewComponentPart#getParentViewComponentPart <em>Parent View Component Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sub View Component Parts</em>' containment reference list isn't clear,
@@ -103,7 +106,8 @@ public interface ViewComponentPart extends InteractionFlowElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sub View Component Parts</em>' containment reference list.
 	 * @see IFML.Core.CorePackage#getViewComponentPart_SubViewComponentParts()
-	 * @model containment="true" ordered="false"
+	 * @see IFML.Core.ViewComponentPart#getParentViewComponentPart
+	 * @model opposite="parentViewComponentPart" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<ViewComponentPart> getSubViewComponentParts();

@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -119,16 +120,6 @@ public class ConditionalExpressionImpl extends ExpressionImpl implements Conditi
 	 * @ordered
 	 */
 	protected ActivationExpression activationExpression;
-
-	/**
-	 * The cached value of the '{@link #getParentViewComponentPart() <em>Parent View Component Part</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentViewComponentPart()
-	 * @generated
-	 * @ordered
-	 */
-	protected ViewComponentPart parentViewComponentPart;
 
 	/**
 	 * The cached value of the '{@link #getSubViewComponentParts() <em>Sub View Component Parts</em>}' containment reference list.
@@ -272,15 +263,8 @@ public class ConditionalExpressionImpl extends ExpressionImpl implements Conditi
 	 * @generated
 	 */
 	public ViewComponentPart getParentViewComponentPart() {
-		if (parentViewComponentPart != null && parentViewComponentPart.eIsProxy()) {
-			InternalEObject oldParentViewComponentPart = (InternalEObject)parentViewComponentPart;
-			parentViewComponentPart = (ViewComponentPart)eResolveProxy(oldParentViewComponentPart);
-			if (parentViewComponentPart != oldParentViewComponentPart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.CONDITIONAL_EXPRESSION__PARENT_VIEW_COMPONENT_PART, oldParentViewComponentPart, parentViewComponentPart));
-			}
-		}
-		return parentViewComponentPart;
+		if (eContainerFeatureID() != CorePackage.CONDITIONAL_EXPRESSION__PARENT_VIEW_COMPONENT_PART) return null;
+		return (ViewComponentPart)eInternalContainer();
 	}
 
 	/**
@@ -288,8 +272,9 @@ public class ConditionalExpressionImpl extends ExpressionImpl implements Conditi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ViewComponentPart basicGetParentViewComponentPart() {
-		return parentViewComponentPart;
+	public NotificationChain basicSetParentViewComponentPart(ViewComponentPart newParentViewComponentPart, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParentViewComponentPart, CorePackage.CONDITIONAL_EXPRESSION__PARENT_VIEW_COMPONENT_PART, msgs);
+		return msgs;
 	}
 
 	/**
@@ -298,10 +283,19 @@ public class ConditionalExpressionImpl extends ExpressionImpl implements Conditi
 	 * @generated
 	 */
 	public void setParentViewComponentPart(ViewComponentPart newParentViewComponentPart) {
-		ViewComponentPart oldParentViewComponentPart = parentViewComponentPart;
-		parentViewComponentPart = newParentViewComponentPart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.CONDITIONAL_EXPRESSION__PARENT_VIEW_COMPONENT_PART, oldParentViewComponentPart, parentViewComponentPart));
+		if (newParentViewComponentPart != eInternalContainer() || (eContainerFeatureID() != CorePackage.CONDITIONAL_EXPRESSION__PARENT_VIEW_COMPONENT_PART && newParentViewComponentPart != null)) {
+			if (EcoreUtil.isAncestor(this, newParentViewComponentPart))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newParentViewComponentPart != null)
+				msgs = ((InternalEObject)newParentViewComponentPart).eInverseAdd(this, CorePackage.VIEW_COMPONENT_PART__SUB_VIEW_COMPONENT_PARTS, ViewComponentPart.class, msgs);
+			msgs = basicSetParentViewComponentPart(newParentViewComponentPart, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.CONDITIONAL_EXPRESSION__PARENT_VIEW_COMPONENT_PART, newParentViewComponentPart, newParentViewComponentPart));
 	}
 
 	/**
@@ -311,7 +305,7 @@ public class ConditionalExpressionImpl extends ExpressionImpl implements Conditi
 	 */
 	public EList<ViewComponentPart> getSubViewComponentParts() {
 		if (subViewComponentParts == null) {
-			subViewComponentParts = new EObjectContainmentEList<ViewComponentPart>(ViewComponentPart.class, this, CorePackage.CONDITIONAL_EXPRESSION__SUB_VIEW_COMPONENT_PARTS);
+			subViewComponentParts = new EObjectContainmentWithInverseEList<ViewComponentPart>(ViewComponentPart.class, this, CorePackage.CONDITIONAL_EXPRESSION__SUB_VIEW_COMPONENT_PARTS, CorePackage.VIEW_COMPONENT_PART__PARENT_VIEW_COMPONENT_PART);
 		}
 		return subViewComponentParts;
 	}
@@ -329,6 +323,12 @@ public class ConditionalExpressionImpl extends ExpressionImpl implements Conditi
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutInteractionFlows()).basicAdd(otherEnd, msgs);
 			case CorePackage.CONDITIONAL_EXPRESSION__IN_INTERACTION_FLOWS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInInteractionFlows()).basicAdd(otherEnd, msgs);
+			case CorePackage.CONDITIONAL_EXPRESSION__PARENT_VIEW_COMPONENT_PART:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParentViewComponentPart((ViewComponentPart)otherEnd, msgs);
+			case CorePackage.CONDITIONAL_EXPRESSION__SUB_VIEW_COMPONENT_PARTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubViewComponentParts()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -349,10 +349,26 @@ public class ConditionalExpressionImpl extends ExpressionImpl implements Conditi
 				return ((InternalEList<?>)getInInteractionFlows()).basicRemove(otherEnd, msgs);
 			case CorePackage.CONDITIONAL_EXPRESSION__VIEW_ELEMENT_EVENTS:
 				return ((InternalEList<?>)getViewElementEvents()).basicRemove(otherEnd, msgs);
+			case CorePackage.CONDITIONAL_EXPRESSION__PARENT_VIEW_COMPONENT_PART:
+				return basicSetParentViewComponentPart(null, msgs);
 			case CorePackage.CONDITIONAL_EXPRESSION__SUB_VIEW_COMPONENT_PARTS:
 				return ((InternalEList<?>)getSubViewComponentParts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case CorePackage.CONDITIONAL_EXPRESSION__PARENT_VIEW_COMPONENT_PART:
+				return eInternalContainer().eInverseRemove(this, CorePackage.VIEW_COMPONENT_PART__SUB_VIEW_COMPONENT_PARTS, ViewComponentPart.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -377,8 +393,7 @@ public class ConditionalExpressionImpl extends ExpressionImpl implements Conditi
 				if (resolve) return getActivationExpression();
 				return basicGetActivationExpression();
 			case CorePackage.CONDITIONAL_EXPRESSION__PARENT_VIEW_COMPONENT_PART:
-				if (resolve) return getParentViewComponentPart();
-				return basicGetParentViewComponentPart();
+				return getParentViewComponentPart();
 			case CorePackage.CONDITIONAL_EXPRESSION__SUB_VIEW_COMPONENT_PARTS:
 				return getSubViewComponentParts();
 		}
@@ -484,7 +499,7 @@ public class ConditionalExpressionImpl extends ExpressionImpl implements Conditi
 			case CorePackage.CONDITIONAL_EXPRESSION__ACTIVATION_EXPRESSION:
 				return activationExpression != null;
 			case CorePackage.CONDITIONAL_EXPRESSION__PARENT_VIEW_COMPONENT_PART:
-				return parentViewComponentPart != null;
+				return getParentViewComponentPart() != null;
 			case CorePackage.CONDITIONAL_EXPRESSION__SUB_VIEW_COMPONENT_PARTS:
 				return subViewComponentParts != null && !subViewComponentParts.isEmpty();
 		}

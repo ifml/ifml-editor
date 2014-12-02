@@ -604,7 +604,7 @@ public interface ExtensionsPackage extends EPackage {
 	int IFML_SLOT__ACTIVATION_EXPRESSION = CorePackage.VIEW_COMPONENT_PART__ACTIVATION_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Parent View Component Part</b></em>' reference.
+	 * The feature id for the '<em><b>Parent View Component Part</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -876,7 +876,7 @@ public interface ExtensionsPackage extends EPackage {
 	int FIELD__ACTIVATION_EXPRESSION = CorePackage.VIEW_COMPONENT_PART__ACTIVATION_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Parent View Component Part</b></em>' reference.
+	 * The feature id for the '<em><b>Parent View Component Part</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1221,7 +1221,7 @@ public interface ExtensionsPackage extends EPackage {
 	int SELECTION_FIELD__ACTIVATION_EXPRESSION = FIELD__ACTIVATION_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Parent View Component Part</b></em>' reference.
+	 * The feature id for the '<em><b>Parent View Component Part</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1384,7 +1384,7 @@ public interface ExtensionsPackage extends EPackage {
 	int SIMPLE_FIELD__ACTIVATION_EXPRESSION = FIELD__ACTIVATION_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Parent View Component Part</b></em>' reference.
+	 * The feature id for the '<em><b>Parent View Component Part</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

@@ -93,9 +93,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="activationExpression"
           ordered="false" eType="#//Core/ActivationExpression"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentViewComponentPart"
-          ordered="false" lowerBound="1" eType="#//Core/ViewComponentPart"/>
+          ordered="false" eType="#//Core/ViewComponentPart" eOpposite="#//Core/ViewComponentPart/subViewComponentParts"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="subViewComponentParts"
-          ordered="false" upperBound="-1" eType="#//Core/ViewComponentPart" containment="true"/>
+          ordered="false" upperBound="-1" eType="#//Core/ViewComponentPart" containment="true"
+          eOpposite="#//Core/ViewComponentPart/parentViewComponentPart"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ViewContainer" eSuperTypes="#//Core/ViewElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLandmark" ordered="false"
